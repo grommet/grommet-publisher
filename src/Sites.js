@@ -40,7 +40,7 @@ const Sites = ({ site, onClose, onChange }) => {
     if (item) {
       const nextSite = JSON.parse(item);
       upgradeSite(nextSite);
-      onChange({ site: nextSite });
+      onChange(nextSite);
       onClose();
     }
   }
@@ -48,7 +48,7 @@ const Sites = ({ site, onClose, onChange }) => {
   const onReset = () => {
     localStorage.removeItem('selected');
     localStorage.removeItem('activeSite');
-    onChange({ site: starter });
+    onChange(starter);
     onClose();
   }
 
@@ -60,7 +60,7 @@ const Sites = ({ site, onClose, onChange }) => {
     setSites(nextSites);
     if (site.name === name) {
       localStorage.removeItem('activeSite');
-      onChange({ site: starter });
+      onChange(starter);
     }
   }
 
