@@ -20,7 +20,7 @@ const Preview = ({ site, onChange }) => {
 
   return (
     <Grommet theme={theme} style={{ minHeight: '100vh' }}>
-      <Box fill background="dark-1">
+      <Box fill background="#1A1F2B">
         <Routes notFoundRedirect="/">
           <Route
             exact

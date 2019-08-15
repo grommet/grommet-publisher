@@ -1,24 +1,26 @@
 import React, { Fragment } from 'react';
 import { Box, Button, Heading, Text } from 'grommet';
 import { Add, Apps, Share } from 'grommet-icons';
+import { RouterContext } from './Router';
 import ActionButton from './components/ActionButton';
 import RoutedButton from './components/RoutedButton';
 import Sites from './Sites';
 import Sharer from './Share';
 
-const Actioner = ({ Icon, Modal, theme, onChange }) => {
+const Actioner = ({ Icon, Modal, site, onChange }) => {
   const [show, setShow] = React.useState();
   return (
     <Fragment>
       <ActionButton icon={<Icon />} hoverIndicator onClick={() => setShow(true)} />
       {show && (
-        <Modal theme={theme} onChange={onChange} onClose={() => setShow(false)} />
+        <Modal site={site} onChange={onChange} onClose={() => setShow(false)} />
       )}
     </Fragment>
   );
 }
 
 const Nav = ({ site, onChange }) => {
+  const { push } = React.useContext(RouterContext);
   return (
     <Box fill="vertical" overflow="auto" background="dark-1" border="right" >
       <Box
@@ -88,6 +90,7 @@ const Nav = ({ site, onChange }) => {
                     const nextSection = nextSite.sections[section.path];
                     nextSection.pageOrder.push(nextPage.path);
                     onChange(nextSite);
+                    push(nextPage.path);
                   }}
                 />
               </Box>
@@ -110,6 +113,7 @@ const Nav = ({ site, onChange }) => {
             nextSite.sections[nextSection.path] = nextSection;
             nextSite.sectionOrder.push(nextSection.path);
             onChange(nextSite);
+            push(nextSection.path);
           }}
         />
       </Box>

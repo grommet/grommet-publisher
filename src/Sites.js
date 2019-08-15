@@ -15,6 +15,7 @@ const nameToBackground = (name) => {
 
 const Sites = ({ site, onClose, onChange }) => {
   const [sites, setSites] = React.useState([]);
+  const [error, setError] = React.useState();
   const [confirmDelete, setConfirmDelete] = React.useState();
 
   React.useEffect(() => {
@@ -112,6 +113,46 @@ const Sites = ({ site, onClose, onChange }) => {
             </Stack>
           )
         })}
+        <Box
+          fill
+          round="medium"
+          overflow="hidden"
+          border={{ side: 'all', color: 'dark-3', size: 'medium' }}
+        >
+          <Stack fill guidingChild="last" interactiveChild="first">
+            <input
+              style={{ display: 'block', width: '100%', height: '100%' }}
+              type="file"
+              onChange={(event) => {
+                setError(undefined);
+                const reader = new FileReader();
+                reader.onload = () => {
+                  try {
+                    const nextSite = JSON.parse(reader.result);
+                    onChange(nextSite);
+                    onClose();
+                  } catch (e) {
+                    setError(e.message);
+                  }
+                };
+                reader.readAsText(event.target.files[0]);
+              }}
+            />
+            <Box
+              fill
+              background="dark-1"
+              align="center"
+              justify="center"
+            >
+              <Text>Import</Text>
+              {error && (
+                <Box background="status-critical" pad="medium">
+                  <Text>{error}</Text>
+                </Box>
+              )}
+            </Box>
+          </Stack>
+        </Box>
       </Grid>
     </Action>
   );

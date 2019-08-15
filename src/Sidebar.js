@@ -5,7 +5,7 @@ import RoutedAnchor from './components/RoutedAnchor';
 const Sidebar = ({ section, site, ...rest }) => {
   return (
     <Box  
-      pad={{ horizontal: 'large', vertical: 'small' }}
+      pad={{ vertical: 'small' }}
       gap="small"
       {...rest}
     >

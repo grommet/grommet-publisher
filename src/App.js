@@ -20,8 +20,7 @@ const App = () => {
   const responsive = React.useContext(ResponsiveContext);
   const [site, setSite] = React.useState();
   const [preview, setPreview] = React.useState();
-  let debouncing = false;
-  let storeTimer;
+  const storeTimer = React.useRef(null);
 
   React.useEffect(() => {
     const params = getParams();
@@ -52,12 +51,9 @@ const App = () => {
   const onChange = (nextSite) => {
     setSite(nextSite);
 
-    if (!debouncing) {
-      debouncing = true;
-    }
     // delay storing it locally so we don't bog down typing
-    clearTimeout(storeTimer);
-    storeTimer = setTimeout(() => {
+    clearTimeout(storeTimer.current);
+    storeTimer.current = setTimeout(() => {
       document.title = nextSite.name;
       localStorage.setItem(nextSite.name, JSON.stringify(nextSite));
       localStorage.setItem('activeSite', nextSite.name);
@@ -71,8 +67,7 @@ const App = () => {
         sites.unshift(nextSite.name);
         localStorage.setItem('sites', JSON.stringify(sites));
       }
-      debouncing = false;
-    }, 500);
+    }, 1000);
   }
 
   const onKey = (event) => {

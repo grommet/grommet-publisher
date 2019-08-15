@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { Anchor } from 'grommet';
 import { RouterContext } from '../Router';
 
-const RoutedAnchor = ({ path, ...rest }) => {
+const RoutedAnchor = ({ active, path, ...rest }) => {
   const { path: activePath, push } = React.useContext(RouterContext);
   return (
     <Anchor
       href={path}
-      active={activePath === path}
+      color={(active || activePath === path) ? 'brand' : undefined}
       onClick={path ? (event) => {
         event.preventDefault();
         push(path);

@@ -14,6 +14,7 @@ const RoutedButton = ({ path, showActive = true, ...rest }) => {
         event.preventDefault();
         push(path);
       } : undefined}
+      style={{ lineHeight: 0 }}
     />
   );
 }

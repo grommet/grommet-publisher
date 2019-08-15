@@ -1,9 +1,11 @@
 import React from 'react';
 import { Box, Button, FormField, TextArea, TextInput } from 'grommet';
 import { Trash } from 'grommet-icons';
+import { RouterContext } from './Router';
 import Scope from './Scope';
 
 export default ({ path, site, onChange }) => {
+  const { replace } = React.useContext(RouterContext);
   const [confirmDelete, setConfirmDelete] = React.useState();
   const section = site.sections[path];
   return (
@@ -20,8 +22,27 @@ export default ({ path, site, onChange }) => {
                     value={section.name || ''}
                     onChange={(event) => {
                       const nextSite = JSON.parse(JSON.stringify(site));
-                      nextSite.pages[section.path].name = event.target.value;
+                      nextSite.sections[section.path].name = event.target.value;
                       onChange(nextSite);
+                    }}
+                  />
+                </FormField>
+                <FormField htmlFor="path" label="Path">
+                  <TextInput
+                    id="path"
+                    name="path"
+                    plain
+                    value={section.path || ''}
+                    onChange={(event) => {
+                      const path = event.target.value;
+                      const nextSite = JSON.parse(JSON.stringify(site));
+                      nextSite.sections[path] = nextSite.sections[section.path];
+                      nextSite.sections[path].path = path;
+                      delete nextSite.sections[section.path];
+                      const index = nextSite.sectionOrder.indexOf(section.path);
+                      nextSite.sectionOrder[index] = path;
+                      onChange(nextSite);
+                      replace(path);
                     }}
                   />
                 </FormField>

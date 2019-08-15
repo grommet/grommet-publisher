@@ -1,10 +1,12 @@
 import React from 'react';
 import { Box, Button, FormField, TextArea, TextInput } from 'grommet';
 import { Trash } from 'grommet-icons';
+import { RouterContext } from './Router';
 import Scope from './Scope';
 import { pageSection } from './site';
 
 export default ({ path, site, onChange }) => {
+  const { replace } = React.useContext(RouterContext);
   const [confirmDelete, setConfirmDelete] = React.useState();
   const page = site.pages[path];
   const section = pageSection(site, path);
@@ -40,8 +42,10 @@ export default ({ path, site, onChange }) => {
                       nextSite.pages[path] = nextSite.pages[page.path];
                       nextSite.pages[path].path = path;
                       delete nextSite.pages[page.path];
+                      const index = nextSite.sections[section.path].pageOrder.indexOf(page.path);
+                      nextSite.sections[section.path].pageOrder[index] = path;
                       onChange(nextSite);
-                      // TODO: push history to new path
+                      replace(path);
                     }}
                   />
                 </FormField>
