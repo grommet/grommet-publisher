@@ -30,6 +30,7 @@ const App = () => {
       .then((nextSite) => {
         upgradeSite(nextSite);
         document.title = nextSite.name;
+        setPreview(true);
         setSite(nextSite);
       });
     } else {
