@@ -1,0 +1,56 @@
+import React from 'react';
+import { Grommet, Box } from 'grommet';
+import { Route, Routes } from './Router';
+import SitePreview from './SitePreview';
+import SectionPreview from './SectionPreview';
+import PagePreview from './PagePreview';
+
+export const themeApiUrl = 'https://us-central1-grommet-designer.cloudfunctions.net/themes';
+
+const Preview = ({ site, onChange }) => {
+  const [theme, setTheme] = React.useState();
+  React.useState(() => {
+    if (site.theme) {
+      const id = site.theme.split('id=')[1];
+      fetch(`${themeApiUrl}/${id}`)
+        .then(response => response.json())
+        .then(theme => setTheme(theme));
+    }
+  }, [site]);
+
+  return (
+    <Grommet theme={theme} style={{ minHeight: '100vh' }}>
+      <Box fill background="dark-1">
+        <Routes notFoundRedirect="/">
+          <Route
+            exact
+            path="/"
+            component={SitePreview}
+            props={{ site }}
+          />
+          {Object.keys(site.sections).map(path => (
+            <Route
+              key={path}
+              exact
+              path={path}
+              site={site}
+              component={SectionPreview}
+              props={{ path, site }}
+            />
+          ))}
+          {Object.keys(site.pages).map(path => (
+            <Route
+              key={path}
+              exact
+              path={path}
+              component={PagePreview}
+              props={{ path, site }}
+            />
+          ))}
+        </Routes>
+      </Box>
+    </Grommet>
+  );
+}
+
+export default Preview;
