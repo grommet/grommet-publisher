@@ -37,6 +37,9 @@ export default class Content extends Component {
             component: Image,
             props: { fit: 'contain' },
           },
+          Box: {
+            component: Box,
+          },
           Button: {
             component: Button,
             props: { primary: true },
