@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, FormField, TextArea, TextInput } from 'grommet';
-import Scope from './Scope';
+import Scope from './components/Scope';
 
 export default ({ site, onChange }) => (
   <Scope scopes={['content', 'details']}>

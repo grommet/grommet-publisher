@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Button, FormField, TextArea, TextInput } from 'grommet';
 import { Trash } from 'grommet-icons';
 import { RouterContext } from './Router';
-import Scope from './Scope';
+import Scope from './components/Scope';
 import { pageSection } from './site';
 
 export default ({ path, site, onChange }) => {

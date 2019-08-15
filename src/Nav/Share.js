@@ -4,8 +4,8 @@ import {
   Text, TextInput
 } from 'grommet';
 import { CloudUpload, Copy, Download } from 'grommet-icons';
-import { apiUrl } from './site';
-import Action from './components/Action';
+import { apiUrl } from '../site';
+import Action from '../components/Action';
 
 const Summary = ({ Icon, label, guidance }) => (
   <Box align="center" gap="small">
@@ -72,7 +72,7 @@ const Publish = ({ site, onChange }) => {
     })
     .catch(e => setError(e.message));
 
-    onChange({ site: nextSite });
+    onChange(nextSite);
   }
 
   const onCopy = () => {

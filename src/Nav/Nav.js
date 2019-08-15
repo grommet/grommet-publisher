@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import { Box, Button, Heading, Text } from 'grommet';
 import { Add, Apps, Share } from 'grommet-icons';
-import { RouterContext } from './Router';
-import ActionButton from './components/ActionButton';
-import RoutedButton from './components/RoutedButton';
+import { RouterContext } from '../Router';
+import ActionButton from '../components/ActionButton';
+import RoutedButton from '../components/RoutedButton';
 import Sites from './Sites';
 import Sharer from './Share';
 

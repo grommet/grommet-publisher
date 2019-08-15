@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Grid, Grommet, ResponsiveContext, Keyboard, grommet } from 'grommet';
 import { apiUrl, starter, upgradeSite } from './site';
 import Router from './Router';
-import Nav from './Nav';
+import Nav from './Nav/Nav';
 import Editor from './Editor';
 import Preview from './Preview';
 

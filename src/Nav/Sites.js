@@ -1,9 +1,9 @@
 import React from 'react';
 import { Box, Button, Grid, Grommet, Stack, Text } from 'grommet';
 import { Trash } from 'grommet-icons';
-import { starter, upgradeSite } from './site';
-import Action from './components/Action';
-import ActionButton from './components/ActionButton';
+import { starter, upgradeSite } from '../site';
+import Action from '../components/Action';
+import ActionButton from '../components/ActionButton';
 
 const nameToBackground = (name) => {
   let num = 0;

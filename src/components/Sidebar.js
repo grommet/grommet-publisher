@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from 'grommet';
-import RoutedAnchor from './components/RoutedAnchor';
+import RoutedAnchor from './RoutedAnchor';
 
 const Sidebar = ({ section, site, ...rest }) => {
   return (

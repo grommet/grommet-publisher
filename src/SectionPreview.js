@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Grid } from 'grommet';
 import Header from './components/Header';
 import Content from './components/Content';
-import Sidebar from './Sidebar';
+import Sidebar from './components/Sidebar';
 
 const SectionPreview = ({ path, site }) => {
   const section = site.sections[path];
