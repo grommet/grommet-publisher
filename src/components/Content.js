@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Box, Button, Heading, Markdown, Paragraph, Text } from 'grommet';
+import { Box, Button, Heading, Image, Markdown, Paragraph, Text } from 'grommet';
 
 export default class Content extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -31,10 +31,15 @@ export default class Content extends Component {
         components={{
           h1: {
             component: Heading,
-            props: { size: 'large' }
+            props: { size: 'large' },
+          },
+          img: {
+            component: Image,
+            props: { fit: 'contain' },
           },
           Button: {
             component: Button,
+            props: { primary: true },
           },
           Paragraph: {
             component: Paragraph,

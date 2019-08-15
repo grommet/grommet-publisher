@@ -23,7 +23,7 @@ const Preview = ({ site, onChange }) => {
 
   return (
     <Grommet theme={theme} style={{ minHeight: '100vh' }}>
-      <Box background="#1A1F2B" animation="fadeIn" style={{ minHeight: '100vh' }}>
+      <Box background="#1A1F2B" overflow="hidden" animation="fadeIn" style={{ minHeight: '100vh' }}>
         {theme === undefined ? (
           <Box flex align="center" justify="center" animation="pulse">
             <Document size="xlarge" color="dark-3" />
