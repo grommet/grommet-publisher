@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
-import { Box, Button, Heading, Text } from 'grommet';
-import { Add, Apps, Share } from 'grommet-icons';
+import { Box, Button, Text } from 'grommet';
+import { Apps, FormAdd, Share } from 'grommet-icons';
 import { RouterContext } from '../Router';
 import ActionButton from '../components/ActionButton';
 import RoutedButton from '../components/RoutedButton';
@@ -38,9 +38,9 @@ const Nav = ({ site, onChange }) => {
         <Box flex>
           <RoutedButton fill path="/" hoverIndicator>
             <Box fill direction="row" align="center" pad="small">
-              <Heading level={1} size="22px" margin="none" truncate>
+              <Text size="small" truncate>
                 {site.name}
-              </Heading>
+              </Text>
             </Box>
           </RoutedButton>
         </Box>
@@ -57,9 +57,9 @@ const Nav = ({ site, onChange }) => {
           .map(section => (
             <Box key={section.path} flex={false}>
               <RoutedButton path={section.path} hoverIndicator>
-                <Heading level={2} size="small" margin="small">
-                  {section.name}
-                </Heading>
+                <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
+                  <Text size="small">{section.name}</Text>
+                </Box>
               </RoutedButton>
               <Box flex={false} margin={{ left: 'small' }}>
                 {section.pageOrder.map(path => site.pages[path])
@@ -70,15 +70,14 @@ const Nav = ({ site, onChange }) => {
                       path={page.path}
                       hoverIndicator
                     >
-                      <Box pad="small">
-                        <Text>{page.name}</Text>
+                      <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
+                        <Text size="small">{page.name}</Text>
                       </Box>
                     </RoutedButton>
                   ))
                 }
                 <Button
                   title="add a page"
-                  icon={<Add color="dark-4" />}
                   hoverIndicator
                   onClick={() => {
                     const nextSite = JSON.parse(JSON.stringify(site));
@@ -94,14 +93,17 @@ const Nav = ({ site, onChange }) => {
                     onChange(nextSite);
                     push(nextPage.path);
                   }}
-                />
+                >
+                  <Box pad={{ horizontal: 'xsmall' }}>
+                    <FormAdd color="dark-4" />
+                  </Box>
+                </Button>
               </Box>
             </Box>
           ))
         }
         <Button
           title="add a section"
-          icon={<Add color="dark-4" />}
           hoverIndicator
           onClick={() => {
             const nextSite = JSON.parse(JSON.stringify(site));
@@ -117,7 +119,11 @@ const Nav = ({ site, onChange }) => {
             onChange(nextSite);
             push(nextSection.path);
           }}
-        />
+        >
+          <Box pad={{ horizontal: 'xsmall' }}>
+            <FormAdd color="dark-4" />
+          </Box>
+        </Button>
       </Box>
     </Box>
   );

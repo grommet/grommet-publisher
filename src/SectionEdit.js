@@ -47,7 +47,7 @@ export default ({ path, site, onChange }) => {
                   />
                 </FormField>
               </Box>
-              <Box alignSelf="center" gap="small">
+              <Box alignSelf="start" align="start" gap="small">
                 {confirmDelete && (
                   <Button
                     label="Confirm Delete"

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Grid, Grommet, ResponsiveContext, Keyboard, grommet } from 'grommet';
+import { Document } from 'grommet-icons';
 import { apiUrl, starter, upgradeSite } from './site';
 import Router from './Router';
 import Nav from './Nav/Nav';
@@ -17,7 +18,6 @@ const getParams = () => {
 }
 
 const App = () => {
-  const responsive = React.useContext(ResponsiveContext);
   const [site, setSite] = React.useState();
   const [preview, setPreview] = React.useState();
   const storeTimer = React.useRef(null);
@@ -84,25 +84,33 @@ const App = () => {
     <Router>
       <Grommet full theme={grommet}>
         <Keyboard target="document" onKeyDown={onKey}>
-          {!site ? (
-            <Box fill justify="center" align="center">
-              <Box pad="xlarge" background="dark-2" round animation="pulse" />
-            </Box>
-          ) : (
-            <Grid
-              fill
-              columns={(responsive === 'small' || preview)
-                ? 'flex'
-                : [['small', 'medium'], ['small', 'medium'], ['large', 'flex']]}
-              rows='full'
-            >
-              {responsive !== 'small' && !preview && (
-                <Nav site={site} onChange={onChange} />
-              )}
-              {!preview && <Editor site={site} onChange={onChange} />}
-              <Preview site={site} />
-            </Grid>
-          )}
+          <ResponsiveContext.Consumer>
+            {responsive => {
+              return !site ? (
+                <Box fill justify="center" align="center">
+                  <Box animation="pulse">
+                    <Document size="xlarge" />
+                  </Box>
+                </Box>
+              ) : (
+                <Grid
+                  fill
+                  columns={(responsive === 'small' || preview)
+                    ? 'flex'
+                    : ['small', ['small', 'large'], ['large', 'flex']]}
+                  rows='full'
+                >
+                  {responsive !== 'small' && !preview && (
+                    <Nav site={site} onChange={onChange} />
+                  )}
+                  {responsive !== 'small' && !preview && (
+                    <Editor site={site} onChange={onChange} />
+                  )}
+                  <Preview site={site} />
+                </Grid>
+              )
+            }}
+          </ResponsiveContext.Consumer>
         </Keyboard>
       </Grommet>
     </Router>
