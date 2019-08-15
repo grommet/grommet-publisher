@@ -53,6 +53,7 @@ const Nav = ({ site, onChange }) => {
       </Box>
       <Box flex={false}>
         {site.sectionOrder.map(path => site.sections[path])
+          .filter(section => section)
           .map(section => (
             <Box key={section.path} flex={false}>
               <RoutedButton path={section.path} hoverIndicator>
@@ -62,6 +63,7 @@ const Nav = ({ site, onChange }) => {
               </RoutedButton>
               <Box flex={false} margin={{ left: 'small' }}>
                 {section.pageOrder.map(path => site.pages[path])
+                  .filter(page => page)
                   .map(page => (
                     <RoutedButton
                       key={page.path}

@@ -9,9 +9,11 @@ const Sidebar = ({ section, site, ...rest }) => {
       gap="small"
       {...rest}
     >
-      {section.pageOrder.map(path => (
-        <RoutedAnchor key={path} path={path}>
-          <Box>{site.pages[path].name}</Box>
+      {section && section.pageOrder.map(path => site.pages[path])
+        .filter(page => page)
+        .map(page => (
+        <RoutedAnchor key={page.path} path={page.path}>
+          <Box>{page.name}</Box>
         </RoutedAnchor>
       ))}
     </Box>

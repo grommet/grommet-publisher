@@ -7,9 +7,12 @@ import { pageSection } from './site';
 
 export default ({ path, site, onChange }) => {
   const { replace } = React.useContext(RouterContext);
+  const [tmpPath, setTmpPath] = React.useState(path);
+  const debounceTimer = React.useRef();
   const [confirmDelete, setConfirmDelete] = React.useState();
   const page = site.pages[path];
   const section = pageSection(site, path);
+
   return (
     <Scope scopes={['content', 'details']}>
       {(scope) => {
@@ -35,22 +38,32 @@ export default ({ path, site, onChange }) => {
                     id="path"
                     name="path"
                     plain
-                    value={page.path || ''}
+                    value={tmpPath || page.path || ''}
                     onChange={(event) => {
                       const path = event.target.value;
-                      const nextSite = JSON.parse(JSON.stringify(site));
-                      nextSite.pages[path] = nextSite.pages[page.path];
-                      nextSite.pages[path].path = path;
-                      delete nextSite.pages[page.path];
-                      const index = nextSite.sections[section.path].pageOrder.indexOf(page.path);
-                      nextSite.sections[section.path].pageOrder[index] = path;
-                      onChange(nextSite);
-                      replace(path);
+                      // debounce so we avoid replace() while the user types
+                      setTmpPath(path);
+                      clearTimeout(debounceTimer.current);
+                      debounceTimer.current = setTimeout(() => {
+                        // first add new path
+                        let nextSite = JSON.parse(JSON.stringify(site));
+                        nextSite.pages[path] = JSON.parse(JSON.stringify(nextSite.pages[page.path]));
+                        nextSite.pages[path].path = path;
+                        const index = nextSite.sections[section.path].pageOrder.indexOf(page.path);
+                        nextSite.sections[section.path].pageOrder.splice(index, 0, path);
+                        onChange(nextSite);
+                        replace(path);
+                        // then remove old path
+                        nextSite = JSON.parse(JSON.stringify(nextSite));
+                        delete nextSite.pages[page.path];
+                        nextSite.sections[section.path].pageOrder.splice(index + 1, 1);
+                        onChange(nextSite);
+                      }, 1000);
                     }}
                   />
                 </FormField>
               </Box>
-              <Box gap="small">
+              <Box alignSelf="center" gap="small">
                 {confirmDelete && (
                   <Button
                     label="Confirm Delete"
