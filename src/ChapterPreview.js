@@ -4,22 +4,34 @@ import Header from './components/Header';
 import Content from './components/Content';
 import Sidebar from './components/Sidebar';
 
-const SectionPreview = ({ path, site }) => {
+const ChapterPreview = ({ path, site }) => {
   const responsive = React.useContext(ResponsiveContext);
-  const section = site.sections[path];
+  const chapter = site.chapters[path];
+  const noPages = (chapter.pageOrder.length === 0);
+  const noSidebar = (responsive === 'small') || noPages;
+
+  if (noPages) {
+    return (
+      <Box style={{ position: 'relative' }}>
+        <Header gridArea="header" site={site} overlay={true} />
+        <Content fill>{chapter.content}</Content>
+      </Box>
+    );
+  }
+
   return (
     <Grid
-      columns={responsive === 'small' ?
-        ['xxsmall', 'flex', 'xxsmall'] : [
+      columns={noSidebar ?
+        ['flex'] : [
         ['xxsmall', 'flex'],
         ['small', 'medium'],
         ['medium', 'large'],
         ['xxsmall', 'flex'],
       ]}
       rows={['xsmall', 'flex']}
-      areas={responsive === 'small' ? [
-        { name: 'header', start: [1, 0], end: [1, 0] },
-        { name: 'content', start: [1, 1], end: [1, 1] },
+      areas={noSidebar ? [
+        { name: 'header', start: [0, 0], end: [0, 0] },
+        { name: 'content', start: [0, 1], end: [0, 1] },
       ] : [
         { name: 'header', start: [1, 0], end: [2, 0] },
         { name: 'sidebar', start: [1, 1], end: [1, 1] },
@@ -27,14 +39,14 @@ const SectionPreview = ({ path, site }) => {
       ]}
     >
       <Header gridArea="header" site={site} />
-      {responsive !== 'small' && (
-        <Sidebar gridArea="sidebar" site={site} section={section} />
+      {!noSidebar && (
+        <Sidebar gridArea="sidebar" site={site} chapter={chapter} />
       )}
       <Box gridArea="content">
-        <Content>{section.content}</Content>
+        <Content>{chapter.content}</Content>
       </Box>
     </Grid>
   );
 }
 
-export default SectionPreview;
+export default ChapterPreview;

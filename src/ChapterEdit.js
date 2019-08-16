@@ -7,7 +7,7 @@ import Scope from './components/Scope';
 export default ({ path, site, onChange }) => {
   const { replace } = React.useContext(RouterContext);
   const [confirmDelete, setConfirmDelete] = React.useState();
-  const section = site.sections[path];
+  const chapter = site.chapters[path];
   return (
     <Scope scopes={['content', 'details']}>
       {(scope) => {
@@ -19,10 +19,10 @@ export default ({ path, site, onChange }) => {
                   <TextInput
                     name="name"
                     plain
-                    value={section.name || ''}
+                    value={chapter.name || ''}
                     onChange={(event) => {
                       const nextSite = JSON.parse(JSON.stringify(site));
-                      nextSite.sections[section.path].name = event.target.value;
+                      nextSite.chapters[chapter.path].name = event.target.value;
                       onChange(nextSite);
                     }}
                   />
@@ -32,15 +32,15 @@ export default ({ path, site, onChange }) => {
                     id="path"
                     name="path"
                     plain
-                    value={section.path || ''}
+                    value={chapter.path || ''}
                     onChange={(event) => {
                       const path = event.target.value;
                       const nextSite = JSON.parse(JSON.stringify(site));
-                      nextSite.sections[path] = nextSite.sections[section.path];
-                      nextSite.sections[path].path = path;
-                      delete nextSite.sections[section.path];
-                      const index = nextSite.sectionOrder.indexOf(section.path);
-                      nextSite.sectionOrder[index] = path;
+                      nextSite.chapters[path] = nextSite.chapters[chapter.path];
+                      nextSite.chapters[path].path = path;
+                      delete nextSite.chapters[chapter.path];
+                      const index = nextSite.chapterOrder.indexOf(chapter.path);
+                      nextSite.chapterOrder[index] = path;
                       onChange(nextSite);
                       replace(path);
                     }}
@@ -55,12 +55,12 @@ export default ({ path, site, onChange }) => {
                     color="status-critical"
                     onClick={() => {
                       const nextSite = JSON.parse(JSON.stringify(site));
-                      // delete all pages in this section
-                      section.pageOrder.forEach(pagePath =>
+                      // delete all pages in this chapter
+                      chapter.pageOrder.forEach(pagePath =>
                         delete nextSite.pages[pagePath]);
-                      delete nextSite.sections[path];
-                      nextSite.sectionOrder =
-                      nextSite.sectionOrder.filter(p => p !== path);
+                      delete nextSite.chapters[path];
+                      nextSite.chapterOrder =
+                      nextSite.chapterOrder.filter(p => p !== path);
                       onChange(nextSite);
                     }}
                   />
@@ -81,10 +81,10 @@ export default ({ path, site, onChange }) => {
                 id="content"
                 name="content"
                 fill
-                value={section.content || ''}
+                value={chapter.content || ''}
                 onChange={(event) => {
                   const nextSite = JSON.parse(JSON.stringify(site));
-                  nextSite.sections[section.path].content = event.target.value;
+                  nextSite.chapters[chapter.path].content = event.target.value;
                   onChange(nextSite);
                 }}
               />

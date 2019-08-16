@@ -3,7 +3,7 @@ import { Grommet, Box } from 'grommet';
 import { Document } from 'grommet-icons';
 import { Route, Routes } from './Router';
 import SitePreview from './SitePreview';
-import SectionPreview from './SectionPreview';
+import ChapterPreview from './ChapterPreview';
 import PagePreview from './PagePreview';
 
 export const themeApiUrl = 'https://us-central1-grommet-designer.cloudfunctions.net/themes';
@@ -23,7 +23,7 @@ const Preview = ({ site, onChange }) => {
 
   return (
     <Grommet theme={theme} style={{ minHeight: '100vh' }}>
-      <Box background="#1A1F2B" overflow="hidden" animation="fadeIn" style={{ minHeight: '100vh' }}>
+      <Box overflow="hidden" animation="fadeIn" style={{ minHeight: '100vh' }}>
         {theme === undefined ? (
           <Box flex align="center" justify="center" animation="pulse">
             <Document size="xlarge" color="dark-3" />
@@ -36,13 +36,13 @@ const Preview = ({ site, onChange }) => {
               component={SitePreview}
               props={{ site }}
             />
-            {Object.keys(site.sections).map(path => (
+            {Object.keys(site.chapters).map(path => (
               <Route
                 key={path}
                 exact
                 path={path}
                 site={site}
-                component={SectionPreview}
+                component={ChapterPreview}
                 props={{ path, site }}
               />
             ))}

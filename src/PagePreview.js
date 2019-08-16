@@ -3,12 +3,12 @@ import { Box, Grid, ResponsiveContext } from 'grommet';
 import Header from './components/Header';
 import Content from './components/Content';
 import Sidebar from './components/Sidebar';
-import { pageSection } from './site';
+import { pageChapter } from './site';
 
 const PagePreview = ({ path, site }) => {
   const responsive = React.useContext(ResponsiveContext);
   const page = site.pages[path];
-  const section = pageSection(site, path);
+  const chapter = pageChapter(site, path);
   return (
     <Grid
       columns={responsive === 'small' ?
@@ -30,7 +30,7 @@ const PagePreview = ({ path, site }) => {
     >
       <Header gridArea="header" site={site} />
       {responsive !== 'small' && (
-        <Sidebar gridArea="sidebar" site={site} section={section} />
+        <Sidebar gridArea="sidebar" site={site} chapter={chapter} />
       )}
       <Box gridArea="content">
         <Content>{page.content}</Content>

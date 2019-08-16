@@ -2,14 +2,14 @@ import React from 'react';
 import { Box } from 'grommet';
 import RoutedAnchor from './RoutedAnchor';
 
-const Sidebar = ({ section, site, ...rest }) => {
+const Sidebar = ({ chapter, site, ...rest }) => {
   return (
     <Box  
       pad={{ vertical: 'small' }}
       gap="small"
       {...rest}
     >
-      {section && section.pageOrder.map(path => site.pages[path])
+      {chapter && chapter.pageOrder.map(path => site.pages[path])
         .filter(page => page)
         .map(page => (
         <RoutedAnchor key={page.path} path={page.path}>

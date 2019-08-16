@@ -52,17 +52,17 @@ const Nav = ({ site, onChange }) => {
         />
       </Box>
       <Box flex={false}>
-        {site.sectionOrder.map(path => site.sections[path])
-          .filter(section => section)
-          .map(section => (
-            <Box key={section.path} flex={false}>
-              <RoutedButton path={section.path} hoverIndicator>
+        {site.chapterOrder.map(path => site.chapters[path])
+          .filter(chapter => chapter)
+          .map(chapter => (
+            <Box key={chapter.path} flex={false}>
+              <RoutedButton path={chapter.path} hoverIndicator>
                 <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
-                  <Text size="small">{section.name}</Text>
+                  <Text size="small">{chapter.name}</Text>
                 </Box>
               </RoutedButton>
               <Box flex={false} margin={{ left: 'small' }}>
-                {section.pageOrder.map(path => site.pages[path])
+                {chapter.pageOrder.map(path => site.pages[path])
                   .filter(page => page)
                   .map(page => (
                     <RoutedButton
@@ -88,8 +88,8 @@ const Nav = ({ site, onChange }) => {
                       content: `# Page ${id}`,
                     }
                     nextSite.pages[nextPage.path] = nextPage;
-                    const nextSection = nextSite.sections[section.path];
-                    nextSection.pageOrder.push(nextPage.path);
+                    const nextChapter = nextSite.chapters[chapter.path];
+                    nextChapter.pageOrder.push(nextPage.path);
                     onChange(nextSite);
                     push(nextPage.path);
                   }}
@@ -103,21 +103,21 @@ const Nav = ({ site, onChange }) => {
           ))
         }
         <Button
-          title="add a section"
+          title="add a chapter"
           hoverIndicator
           onClick={() => {
             const nextSite = JSON.parse(JSON.stringify(site));
-            const id = Object.keys(nextSite.sections).length;
-            const nextSection = {
-              name: `section ${id}`,
-              path: `/section-${id}`,
-              content: `# Section ${id}`,
+            const id = Object.keys(nextSite.chapters).length;
+            const nextChapter = {
+              name: `chapter ${id}`,
+              path: `/chapter-${id}`,
+              content: `# Chapter ${id}`,
               pageOrder: [],
             }
-            nextSite.sections[nextSection.path] = nextSection;
-            nextSite.sectionOrder.push(nextSection.path);
+            nextSite.chapters[nextChapter.path] = nextChapter;
+            nextSite.chapterOrder.push(nextChapter.path);
             onChange(nextSite);
-            push(nextSection.path);
+            push(nextChapter.path);
           }}
         >
           <Box pad={{ horizontal: 'xsmall' }}>

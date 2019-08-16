@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from './Router';
 import SiteEdit from './SiteEdit';
-import SectionEdit from './SectionEdit';
+import ChapterEdit from './ChapterEdit';
 import PageEdit from './PageEdit';
 
 const Editor = ({ site, onChange }) => {
@@ -13,12 +13,12 @@ const Editor = ({ site, onChange }) => {
         component={SiteEdit}
         props={{ site, onChange }}
       />
-      {Object.keys(site.sections).map(path => (
+      {Object.keys(site.chapters).map(path => (
         <Route
           key={path}
           exact
           path={path}
-          component={SectionEdit}
+          component={ChapterEdit}
           props={{ path, site, onChange }}
         />
       ))}

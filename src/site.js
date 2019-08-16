@@ -4,8 +4,8 @@ export const apiUrl = 'https://us-central1-grommet-designer.cloudfunctions.net/s
 export const starter = {
   name: 'My Site',
   content: '# My Site',
-  sectionOrder: ['/welcome', '/about'],
-  sections: {
+  chapterOrder: ['/welcome', '/about'],
+  chapters: {
     '/welcome': {
       name: 'welcome',
       path: '/welcome',
@@ -44,9 +44,9 @@ export const starter = {
   theme: 'https://theme-designer.grommet.io/?id=HPE-eric-soderberg-hpe-com',
 }
 
-export const pageSection = (site, pagePath) =>
-  Object.keys(site.sections).map(p => site.sections[p])
-    .filter(section => section.pageOrder.includes(pagePath))[0];
+export const pageChapter = (site, pagePath) =>
+  Object.keys(site.chapters).map(p => site.chapters[p])
+    .filter(chapter => chapter.pageOrder.includes(pagePath))[0];
 
 export const upgradeSite = (site) => {
   return site; // nothing to upgrade yet.

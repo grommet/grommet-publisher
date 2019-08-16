@@ -4,20 +4,25 @@ import { Hpe, Menu } from 'grommet-icons';
 import { RouterContext } from '../Router';
 import RoutedAnchor from './RoutedAnchor';
 import RoutedButton from './RoutedButton';
-import { pageSection } from '../site';
+import { pageChapter } from '../site';
 
-const Header = ({ site, ...rest }) => {
+const Header = ({ site, overlay, ...rest }) => {
   const responsive = React.useContext(ResponsiveContext);
   const { path: activePath } = React.useContext(RouterContext);
-  const section = pageSection(site, activePath);
+  const chapter = pageChapter(site, activePath);
+  let style;
+  if (overlay) {
+    style = { position: 'absolute', top: 0, left: 0, right: 0, zIndex: 10 };
+  }
   return (
     <Box
       flex={false}
-      pad={{ vertical: 'small' }}
+      pad={{ vertical: 'small', horizontal: 'large' }}
       direction="row"
       align="center"
       justify="between"
       gap="small"
+      style={style}
       {...rest}
     >
       <RoutedButton path="/" showActive={false}>
@@ -35,20 +40,20 @@ const Header = ({ site, ...rest }) => {
               border
               elevation="large"
             >
-              {site.sectionOrder.map(path => site.sections[path])
-                .filter(section => section)
-                .map(section => (
+              {site.chapterOrder.map(path => site.chapters[path])
+                .filter(chapter => chapter)
+                .map(chapter => (
                 <Box>
                   <RoutedButton
-                    key={section.path}
-                    path={section.path}
+                    key={chapter.path}
+                    path={chapter.path}
                     hoverIndicator
                   >
                     <Box pad={{ horizontal: 'medium', vertical: 'xsmall' }}>
-                      {section.name}
+                      {chapter.name}
                     </Box>
                   </RoutedButton>
-                  {section.pageOrder.map(path => site.pages[path])
+                  {chapter.pageOrder.map(path => site.pages[path])
                     .filter(page => page)
                     .map(page => (
                     <RoutedButton
@@ -68,13 +73,13 @@ const Header = ({ site, ...rest }) => {
         />
       ) : (
         <Box direction="row" align="center" gap="medium">
-          {site.sectionOrder.map(path => (
+          {site.chapterOrder.map(path => (
             <RoutedAnchor
               key={path}
               path={path} 
-              active={section && section.path === path}
+              active={chapter && chapter.path === path}
             >
-              <Box>{site.sections[path].name}</Box>
+              <Box>{site.chapters[path].name}</Box>
             </RoutedAnchor>
           ))}
         </Box>

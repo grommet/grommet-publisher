@@ -3,7 +3,7 @@ import { Box, Button, FormField, TextArea, TextInput } from 'grommet';
 import { Trash } from 'grommet-icons';
 import { RouterContext } from './Router';
 import Scope from './components/Scope';
-import { pageSection } from './site';
+import { pageChapter } from './site';
 
 export default ({ path, site, onChange }) => {
   const { replace } = React.useContext(RouterContext);
@@ -11,7 +11,7 @@ export default ({ path, site, onChange }) => {
   const debounceTimer = React.useRef();
   const [confirmDelete, setConfirmDelete] = React.useState();
   const page = site.pages[path];
-  const section = pageSection(site, path);
+  const chapter = pageChapter(site, path);
 
   return (
     <Scope scopes={['content', 'details']}>
@@ -49,14 +49,14 @@ export default ({ path, site, onChange }) => {
                         let nextSite = JSON.parse(JSON.stringify(site));
                         nextSite.pages[path] = JSON.parse(JSON.stringify(nextSite.pages[page.path]));
                         nextSite.pages[path].path = path;
-                        const index = nextSite.sections[section.path].pageOrder.indexOf(page.path);
-                        nextSite.sections[section.path].pageOrder.splice(index, 0, path);
+                        const index = nextSite.chapters[chapter.path].pageOrder.indexOf(page.path);
+                        nextSite.chapters[chapter.path].pageOrder.splice(index, 0, path);
                         onChange(nextSite);
                         replace(path);
                         // then remove old path
                         nextSite = JSON.parse(JSON.stringify(nextSite));
                         delete nextSite.pages[page.path];
-                        nextSite.sections[section.path].pageOrder.splice(index + 1, 1);
+                        nextSite.chapters[chapter.path].pageOrder.splice(index + 1, 1);
                         onChange(nextSite);
                       }, 1000);
                     }}
@@ -72,9 +72,9 @@ export default ({ path, site, onChange }) => {
                     onClick={() => {
                       const nextSite = JSON.parse(JSON.stringify(site));
                       delete nextSite.pages[path];
-                      const nextSection = nextSite.sections[section.path];
-                      nextSection.pageOrder =
-                        nextSection.pageOrder.filter(p => p !== path);
+                      const nextChapter = nextSite.chapters[chapter.path];
+                      nextChapter.pageOrder =
+                        nextChapter.pageOrder.filter(p => p !== path);
                       onChange(nextSite);
                     }}
                   />
