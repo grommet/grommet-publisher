@@ -8,9 +8,9 @@ import PagePreview from './PagePreview';
 
 export const themeApiUrl = 'https://us-central1-grommet-designer.cloudfunctions.net/themes';
 
-const Preview = ({ site }) => {
+const Preview = ({ site, onChange }) => {
   const [theme, setTheme] = React.useState();
-  React.useState(() => {
+  React.useEffect(() => {
     if (site.theme) {
       const id = site.theme.split('id=')[1];
       fetch(`${themeApiUrl}/${id}`)
@@ -19,7 +19,7 @@ const Preview = ({ site }) => {
     } else {
       setTheme(false);
     }
-  }, [site]);
+  }, [site.theme]);
 
   return (
     <Grommet theme={theme} style={{ minHeight: '100vh' }}>
@@ -38,7 +38,7 @@ const Preview = ({ site }) => {
               exact
               path="/"
               component={SitePreview}
-              props={{ site }}
+              props={{ site, onChange }}
             />
             {Object.keys(site.chapters).map(path => (
               <Route
@@ -47,7 +47,7 @@ const Preview = ({ site }) => {
                 path={path}
                 site={site}
                 component={ChapterPreview}
-                props={{ path, site }}
+                props={{ path, site, onChange }}
               />
             ))}
             {Object.keys(site.pages).map(path => (
@@ -56,7 +56,7 @@ const Preview = ({ site }) => {
                 exact
                 path={path}
                 component={PagePreview}
-                props={{ path, site }}
+                props={{ path, site, onChange }}
               />
             ))}
           </Routes>

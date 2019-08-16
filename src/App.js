@@ -106,7 +106,7 @@ const App = () => {
                   {responsive !== 'small' && !preview && (
                     <Editor site={site} onChange={onChange} />
                   )}
-                  <Preview site={site} />
+                  <Preview site={site} onChange={onChange} />
                 </Grid>
               )
             }}

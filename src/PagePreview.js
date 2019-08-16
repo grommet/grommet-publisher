@@ -6,7 +6,7 @@ import Content from './components/Content';
 import Sidebar from './components/Sidebar';
 import { pageChapter } from './site';
 
-const PagePreview = ({ path, site }) => {
+const PagePreview = ({ path, site, onChange }) => {
   const responsive = React.useContext(ResponsiveContext);
   const page = site.pages[path];
   const chapter = pageChapter(site, path);
@@ -39,7 +39,7 @@ const PagePreview = ({ path, site }) => {
       <Box gridArea="content" flex="grow">
         <Content>{page.content}</Content>
       </Box>
-      <Footer gridArea="footer" site={site} />
+      <Footer gridArea="footer" site={site} onChange={onChange} />
     </Grid>
   );
 }

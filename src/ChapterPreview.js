@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import Content from './components/Content';
 import Sidebar from './components/Sidebar';
 
-const ChapterPreview = ({ path, site }) => {
+const ChapterPreview = ({ path, site, onChange }) => {
   const responsive = React.useContext(ResponsiveContext);
   const chapter = site.chapters[path];
   const noPages = (chapter.pageOrder.length === 0);
@@ -53,7 +53,7 @@ const ChapterPreview = ({ path, site }) => {
       <Box gridArea="content" flex="grow">
         <Content>{chapter.content}</Content>
       </Box>
-      <Footer gridArea="footer" site={site} />
+      <Footer gridArea="footer" site={site} onChange={onChange} />
     </Grid>
   );
 }

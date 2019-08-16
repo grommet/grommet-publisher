@@ -1,9 +1,9 @@
 import React from 'react';
-import { Box, Image, Text } from 'grommet';
+import { Box, CheckBox, Image, Text } from 'grommet';
 import RoutedButton from './RoutedButton';
 import { normalizeImageSrc } from '../site';
 
-const Footer = ({ site, overlay, ...rest }) => {
+const Footer = ({ site, overlay, onChange, ...rest }) => {
   let style;
   if (overlay) {
     style = { position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 10 };
@@ -30,6 +30,18 @@ const Footer = ({ site, overlay, ...rest }) => {
         )}
         <Text size="small" color="dark-4">{site.copyright}</Text>
       </Box>
+      {site.themeLight && site.themeDark && (
+        <CheckBox
+          toggle
+          checked={site.theme === site.themeDark}
+          onChange={(event) => {
+            const nextSite = JSON.parse(JSON.stringify(site));
+            nextSite.theme = event.target.checked
+              ? site.themeDark : site.themeLight;
+            onChange(nextSite);
+          }}
+        />
+      )}
     </Box>
   );
 }

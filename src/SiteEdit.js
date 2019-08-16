@@ -21,15 +21,28 @@ export default ({ site, onChange }) => (
                 }}
               />
             </FormField>
-            <FormField htmlFor="theme" label="Theme">
+            <FormField htmlFor="themeLight" label="Light Theme">
               <TextInput
-                id="theme"
-                name="theme"
+                id="themeLight"
+                name="themeLight"
                 plain
-                value={site.theme || ''}
+                value={site.themeLight || ''}
                 onChange={(event) => {
                   const nextSite = JSON.parse(JSON.stringify(site));
-                  nextSite.theme = event.target.value;
+                  nextSite.themeLight = event.target.value;
+                  onChange(nextSite);
+                }}
+              />
+            </FormField>
+            <FormField htmlFor="themeDark" label="Dark Theme">
+              <TextInput
+                id="themeDark"
+                name="themeDark"
+                plain
+                value={site.themeDark || ''}
+                onChange={(event) => {
+                  const nextSite = JSON.parse(JSON.stringify(site));
+                  nextSite.themeDark = event.target.value;
                   onChange(nextSite);
                 }}
               />
