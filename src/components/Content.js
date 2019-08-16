@@ -26,7 +26,7 @@ export default class Content extends Component {
   }
 
   render() {
-    const { fill } = this.props;
+    const { fill, ...rest } = this.props;
     const { error } = this.state;
 
     if (error) return (
@@ -61,7 +61,7 @@ export default class Content extends Component {
           Paragraph: { component: Paragraph },
           Text: { component: Text },
         }}
-        {...this.props}
+        {...rest}
       />
     );
   }

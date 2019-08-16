@@ -1,10 +1,10 @@
 import React from 'react';
-import { Box, DropButton, ResponsiveContext } from 'grommet';
-import { Hpe, Menu } from 'grommet-icons';
+import { Box, DropButton, Image, ResponsiveContext } from 'grommet';
+import { Document, Menu } from 'grommet-icons';
 import { RouterContext } from '../Router';
 import RoutedAnchor from './RoutedAnchor';
 import RoutedButton from './RoutedButton';
-import { pageChapter } from '../site';
+import { pageChapter, normalizeImageSrc } from '../site';
 
 const Header = ({ site, overlay, ...rest }) => {
   const responsive = React.useContext(ResponsiveContext);
@@ -17,16 +17,17 @@ const Header = ({ site, overlay, ...rest }) => {
   return (
     <Box
       flex={false}
+      height="xsmall"
       pad={{ vertical: 'small', horizontal: 'large' }}
       direction="row"
       align="center"
       justify="between"
-      gap="small"
+      gap="medium"
       style={style}
       {...rest}
     >
-      <RoutedButton path="/" showActive={false}>
-        <Hpe size="large" color="brand" />
+      <RoutedButton path="/" showActive={false} style={{ lineHeight: 0 }}>
+        {site.logo ? <Image src={normalizeImageSrc(site.logo)} /> : <Document />}
       </RoutedButton>
       {responsive === 'small' ? (
         <DropButton

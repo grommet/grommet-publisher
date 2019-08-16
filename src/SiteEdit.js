@@ -10,6 +10,7 @@ export default ({ site, onChange }) => (
           <Box flex={false} pad="small">
             <FormField htmlFor="name" label="Name">
               <TextInput
+                id="name"
                 name="name"
                 plain
                 value={site.name || ''}
@@ -22,12 +23,39 @@ export default ({ site, onChange }) => (
             </FormField>
             <FormField htmlFor="theme" label="Theme">
               <TextInput
+                id="theme"
                 name="theme"
                 plain
                 value={site.theme || ''}
                 onChange={(event) => {
                   const nextSite = JSON.parse(JSON.stringify(site));
                   nextSite.theme = event.target.value;
+                  onChange(nextSite);
+                }}
+              />
+            </FormField>
+            <FormField htmlFor="logo" label="Logo" help="raw <svg /> or a URL">
+              <TextArea
+                id="logo"
+                name="logo"
+                plain
+                value={site.logo || ''}
+                onChange={(event) => {
+                  const nextSite = JSON.parse(JSON.stringify(site));
+                  nextSite.logo = event.target.value;
+                  onChange(nextSite);
+                }}
+              />
+            </FormField>
+            <FormField htmlFor="copyright" label="Copyright">
+              <TextInput
+                id="copyright"
+                name="copyright"
+                plain
+                value={site.copyright || ''}
+                onChange={(event) => {
+                  const nextSite = JSON.parse(JSON.stringify(site));
+                  nextSite.copyright = event.target.value;
                   onChange(nextSite);
                 }}
               />

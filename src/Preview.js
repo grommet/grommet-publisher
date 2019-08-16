@@ -8,7 +8,7 @@ import PagePreview from './PagePreview';
 
 export const themeApiUrl = 'https://us-central1-grommet-designer.cloudfunctions.net/themes';
 
-const Preview = ({ site, onChange }) => {
+const Preview = ({ site }) => {
   const [theme, setTheme] = React.useState();
   React.useState(() => {
     if (site.theme) {
@@ -23,7 +23,11 @@ const Preview = ({ site, onChange }) => {
 
   return (
     <Grommet theme={theme} style={{ minHeight: '100vh' }}>
-      <Box overflow="hidden" animation="fadeIn" style={{ minHeight: '100vh' }}>
+      <Box
+        fill
+        overflow="auto"
+        animation="fadeIn"
+      >
         {theme === undefined ? (
           <Box flex align="center" justify="center" animation="pulse">
             <Document size="xlarge" color="dark-3" />

@@ -1,30 +1,19 @@
 import React from 'react';
-import { Box, Grid, ResponsiveContext } from 'grommet';
+import { Box } from 'grommet';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import Content from './components/Content';
 
 const SitePreview = ({ site }) => {
-  const responsive = React.useContext(ResponsiveContext);
+  const overlay = site.content.slice(0, 8) === '<Section';
   return (
-    <Grid
-      columns={responsive === 'small' ?
-        ['xxsmall', 'flex', 'xxsmall'] : [
-        ['xxsmall', 'flex'],
-        ['small', 'medium'],
-        ['medium', 'large'],
-        ['xxsmall', 'flex'],
-      ]}
-      rows={['xsmall', 'flex']}
-      areas={[
-        { name: 'header', start: [1, 0], end: [1, 0] },
-        { name: 'content', start: [1, 1], end: [1, 1] },
-      ]}
-    >
-      <Header gridArea="header" site={site} />
-      <Box gridArea="content">
-        <Content>{site.content}</Content>
+    <Box flex="grow" style={{ position: 'relative' }}>
+      <Header site={site} overlay={overlay} />
+      <Box margin={overlay ? undefined : { horizontal: 'large' }}>
+        <Content fill={overlay}>{site.content}</Content>
       </Box>
-    </Grid>
+      <Footer site={site} overlay={overlay} />
+    </Box>
   );
 }
 

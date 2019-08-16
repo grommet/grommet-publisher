@@ -48,6 +48,11 @@ export const pageChapter = (site, pagePath) =>
   Object.keys(site.chapters).map(p => site.chapters[p])
     .filter(chapter => chapter.pageOrder.includes(pagePath))[0];
 
+const svgPrefix = 'data:image/svg+xml;utf8,';
+
+export const normalizeImageSrc = (src) =>
+  src.slice(0, 4) === '<svg' ? `${svgPrefix}${src}` : src
+
 export const upgradeSite = (site) => {
   return site; // nothing to upgrade yet.
 }
