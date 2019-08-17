@@ -19,7 +19,7 @@ const ChapterPreview = ({ path, site, onChange }) => {
         <Box flex="grow" margin={overlay ? undefined : { horizontal: 'large' }}>
           <Content fill={overlay}>{chapter.content}</Content>
         </Box>
-        <Footer site={site} overlay={overlay} />
+        <Footer site={site} overlay={overlay} onChange={onChange} />
       </Box>
     );
   }
