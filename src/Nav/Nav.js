@@ -7,11 +7,16 @@ import RoutedButton from '../components/RoutedButton';
 import Sites from './Sites';
 import Sharer from './Share';
 
-const Actioner = ({ Icon, Modal, site, onChange }) => {
+const Actioner = ({ Icon, Modal, site, onChange, ...rest }) => {
   const [show, setShow] = React.useState();
   return (
     <Fragment>
-      <ActionButton icon={<Icon />} hoverIndicator onClick={() => setShow(true)} />
+      <ActionButton
+        icon={<Icon />}
+        hoverIndicator
+        onClick={() => setShow(true)}
+        {...rest}
+      />
       {show && (
         <Modal site={site} onChange={onChange} onClose={() => setShow(false)} />
       )}
@@ -30,6 +35,7 @@ const Nav = ({ site, onChange }) => {
         border="bottom"
       >
         <Actioner
+          title="choose another site"
           Icon={Apps}
           Modal={Sites}
           site={site}

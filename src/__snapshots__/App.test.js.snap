@@ -1,0 +1,551 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App empty 1`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 iQFOBe"
+>
+  <div
+    class="StyledGrid-sc-1wofa1l-0 dtwiYR"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 khKKIn"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 vYtDR"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 eCBRSq"
+        >
+          <button
+            class="StyledButton-sc-323bzc-0 esrnCr"
+            title="choose another site"
+            type="button"
+          >
+            <svg
+              aria-label="Apps"
+              class="StyledIcon-ofa7kd-0 jAaLrm"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19,5 L21,5 L21,3 L19,3 L19,5 Z M11,5 L13,5 L13,3 L11,3 L11,5 Z M3,5 L5,5 L5,3 L3,3 L3,5 Z M19,13 L21,13 L21,11 L19,11 L19,13 Z M11,13 L13,13 L13,11 L11,11 L11,13 Z M3,13 L5,13 L5,11 L3,11 L3,13 Z M19,21 L21,21 L21,19 L19,19 L19,21 Z M11,21 L13,21 L13,19 L11,19 L11,21 Z M3,21 L5,21 L5,19 L3,19 L3,21 Z"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="StyledBox-sc-13pk1d4-0 bhtaEx"
+        >
+          <a
+            class="StyledButton-sc-323bzc-0 fWyiSX"
+            href="/"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 grjdwn"
+            >
+              <span
+                class="StyledText-sc-1sadyjn-0 cWZJFx"
+              >
+                My Site
+              </span>
+            </div>
+          </a>
+        </div>
+        <div
+          class="StyledBox-sc-13pk1d4-0 eCBRSq"
+        >
+          <button
+            class="StyledButton-sc-323bzc-0 esrnCr"
+            type="button"
+          >
+            <svg
+              aria-label="Share"
+              class="StyledIcon-ofa7kd-0 jAaLrm"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19,13 L19,23 L1,23 L1,5 L1,5 L11,5 M14,1 L23,1 L23,10 M10,14 L22.9999998,1 L10,14 Z"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        class="StyledBox-sc-13pk1d4-0 eCBRSq"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 eCBRSq"
+        >
+          <a
+            class="StyledButton-sc-323bzc-0 cHvPFc"
+            href="/welcome"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 biCOCm"
+            >
+              <span
+                class="StyledText-sc-1sadyjn-0 gNZQxf"
+              >
+                welcome
+              </span>
+            </div>
+          </a>
+          <div
+            class="StyledBox-sc-13pk1d4-0 cYWegf"
+          >
+            <a
+              class="StyledButton-sc-323bzc-0 cHvPFc"
+              href="/join"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 biCOCm"
+              >
+                <span
+                  class="StyledText-sc-1sadyjn-0 gNZQxf"
+                >
+                  join
+                </span>
+              </div>
+            </a>
+            <a
+              class="StyledButton-sc-323bzc-0 cHvPFc"
+              href="/explore"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 biCOCm"
+              >
+                <span
+                  class="StyledText-sc-1sadyjn-0 gNZQxf"
+                >
+                  explore
+                </span>
+              </div>
+            </a>
+            <button
+              class="StyledButton-sc-323bzc-0 cHvPFc"
+              title="add a page"
+              type="button"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 kXpTxO"
+              >
+                <svg
+                  aria-label="FormAdd"
+                  class="StyledIcon-ofa7kd-0 kRlneC"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12,18 L12,6 M6,12 L18,12"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="StyledBox-sc-13pk1d4-0 eCBRSq"
+        >
+          <a
+            class="StyledButton-sc-323bzc-0 cHvPFc"
+            href="/about"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 biCOCm"
+            >
+              <span
+                class="StyledText-sc-1sadyjn-0 gNZQxf"
+              >
+                about
+              </span>
+            </div>
+          </a>
+          <div
+            class="StyledBox-sc-13pk1d4-0 cYWegf"
+          >
+            <a
+              class="StyledButton-sc-323bzc-0 cHvPFc"
+              href="/contact"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 biCOCm"
+              >
+                <span
+                  class="StyledText-sc-1sadyjn-0 gNZQxf"
+                >
+                  contact
+                </span>
+              </div>
+            </a>
+            <a
+              class="StyledButton-sc-323bzc-0 cHvPFc"
+              href="/legal"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 biCOCm"
+              >
+                <span
+                  class="StyledText-sc-1sadyjn-0 gNZQxf"
+                >
+                  legal
+                </span>
+              </div>
+            </a>
+            <button
+              class="StyledButton-sc-323bzc-0 cHvPFc"
+              title="add a page"
+              type="button"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 kXpTxO"
+              >
+                <svg
+                  aria-label="FormAdd"
+                  class="StyledIcon-ofa7kd-0 kRlneC"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12,18 L12,6 M6,12 L18,12"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+        <button
+          class="StyledButton-sc-323bzc-0 cHvPFc"
+          title="add a chapter"
+          type="button"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 kXpTxO"
+          >
+            <svg
+              aria-label="FormAdd"
+              class="StyledIcon-ofa7kd-0 kRlneC"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12,18 L12,6 M6,12 L18,12"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div
+      class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
+      style="min-height: 100vh;"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 CxiyR"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 SMrhB"
+        >
+          <svg
+            aria-label="Document"
+            class="StyledIcon-ofa7kd-0 iTUmdu"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M14,1 L14,8 L21,8 M21,23 L3,23 L3,1 L15,1 L18,4 L21,7 L21,23 L21,23 L21,23 Z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`App empty 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 iQFOBe"
+>
+  <div
+    class="StyledGrid-sc-1wofa1l-0 dtwiYR"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 khKKIn"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 vYtDR"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 eCBRSq"
+        >
+          <button
+            class="StyledButton-sc-323bzc-0 esrnCr"
+            title="choose another site"
+            type="button"
+          >
+            <svg
+              aria-label="Apps"
+              class="StyledIcon-ofa7kd-0 jAaLrm"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19,5 L21,5 L21,3 L19,3 L19,5 Z M11,5 L13,5 L13,3 L11,3 L11,5 Z M3,5 L5,5 L5,3 L3,3 L3,5 Z M19,13 L21,13 L21,11 L19,11 L19,13 Z M11,13 L13,13 L13,11 L11,11 L11,13 Z M3,13 L5,13 L5,11 L3,11 L3,13 Z M19,21 L21,21 L21,19 L19,19 L19,21 Z M11,21 L13,21 L13,19 L11,19 L11,21 Z M3,21 L5,21 L5,19 L3,19 L3,21 Z"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="StyledBox-sc-13pk1d4-0 bhtaEx"
+        >
+          <a
+            class="StyledButton-sc-323bzc-0 fWyiSX"
+            href="/"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 grjdwn"
+            >
+              <span
+                class="StyledText-sc-1sadyjn-0 cWZJFx"
+              >
+                My Site
+              </span>
+            </div>
+          </a>
+        </div>
+        <div
+          class="StyledBox-sc-13pk1d4-0 eCBRSq"
+        >
+          <button
+            class="StyledButton-sc-323bzc-0 esrnCr"
+            type="button"
+          >
+            <svg
+              aria-label="Share"
+              class="StyledIcon-ofa7kd-0 jAaLrm"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19,13 L19,23 L1,23 L1,5 L1,5 L11,5 M14,1 L23,1 L23,10 M10,14 L22.9999998,1 L10,14 Z"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        class="StyledBox-sc-13pk1d4-0 eCBRSq"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 eCBRSq"
+        >
+          <a
+            class="StyledButton-sc-323bzc-0 cHvPFc"
+            href="/welcome"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 biCOCm"
+            >
+              <span
+                class="StyledText-sc-1sadyjn-0 gNZQxf"
+              >
+                welcome
+              </span>
+            </div>
+          </a>
+          <div
+            class="StyledBox-sc-13pk1d4-0 cYWegf"
+          >
+            <a
+              class="StyledButton-sc-323bzc-0 cHvPFc"
+              href="/join"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 biCOCm"
+              >
+                <span
+                  class="StyledText-sc-1sadyjn-0 gNZQxf"
+                >
+                  join
+                </span>
+              </div>
+            </a>
+            <a
+              class="StyledButton-sc-323bzc-0 cHvPFc"
+              href="/explore"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 biCOCm"
+              >
+                <span
+                  class="StyledText-sc-1sadyjn-0 gNZQxf"
+                >
+                  explore
+                </span>
+              </div>
+            </a>
+            <button
+              class="StyledButton-sc-323bzc-0 cHvPFc"
+              title="add a page"
+              type="button"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 kXpTxO"
+              >
+                <svg
+                  aria-label="FormAdd"
+                  class="StyledIcon-ofa7kd-0 kRlneC"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12,18 L12,6 M6,12 L18,12"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="StyledBox-sc-13pk1d4-0 eCBRSq"
+        >
+          <a
+            class="StyledButton-sc-323bzc-0 cHvPFc"
+            href="/about"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 biCOCm"
+            >
+              <span
+                class="StyledText-sc-1sadyjn-0 gNZQxf"
+              >
+                about
+              </span>
+            </div>
+          </a>
+          <div
+            class="StyledBox-sc-13pk1d4-0 cYWegf"
+          >
+            <a
+              class="StyledButton-sc-323bzc-0 cHvPFc"
+              href="/contact"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 biCOCm"
+              >
+                <span
+                  class="StyledText-sc-1sadyjn-0 gNZQxf"
+                >
+                  contact
+                </span>
+              </div>
+            </a>
+            <a
+              class="StyledButton-sc-323bzc-0 cHvPFc"
+              href="/legal"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 biCOCm"
+              >
+                <span
+                  class="StyledText-sc-1sadyjn-0 gNZQxf"
+                >
+                  legal
+                </span>
+              </div>
+            </a>
+            <button
+              class="StyledButton-sc-323bzc-0 cHvPFc"
+              title="add a page"
+              type="button"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 kXpTxO"
+              >
+                <svg
+                  aria-label="FormAdd"
+                  class="StyledIcon-ofa7kd-0 kRlneC"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12,18 L12,6 M6,12 L18,12"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+        <button
+          class="StyledButton-sc-323bzc-0 cHvPFc"
+          title="add a chapter"
+          type="button"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 kXpTxO"
+          >
+            <svg
+              aria-label="FormAdd"
+              class="StyledIcon-ofa7kd-0 kRlneC"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12,18 L12,6 M6,12 L18,12"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div
+      class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
+      style="min-height: 100vh;"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 CxiyR"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 SMrhB"
+        >
+          <svg
+            aria-label="Document"
+            class="StyledIcon-ofa7kd-0 iTUmdu"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M14,1 L14,8 L21,8 M21,23 L3,23 L3,1 L15,1 L18,4 L21,7 L21,23 L21,23 L21,23 Z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
