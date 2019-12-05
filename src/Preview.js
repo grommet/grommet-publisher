@@ -23,7 +23,11 @@ const Preview = ({ site, onChange }) => {
   }, [site.theme]);
 
   return (
-    <Grommet theme={theme} style={{ minHeight: '100vh' }}>
+    <Grommet
+      theme={theme}
+      themeMode={site.themeMode}
+      style={{ minHeight: '100vh' }}
+    >
       <Box
         fill
         overflow="auto"

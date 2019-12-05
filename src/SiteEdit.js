@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, FormField, TextArea, TextInput } from 'grommet';
+import { Box, FormField, RadioButtonGroup, TextArea, TextInput } from 'grommet';
 import Scope from './components/Scope';
 
 export default ({ site, onChange }) => (
@@ -21,37 +21,39 @@ export default ({ site, onChange }) => (
                 }}
               />
             </FormField>
-            <FormField htmlFor="themeLight" label="Light Theme">
+            <FormField htmlFor="theme" label="Theme">
               <TextInput
-                id="themeLight"
-                name="themeLight"
+                id="theme"
+                name="theme"
                 plain
-                value={site.themeLight || ''}
+                value={site.theme || ''}
                 onChange={(event) => {
                   const nextSite = JSON.parse(JSON.stringify(site));
-                  nextSite.themeLight = event.target.value;
+                  nextSite.theme = event.target.value;
                   onChange(nextSite);
                 }}
               />
             </FormField>
-            <FormField htmlFor="themeDark" label="Dark Theme">
-              <TextInput
-                id="themeDark"
-                name="themeDark"
-                plain
-                value={site.themeDark || ''}
-                onChange={(event) => {
-                  const nextSite = JSON.parse(JSON.stringify(site));
-                  nextSite.themeDark = event.target.value;
-                  onChange(nextSite);
-                }}
-              />
+            <FormField htmlFor="themeMode" label="Theme Mode">
+              <Box pad="small">
+                <RadioButtonGroup
+                  name="themeMode"
+                  options={['light', 'dark']}
+                  value={site.themeMode || 'light'}
+                  onChange={(event) => {
+                    const nextSite = JSON.parse(JSON.stringify(site));
+                    nextSite.themeMode = event.target.value;
+                    onChange(nextSite);
+                  }}
+                />
+              </Box>
             </FormField>
             <FormField htmlFor="logo" label="Logo" help="raw <svg /> or a URL">
               <TextArea
                 id="logo"
                 name="logo"
                 plain
+                cols={4}
                 value={site.logo || ''}
                 onChange={(event) => {
                   const nextSite = JSON.parse(JSON.stringify(site));
