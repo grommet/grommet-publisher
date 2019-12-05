@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grommet, Box } from 'grommet';
+import { Grommet, Box, grommet } from 'grommet';
 import { Document } from 'grommet-icons';
 import { Route, Routes } from './Router';
 import SitePreview from './SitePreview';
@@ -15,7 +15,8 @@ const Preview = ({ site, onChange }) => {
       const id = site.theme.split('id=')[1];
       fetch(`${themeApiUrl}/${id}`)
         .then(response => response.json())
-        .then(theme => setTheme(theme));
+        .then(theme => setTheme(theme))
+        .catch(() => setTheme(grommet));
     } else {
       setTheme(false);
     }
