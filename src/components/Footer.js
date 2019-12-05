@@ -28,7 +28,7 @@ const Footer = ({ site, overlay, onChange, ...rest }) => {
             />
           </RoutedButton>
         )}
-        <Text size="small" color="dark-4">{site.copyright}</Text>
+        <Text size="small" color="text-xweak">{site.copyright}</Text>
       </Box>
       {site.themeLight && site.themeDark && (
         <CheckBox

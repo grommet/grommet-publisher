@@ -35,7 +35,7 @@ const Preview = ({ site, onChange }) => {
       >
         {theme === undefined ? (
           <Box flex align="center" justify="center" animation="pulse">
-            <Document size="xlarge" color="dark-3" />
+            <Document size="xlarge" color="brand" />
           </Box>
         ) : (
           <Routes notFoundRedirect="/">
