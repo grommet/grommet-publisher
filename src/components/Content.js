@@ -54,11 +54,19 @@ export default class Content extends Component {
         components={{
           h1: {
             component: Heading,
-            props: {
-              size: 'large',
-              margin: fill ? 'none' : undefined,
-              style: fill ? { fontWeight: 100 } : undefined,
-            },
+            props: { level: 1 },
+          },
+          h2: {
+            component: Heading,
+            props: { level: 2 },
+          },
+          h3: {
+            component: Heading,
+            props: { level: 3 },
+          },
+          h4: {
+            component: Heading,
+            props: { level: 4 },
           },
           img: {
             component: Image,
