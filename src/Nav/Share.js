@@ -1,7 +1,15 @@
 import React, { Fragment } from 'react';
 import {
-  Box, Button, Form, FormField, Grid, Heading, MaskedInput, Paragraph,
-  Text, TextInput
+  Box,
+  Button,
+  Form,
+  FormField,
+  Grid,
+  Heading,
+  MaskedInput,
+  Paragraph,
+  Text,
+  TextInput,
 } from 'grommet';
 import { CloudUpload, Copy, Download } from 'grommet-icons';
 import { apiUrl } from '../site';
@@ -10,7 +18,9 @@ import Action from '../components/Action';
 const Summary = ({ Icon, label, guidance }) => (
   <Box align="center" gap="small">
     <Icon size="large" />
-    <Heading level={3} margin="none">{label}</Heading>
+    <Heading level={3} margin="none">
+      {label}
+    </Heading>
     <Paragraph textAlign="center">{guidance}</Paragraph>
   </Box>
 );
@@ -52,11 +62,10 @@ const Publish = ({ site, onChange }) => {
       },
       body,
     })
-    .then((response) => {
-      if (response.ok) {
-        setError(undefined);
-        return response.text()
-          .then(id => {
+      .then(response => {
+        if (response.ok) {
+          setError(undefined);
+          return response.text().then(id => {
             const nextUploadUrl = [
               window.location.protocol,
               '//',
@@ -67,28 +76,32 @@ const Publish = ({ site, onChange }) => {
             ].join('');
             setUploadUrl(nextUploadUrl);
           });
-      }
-      return response.text().then(setError);
-    })
-    .catch(e => setError(e.message));
+        }
+        return response.text().then(setError);
+      })
+      .catch(e => setError(e.message));
 
     onChange(nextSite);
-  }
+  };
 
   const onCopy = () => {
     inputRef.current.select();
     document.execCommand('copy');
     setMessage('copied to clipboard!');
-  }
+  };
 
   return (
-    <Box>
-      <Summary Icon={CloudUpload} label="Publish" guidance={`
+    <Box flex={false}>
+      <Summary
+        Icon={CloudUpload}
+        label="Publish"
+        guidance={`
         Publishing your site will generate a URL
         that you can send to others so they can see it.
         We use your email and PIN # so nobody else can modify your copy.
         They will be able to create their own site based on it.
-      `} />
+      `}
+      />
       <Form value={publication} onSubmit={onPublish}>
         <FormField
           name="email"
@@ -137,13 +150,17 @@ const Publish = ({ site, onChange }) => {
 };
 
 const SaveLocally = ({ site, onClose }) => (
-  <Box align="center">
-    <Summary Icon={Download} label="Download" guidance={`
+  <Box flex={false} align="center">
+    <Summary
+      Icon={Download}
+      label="Download"
+      guidance={`
       Download the site to a JSON file. You can use this as a separate
       backup copy, inspect and transform it with a program, or share
       it with someone else. You can upload it via the top left control
       that shows all of your sites.
-    `} />
+    `}
+    />
     <Button
       label="Download"
       hoverIndicator
@@ -155,12 +172,8 @@ const SaveLocally = ({ site, onClose }) => (
 );
 
 const Share = ({ site, onChange, onClose }) => (
-  <Action
-    label="share"
-    animation="fadeIn"
-    onClose={onClose}
-  >
-    <Grid fill columns={{ count: 'fit', size: "small" }} gap="large">
+  <Action label="share" animation="fadeIn" onClose={onClose}>
+    <Grid columns={{ count: 'fit', size: 'small' }} gap="large">
       <Publish site={site} onChange={onChange} />
       <SaveLocally site={site} onClose={onClose} />
     </Grid>

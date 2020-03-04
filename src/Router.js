@@ -11,6 +11,7 @@ export const Router = ({ children }) => {
 
   React.useEffect(() => {
     const onPopState = () => setPath(document.location.pathname);
+    onPopState();
     window.addEventListener('popstate', onPopState);
     return () => window.removeEventListener('popstate', onPopState);
   }, []);
@@ -44,7 +45,7 @@ export const Router = ({ children }) => {
       {children}
     </RouterContext.Provider>
   );
-}
+};
 
 Router.propTypes = {
   children: PropTypes.node.isRequired,
@@ -54,11 +55,15 @@ export const Routes = ({ children, notFoundRedirect }) => {
   const { path: currentPath, replace } = React.useContext(RouterContext);
   let found;
   Children.forEach(children, child => {
-    if (!found && currentPath && currentPath.split('#')[0] === child.props.path) {
+    if (
+      !found &&
+      currentPath &&
+      currentPath.split('#')[0] === child.props.path
+    ) {
       found = child;
     }
   });
-  if (currentPath && !found) {
+  if (currentPath && !found && notFoundRedirect) {
     setTimeout(() => replace(notFoundRedirect), 1); // avoid setPath() in render()
   }
   return found || null;
@@ -66,7 +71,7 @@ export const Routes = ({ children, notFoundRedirect }) => {
 
 Routes.propTypes = {
   children: PropTypes.node.isRequired,
-  notFoundRedirect: PropTypes.string.isRequired,
+  notFoundRedirect: PropTypes.string,
 };
 
 export const Route = ({ component: Comp, path, props, redirect }) => {
@@ -92,6 +97,14 @@ Route.propTypes = {
 Route.defaultProps = {
   component: undefined,
   redirect: undefined,
+};
+
+export const Redirect = ({ from, to }) => {
+  const { path, replace } = React.useContext(RouterContext);
+  if (path && path.split('#')[0] === from) {
+    replace(to);
+  }
+  return null;
 };
 
 export default Router;

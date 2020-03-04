@@ -39,7 +39,7 @@ exports[`App empty 1`] = `
           class="StyledBox-sc-13pk1d4-0 bTrMkc"
         >
           <a
-            class="StyledButton-sc-323bzc-0 fQsUEE"
+            class="StyledButton-sc-323bzc-0 leUHXs"
             href="/"
           >
             <div
@@ -244,6 +244,45 @@ exports[`App empty 1`] = `
             </svg>
           </div>
         </button>
+      </div>
+    </div>
+    <div
+      class="StyledBox-sc-13pk1d4-0 jyWDiZ"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 bHorkR"
+      >
+        <button
+          class="StyledButton-sc-323bzc-0 iElqND"
+          type="button"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 gersVE"
+          >
+            content
+          </div>
+        </button>
+        <button
+          class="StyledButton-sc-323bzc-0 iElqND"
+          type="button"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 eXTSqT"
+          >
+            details
+          </div>
+        </button>
+      </div>
+      <div
+        class="StyledBox-sc-13pk1d4-0 bimCvx"
+      >
+        <textarea
+          class="StyledTextArea-sc-17i3mwp-0 fUMFqD"
+          id="content"
+          name="content"
+        >
+          # My Site
+        </textarea>
       </div>
     </div>
     <div
@@ -314,7 +353,7 @@ exports[`App empty 2`] = `
           class="StyledBox-sc-13pk1d4-0 bTrMkc"
         >
           <a
-            class="StyledButton-sc-323bzc-0 fQsUEE"
+            class="StyledButton-sc-323bzc-0 leUHXs"
             href="/"
           >
             <div
@@ -519,6 +558,45 @@ exports[`App empty 2`] = `
             </svg>
           </div>
         </button>
+      </div>
+    </div>
+    <div
+      class="StyledBox-sc-13pk1d4-0 jyWDiZ"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 bHorkR"
+      >
+        <button
+          class="StyledButton-sc-323bzc-0 iElqND"
+          type="button"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 gersVE"
+          >
+            content
+          </div>
+        </button>
+        <button
+          class="StyledButton-sc-323bzc-0 iElqND"
+          type="button"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 eXTSqT"
+          >
+            details
+          </div>
+        </button>
+      </div>
+      <div
+        class="StyledBox-sc-13pk1d4-0 bimCvx"
+      >
+        <textarea
+          class="StyledTextArea-sc-17i3mwp-0 fUMFqD"
+          id="content"
+          name="content"
+        >
+          # My Site
+        </textarea>
       </div>
     </div>
     <div

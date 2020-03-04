@@ -6,13 +6,8 @@ import PageEdit from './PageEdit';
 
 const Editor = ({ site, onChange }) => {
   return (
-    <Routes notFoundRedirect="/">
-      <Route
-        exact
-        path="/"
-        component={SiteEdit}
-        props={{ site, onChange }}
-      />
+    <Routes>
+      <Route exact path="/" component={SiteEdit} props={{ site, onChange }} />
       {Object.keys(site.chapters).map(path => (
         <Route
           key={path}
@@ -33,6 +28,6 @@ const Editor = ({ site, onChange }) => {
       ))}
     </Routes>
   );
-}
+};
 
 export default Editor;

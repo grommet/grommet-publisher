@@ -9,8 +9,8 @@ export default ({ children, scopes }) => {
   }, [scopes]);
 
   return (
-    <Box background="light-2" fill overflow="auto">
-      <Box direction="row" align="center" background="light-4">
+    <Box flex={false} background="light-2" fill overflow="auto">
+      <Box flex={false} direction="row" align="center" background="light-4">
         {scopes.map(scope => (
           <Button
             key={scope}
@@ -31,5 +31,5 @@ export default ({ children, scopes }) => {
       </Box>
       {children(activeScope)}
     </Box>
-  )
-}
+  );
+};

@@ -1,12 +1,13 @@
 import React from 'react';
 import { Grommet, Box, grommet } from 'grommet';
 import { Document } from 'grommet-icons';
-import { Route, Routes } from './Router';
+import { Redirect, Route, Routes } from './Router';
 import SitePreview from './SitePreview';
 import ChapterPreview from './ChapterPreview';
 import PagePreview from './PagePreview';
 
-export const themeApiUrl = 'https://us-central1-grommet-designer.cloudfunctions.net/themes';
+export const themeApiUrl =
+  'https://us-central1-grommet-designer.cloudfunctions.net/themes';
 
 const Preview = ({ site, onChange }) => {
   const [theme, setTheme] = React.useState();
@@ -28,11 +29,7 @@ const Preview = ({ site, onChange }) => {
       themeMode={site.themeMode}
       style={{ minHeight: '100vh' }}
     >
-      <Box
-        fill
-        overflow="auto"
-        animation="fadeIn"
-      >
+      <Box fill overflow="auto" animation="fadeIn">
         {theme === undefined ? (
           <Box flex align="center" justify="center" animation="pulse">
             <Document size="xlarge" color="brand" />
@@ -64,11 +61,14 @@ const Preview = ({ site, onChange }) => {
                 props={{ path, site, onChange }}
               />
             ))}
+            {site.alias && (
+              <Redirect path={site.alias.from} to={site.alias.to} />
+            )}
           </Routes>
         )}
       </Box>
     </Grommet>
   );
-}
+};
 
 export default Preview;
