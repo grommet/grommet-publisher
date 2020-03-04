@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
-import { Box, Button, Heading, Image, Markdown, Paragraph, Text } from 'grommet';
+import {
+  Box,
+  Button,
+  Heading,
+  Image,
+  Markdown,
+  Paragraph,
+  Text,
+} from 'grommet';
 
 const Section = ({ background, ...rest }) => (
   <Box
     pad="xlarge"
     align="start"
-    background={(background && background.slice(0, 4) === 'http')
-      ? `url(${background})` : background}
+    background={
+      background && background.slice(0, 4) === 'http'
+        ? `url(${background})`
+        : background
+    }
     {...rest}
   />
 );
@@ -19,7 +30,7 @@ export default class Content extends Component {
     return null;
   }
 
-  state = {}
+  state = {};
 
   componentDidCatch(error) {
     this.setState({ error: true });
@@ -29,13 +40,14 @@ export default class Content extends Component {
     const { fill, ...rest } = this.props;
     const { error } = this.state;
 
-    if (error) return (
-      <Box flex align="center" justify="center">
-        <Text color="status-critical">
-          Oops, looks like we can't render the current content.
-        </Text>
-      </Box>
-    );
+    if (error)
+      return (
+        <Box flex align="center" justify="center">
+          <Text color="status-critical">
+            Oops, looks like we can't render the current content.
+          </Text>
+        </Box>
+      );
 
     return (
       <Markdown
@@ -44,8 +56,8 @@ export default class Content extends Component {
             component: Heading,
             props: {
               size: 'large',
-              margin: (fill ? 'none' : undefined),
-              style: (fill ? { fontWeight: 100 } : undefined)
+              margin: fill ? 'none' : undefined,
+              style: fill ? { fontWeight: 100 } : undefined,
             },
           },
           img: {
@@ -58,6 +70,7 @@ export default class Content extends Component {
             component: Button,
             props: { primary: true },
           },
+          Heading: { component: Heading },
           Paragraph: { component: Paragraph },
           Text: { component: Text },
         }}
