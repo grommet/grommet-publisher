@@ -10,11 +10,13 @@ const SitePreview = ({ site, onChange }) => {
     <Box flex="grow" style={{ position: 'relative' }}>
       <Header site={site} overlay={overlay} />
       <Box flex="grow" margin={overlay ? undefined : { horizontal: 'large' }}>
-        <Content fill={overlay}>{site.content}</Content>
+        <Content size={site.size} fill={overlay}>
+          {site.content}
+        </Content>
       </Box>
       <Footer site={site} overlay={overlay} onChange={onChange} />
     </Box>
   );
-}
+};
 
 export default SitePreview;

@@ -40,7 +40,7 @@ const PagePreview = ({ path, site, onChange }) => {
         <Sidebar gridArea="sidebar" site={site} chapter={chapter} />
       )}
       <Box gridArea="content" flex="grow">
-        <Content>{page.content}</Content>
+        <Content size={site.size}>{page.content}</Content>
       </Box>
       <Footer gridArea="footer" site={site} onChange={onChange} />
     </Grid>

@@ -37,7 +37,7 @@ export default class Content extends Component {
   }
 
   render() {
-    const { fill, ...rest } = this.props;
+    const { fill, size, ...rest } = this.props;
     const { error } = this.state;
 
     if (error)
@@ -54,19 +54,23 @@ export default class Content extends Component {
         components={{
           h1: {
             component: Heading,
-            props: { level: 1 },
+            props: { level: 1, size },
           },
           h2: {
             component: Heading,
-            props: { level: 2 },
+            props: { level: 2, size },
           },
           h3: {
             component: Heading,
-            props: { level: 3 },
+            props: { level: 3, size },
           },
           h4: {
             component: Heading,
-            props: { level: 4 },
+            props: { level: 4, size },
+          },
+          p: {
+            component: Paragraph,
+            props: { size },
           },
           img: {
             component: Image,
