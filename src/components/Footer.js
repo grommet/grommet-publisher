@@ -28,22 +28,21 @@ const Footer = ({ site, overlay, onChange, ...rest }) => {
             />
           </RoutedButton>
         )}
-        <Text size="small" color="text-xweak">{site.copyright}</Text>
+        <Text size="small" color="text-xweak">
+          {site.copyright}
+        </Text>
       </Box>
-      {site.themeLight && site.themeDark && (
-        <CheckBox
-          toggle
-          checked={site.theme === site.themeDark}
-          onChange={(event) => {
-            const nextSite = JSON.parse(JSON.stringify(site));
-            nextSite.theme = event.target.checked
-              ? site.themeDark : site.themeLight;
-            onChange(nextSite);
-          }}
-        />
-      )}
+      <CheckBox
+        toggle
+        checked={site.themeMode === 'dark'}
+        onChange={event => {
+          const nextSite = JSON.parse(JSON.stringify(site));
+          nextSite.themeMode = event.target.checked ? 'dark' : 'light';
+          onChange(nextSite);
+        }}
+      />
     </Box>
   );
-}
+};
 
 export default Footer;
