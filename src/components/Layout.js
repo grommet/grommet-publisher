@@ -28,7 +28,7 @@ const Layout = ({
         <Header site={site} overlay />
         <Box flex="grow">
           <Content fill>{content}</Content>
-          {site.navMode === 'cards' && <Cards routes={children} />}
+          {site.navMode === 'cards' && <Cards routes={children} overlay />}
         </Box>
         <Footer site={site} overlay onChange={onChange} />
       </Box>
@@ -72,7 +72,7 @@ const Layout = ({
       >
         <Content size={site.size}>{content}</Content>
         {site.navMode === 'cards' && (
-          <Cards routes={children} size={site.size} />
+          <Cards routes={children} size={site.size} overlay={overlay} />
         )}
       </Box>
       <Footer gridArea="footer" site={site} onChange={onChange} />
