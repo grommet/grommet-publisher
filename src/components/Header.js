@@ -23,7 +23,7 @@ const Header = ({ overlay, parent, site, ...rest }) => {
       {...rest}
     >
       {site.navMode === 'cards' && parent ? (
-        <RoutedButton path={parent.path} icon={<Previous />} />
+        <RoutedButton path={parent.path} icon={<Previous />} hoverIndicator />
       ) : (
         <RoutedButton path="/" showActive={false} style={{ lineHeight: 0 }}>
           {site.logo ? (
