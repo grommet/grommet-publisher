@@ -14,7 +14,7 @@ const Section = ({ background, ...rest }) => (
     pad="xlarge"
     align="start"
     background={
-      background && background.slice(0, 4) === 'http'
+      background && background.slice && background.slice(0, 4) === 'http'
         ? `url(${background})`
         : background
     }
