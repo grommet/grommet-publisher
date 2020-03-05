@@ -71,7 +71,9 @@ const Layout = ({
         margin={sidebar ? undefined : { horizontal: 'large' }}
       >
         <Content size={site.size}>{content}</Content>
-        {site.navMode === 'cards' && <Cards routes={children} />}
+        {site.navMode === 'cards' && (
+          <Cards routes={children} size={site.size} />
+        )}
       </Box>
       <Footer gridArea="footer" site={site} onChange={onChange} />
     </Grid>
