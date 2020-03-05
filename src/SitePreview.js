@@ -15,7 +15,10 @@ const SitePreview = ({ site, onChange }) => {
           {site.content}
         </Content>
         {site.navMode === 'cards' && (
-          <Cards routes={site.chapterOrder.map(c => site.chapters[c])} />
+          <Cards
+            routes={site.chapterOrder.map(c => site.chapters[c])}
+            size={site.size}
+          />
         )}
       </Box>
       <Footer site={site} overlay={overlay} onChange={onChange} />
