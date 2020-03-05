@@ -1,15 +1,11 @@
 import React from 'react';
-import { Box, DropButton, Image, ResponsiveContext } from 'grommet';
-import { Document, Menu } from 'grommet-icons';
-import { RouterContext } from '../Router';
-import RoutedAnchor from './RoutedAnchor';
+import { Box, Image } from 'grommet';
+import { Previous, Document } from 'grommet-icons';
 import RoutedButton from './RoutedButton';
-import { pageChapter, normalizeImageSrc } from '../site';
+import NavBar from './NavBar';
+import { normalizeImageSrc } from '../site';
 
-const Header = ({ site, overlay, ...rest }) => {
-  const responsive = React.useContext(ResponsiveContext);
-  const { path: activePath } = React.useContext(RouterContext);
-  const chapter = pageChapter(site, activePath);
+const Header = ({ overlay, parent, site, ...rest }) => {
   let style;
   if (overlay) {
     style = { position: 'absolute', top: 0, left: 0, right: 0, zIndex: 10 };
@@ -26,67 +22,20 @@ const Header = ({ site, overlay, ...rest }) => {
       style={style}
       {...rest}
     >
-      <RoutedButton path="/" showActive={false} style={{ lineHeight: 0 }}>
-        {site.logo ? <Image src={normalizeImageSrc(site.logo)} /> : <Document />}
-      </RoutedButton>
-      {responsive === 'small' ? (
-        <DropButton
-          icon={<Menu />}
-          hoverIndicator
-          dropAlign={{ top: 'bottom', right: 'right' }}
-          dropProps={{ plain: true }}
-          dropContent={(
-            <Box
-              background={{ color: '#1A1F2B', opacity: '0.9' }}
-              border
-              elevation="large"
-            >
-              {site.chapterOrder.map(path => site.chapters[path])
-                .filter(chapter => chapter)
-                .map(chapter => (
-                <Box>
-                  <RoutedButton
-                    key={chapter.path}
-                    path={chapter.path}
-                    hoverIndicator
-                  >
-                    <Box pad={{ horizontal: 'medium', vertical: 'xsmall' }}>
-                      {chapter.name}
-                    </Box>
-                  </RoutedButton>
-                  {chapter.pageOrder.map(path => site.pages[path])
-                    .filter(page => page)
-                    .map(page => (
-                    <RoutedButton
-                      key={page.path}
-                      path={page.path}
-                      hoverIndicator
-                    >
-                      <Box pad={{ left: 'large', horizontal: 'medium', vertical: 'xsmall' }}>
-                        {page.name}
-                      </Box>
-                    </RoutedButton>
-                  ))}
-                </Box>
-              ))}
-            </Box>
-          )}
-        />
+      {site.navMode === 'cards' && parent ? (
+        <RoutedButton path={parent.path} icon={<Previous />} />
       ) : (
-        <Box direction="row" align="center" gap="medium">
-          {site.chapterOrder.map(path => (
-            <RoutedAnchor
-              key={path}
-              path={path} 
-              active={chapter && chapter.path === path}
-            >
-              <Box>{site.chapters[path].name}</Box>
-            </RoutedAnchor>
-          ))}
-        </Box>
+        <RoutedButton path="/" showActive={false} style={{ lineHeight: 0 }}>
+          {site.logo ? (
+            <Image src={normalizeImageSrc(site.logo)} />
+          ) : (
+            <Document />
+          )}
+        </RoutedButton>
       )}
+      {site.navMode === 'bar' && <NavBar site={site} overlay={overlay} />}
     </Box>
   );
-}
+};
 
 export default Header;

@@ -3,6 +3,7 @@ export const apiUrl =
 
 export const starter = {
   name: 'My Site',
+  path: '/',
   content: '# My Site',
   chapterOrder: ['/welcome', '/about'],
   chapters: {
@@ -80,6 +81,17 @@ export const changePagePath = (site, oldPath, newPath) => {
 };
 
 export const upgradeSite = site => {
+  // ensure site has a path
+  if (!site.path) site.path = '/';
+
+  // remove any undefined chapter and page references
+  site.chapterOrder = site.chapterOrder.filter(c => site.chapters[c]);
+  Object.keys(site.chapters)
+    .map(c => site.chapters[c])
+    .forEach(chapter => {
+      chapter.pageOrder = chapter.pageOrder.filter(p => site.pages[p]);
+    });
+
   // don't let a chapter or page have a path of '/'
   const chapterPaths = Object.keys(site.chapters);
   chapterPaths
@@ -95,5 +107,6 @@ export const upgradeSite = site => {
       const nextPath = slugify(site.pages[p].name);
       changePagePath(site, p, nextPath);
     });
+
   return site;
 };

@@ -62,6 +62,20 @@ export default ({ site, onChange }) => (
                 />
               </Box>
             </FormField>
+            <FormField htmlFor="navMode" label="Nav Mode">
+              <Box pad="small">
+                <RadioButtonGroup
+                  name="navMode"
+                  options={['cards', 'bar']}
+                  value={site.navMode || 'cards'}
+                  onChange={event => {
+                    const nextSite = JSON.parse(JSON.stringify(site));
+                    nextSite.navMode = event.target.value;
+                    onChange(nextSite);
+                  }}
+                />
+              </Box>
+            </FormField>
             <FormField htmlFor="logo" label="Logo" help="raw <svg /> or a URL">
               <TextArea
                 id="logo"
