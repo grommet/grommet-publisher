@@ -18,6 +18,7 @@ const SitePreview = ({ site, onChange }) => {
           <Cards
             routes={site.chapterOrder.map(c => site.chapters[c])}
             size={site.size}
+            overlay={overlay}
           />
         )}
       </Box>
