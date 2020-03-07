@@ -11,7 +11,7 @@ const textSizeMap = {
   large: 'xlarge',
 };
 
-const Cards = ({ overlay, routes = [], size, ...rest }) => {
+const Cards = ({ overlay, routes = [], size = 'medium', ...rest }) => {
   const theme = React.useContext(ThemeContext);
   const colors = Object.keys(theme.global.colors).filter(c =>
     colorNameExp.test(c),
