@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Image } from 'grommet';
-import { Previous, Document } from 'grommet-icons';
+import { Document } from 'grommet-icons';
+import RoutedAnchor from './RoutedAnchor';
 import RoutedButton from './RoutedButton';
 import NavBar from './NavBar';
 import { normalizeImageSrc } from '../site';
@@ -13,8 +14,7 @@ const Header = ({ overlay, parent, site, ...rest }) => {
   return (
     <Box
       flex={false}
-      height="xsmall"
-      pad={{ vertical: 'small', horizontal: 'large' }}
+      pad={{ vertical: 'medium', horizontal: 'large' }}
       direction="row"
       align="center"
       justify="between"
@@ -23,7 +23,7 @@ const Header = ({ overlay, parent, site, ...rest }) => {
       {...rest}
     >
       {site.navMode === 'cards' && parent ? (
-        <RoutedButton path={parent.path} icon={<Previous />} hoverIndicator />
+        <RoutedAnchor path={parent.path} label={parent.name} />
       ) : (
         <RoutedButton path="/" showActive={false} style={{ lineHeight: 0 }}>
           {site.logo ? (

@@ -44,7 +44,7 @@ const Layout = ({
           ? ['flex', ['small', 'medium'], ['medium', 'large'], 'flex']
           : ['flex', ['medium', 'xlarge'], 'flex']
       }
-      rows={['xsmall', 'flex']}
+      rows={['auto', 'flex']}
       areas={
         sidebar
           ? [
@@ -65,11 +65,8 @@ const Layout = ({
       {sidebar && (
         <Sidebar gridArea="sidebar" site={site} routes={children || peers} />
       )}
-      <Box
-        gridArea="content"
-        margin={sidebar ? undefined : { horizontal: 'large' }}
-      >
-        <Box flex="grow">
+      <Box gridArea="content">
+        <Box flex="grow" margin={sidebar ? undefined : { horizontal: 'large' }}>
           <Content size={site.size}>{content}</Content>
           {site.navMode === 'cards' && (
             <Cards routes={children} size={site.size} overlay={overlay} />
