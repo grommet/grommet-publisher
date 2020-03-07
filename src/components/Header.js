@@ -14,7 +14,7 @@ const Header = ({ overlay, parent, site, ...rest }) => {
   return (
     <Box
       flex={false}
-      pad={{ vertical: 'medium', horizontal: 'large' }}
+      pad={{ vertical: 'medium' }}
       direction="row"
       align="center"
       justify="between"

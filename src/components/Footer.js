@@ -9,7 +9,7 @@ const Footer = ({ site, overlay, onChange, ...rest }) => {
   return (
     <Box
       flex={false}
-      pad={{ vertical: 'small', horizontal: 'large' }}
+      pad={{ vertical: 'small' }}
       direction="row"
       align="center"
       justify="between"

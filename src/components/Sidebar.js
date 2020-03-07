@@ -4,7 +4,7 @@ import RoutedAnchor from './RoutedAnchor';
 
 const Sidebar = ({ routes, site, ...rest }) => {
   return (
-    <Box pad={{ vertical: 'small', left: 'large' }} gap="small" {...rest}>
+    <Box pad={{ vertical: 'small' }} gap="small" {...rest}>
       {routes.map(route => (
         <RoutedAnchor key={route.path} path={route.path}>
           <Box>{route.name}</Box>
