@@ -41,8 +41,8 @@ const Layout = ({
     <Grid
       columns={
         sidebar
-          ? ['flex', ['small', 'medium'], ['medium', 'large'], 'flex']
-          : ['flex', ['medium', 'xlarge'], 'flex']
+          ? ['flex', 'small', ['medium', 'large'], 'flex']
+          : ['flex', ['medium', 'large'], 'flex']
       }
       rows={['auto', 'flex']}
       areas={
@@ -62,7 +62,7 @@ const Layout = ({
       {...rest}
     >
       <Header gridArea="header" site={site} parent={parent} />
-      {sidebar && (
+      {sidebar && parent && (
         <Sidebar gridArea="sidebar" site={site} routes={children || peers} />
       )}
       <Box gridArea="content">

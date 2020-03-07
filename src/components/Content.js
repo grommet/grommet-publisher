@@ -70,7 +70,7 @@ export default class Content extends Component {
           },
           p: {
             component: Paragraph,
-            props: { size },
+            props: { size, fill: true },
           },
           img: {
             component: Image,
