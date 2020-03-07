@@ -28,7 +28,9 @@ const Layout = ({
         <Header site={site} overlay />
         <Box flex="grow">
           <Content fill>{content}</Content>
-          {site.navMode === 'cards' && <Cards routes={children} overlay />}
+          {site.navMode === 'cards' && (
+            <Cards routes={children} size={site.size} overlay />
+          )}
         </Box>
         <Footer site={site} overlay onChange={onChange} />
       </Box>
@@ -42,19 +44,17 @@ const Layout = ({
           ? ['flex', ['small', 'medium'], ['medium', 'large'], 'flex']
           : ['flex', ['medium', 'xlarge'], 'flex']
       }
-      rows={['xsmall', 'flex', 'xxsmall']}
+      rows={['xsmall', 'flex']}
       areas={
         sidebar
           ? [
               { name: 'header', start: [1, 0], end: [2, 0] },
               { name: 'sidebar', start: [1, 1], end: [1, 1] },
               { name: 'content', start: [2, 1], end: [2, 1] },
-              { name: 'footer', start: [1, 2], end: [2, 2] },
             ]
           : [
               { name: 'header', start: [1, 0], end: [1, 0] },
               { name: 'content', start: [1, 1], end: [1, 1] },
-              { name: 'footer', start: [1, 2], end: [1, 2] },
             ]
       }
       fill
@@ -67,15 +67,16 @@ const Layout = ({
       )}
       <Box
         gridArea="content"
-        flex="grow"
         margin={sidebar ? undefined : { horizontal: 'large' }}
       >
-        <Content size={site.size}>{content}</Content>
-        {site.navMode === 'cards' && (
-          <Cards routes={children} size={site.size} overlay={overlay} />
-        )}
+        <Box flex="grow">
+          <Content size={site.size}>{content}</Content>
+          {site.navMode === 'cards' && (
+            <Cards routes={children} size={site.size} overlay={overlay} />
+          )}
+        </Box>
+        <Footer site={site} onChange={onChange} />
       </Box>
-      <Footer gridArea="footer" site={site} onChange={onChange} />
     </Grid>
   );
 };

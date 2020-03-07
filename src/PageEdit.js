@@ -12,7 +12,7 @@ export default ({ path, site, onChange }) => {
   const page = site.pages[path];
   const chapter = pageChapter(site, path);
 
-  // lazily handle changing the path, since it's a but complicated
+  // lazily handle changing the path, since it's a bit complicated
   React.useEffect(() => {
     if (path !== tmpPath) {
       const timer = setTimeout(() => {

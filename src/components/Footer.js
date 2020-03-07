@@ -1,7 +1,5 @@
 import React from 'react';
-import { Box, CheckBox, Image, Text } from 'grommet';
-import RoutedButton from './RoutedButton';
-import { normalizeImageSrc } from '../site';
+import { Box, CheckBox, Text } from 'grommet';
 
 const Footer = ({ site, overlay, onChange, ...rest }) => {
   let style;
@@ -20,14 +18,6 @@ const Footer = ({ site, overlay, onChange, ...rest }) => {
       {...rest}
     >
       <Box direction="row" align="center" gap="small">
-        {site.logo && (
-          <RoutedButton path="/" showActive={false} style={{ lineHeight: 0 }}>
-            <Image
-              src={normalizeImageSrc(site.logo)}
-              style={{ transform: 'scale(0.5)' }}
-            />
-          </RoutedButton>
-        )}
         <Text size="small" color="text-xweak">
           {site.copyright}
         </Text>
