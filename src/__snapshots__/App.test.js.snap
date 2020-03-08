@@ -2,7 +2,8 @@
 
 exports[`App empty 1`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cQKRXe"
+  class="StyledGrommet-sc-19lkkz7-0 gVQrIe"
+  style="min-height: 100vh;"
 >
   <div
     class="StyledGrid-sc-1wofa1l-0 jtEBxd"
@@ -316,7 +317,8 @@ exports[`App empty 1`] = `
 
 exports[`App empty 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cQKRXe"
+  class="StyledGrommet-sc-19lkkz7-0 gVQrIe"
+  style="min-height: 100vh;"
 >
   <div
     class="StyledGrid-sc-1wofa1l-0 jtEBxd"

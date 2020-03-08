@@ -1,5 +1,12 @@
 import React from 'react';
-import { Box, Grid, Grommet, ResponsiveContext, Keyboard, grommet } from 'grommet';
+import {
+  Box,
+  Grid,
+  Grommet,
+  ResponsiveContext,
+  Keyboard,
+  grommet,
+} from 'grommet';
 import { Document } from 'grommet-icons';
 import { apiUrl, starter, upgradeSite } from './site';
 import Router from './Router';
@@ -10,12 +17,15 @@ import Preview from './Preview';
 const getParams = () => {
   const { location } = window;
   const params = {};
-  location.search.slice(1).split('&').forEach(p => {
-    const [k, v] = p.split('=');
-    params[k] = decodeURIComponent(v);
-  });
+  location.search
+    .slice(1)
+    .split('&')
+    .forEach(p => {
+      const [k, v] = p.split('=');
+      params[k] = decodeURIComponent(v);
+    });
   return params;
-}
+};
 
 const App = () => {
   const [site, setSite] = React.useState();
@@ -26,13 +36,13 @@ const App = () => {
     const params = getParams();
     if (params.id) {
       fetch(`${apiUrl}/${params.id}`)
-      .then(response => response.json())
-      .then((nextSite) => {
-        upgradeSite(nextSite);
-        document.title = nextSite.name;
-        setPreview(true);
-        setSite(nextSite);
-      });
+        .then(response => response.json())
+        .then(nextSite => {
+          upgradeSite(nextSite);
+          document.title = nextSite.name;
+          setPreview(true);
+          setSite(nextSite);
+        });
     } else {
       let stored = localStorage.getItem('activeSite');
       if (stored) {
@@ -49,7 +59,7 @@ const App = () => {
     }
   }, []);
 
-  const onChange = (nextSite) => {
+  const onChange = nextSite => {
     setSite(nextSite);
 
     // delay storing it locally so we don't bog down typing
@@ -69,20 +79,20 @@ const App = () => {
         localStorage.setItem('sites', JSON.stringify(sites));
       }
     }, 1000);
-  }
+  };
 
-  const onKey = (event) => {
+  const onKey = event => {
     if (event.metaKey) {
       if (event.key === 'e') {
         event.preventDefault();
         setPreview(!preview);
       }
     }
-  }
+  };
 
   return (
     <Router>
-      <Grommet full theme={grommet}>
+      <Grommet theme={grommet} style={{ minHeight: '100vh' }}>
         <Keyboard target="document" onKeyDown={onKey}>
           <ResponsiveContext.Consumer>
             {responsive => {
@@ -95,10 +105,12 @@ const App = () => {
               ) : (
                 <Grid
                   fill
-                  columns={(responsive === 'small' || preview)
-                    ? 'flex'
-                    : ['small', ['small', 'large'], ['large', 'flex']]}
-                  rows='full'
+                  columns={
+                    responsive === 'small' || preview
+                      ? 'flex'
+                      : ['small', ['small', 'large'], ['large', 'flex']]
+                  }
+                  rows="full"
                 >
                   {responsive !== 'small' && !preview && (
                     <Nav site={site} onChange={onChange} />
@@ -108,13 +120,13 @@ const App = () => {
                   )}
                   <Preview site={site} onChange={onChange} />
                 </Grid>
-              )
+              );
             }}
           </ResponsiveContext.Consumer>
         </Keyboard>
       </Grommet>
     </Router>
   );
-}
+};
 
 export default App;

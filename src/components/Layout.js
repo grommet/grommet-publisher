@@ -41,12 +41,8 @@ const Layout = ({
     <Grid
       columns={
         sidebar
-          ? [['48px', 'flex'], 'small', ['medium', 'large'], ['48px', 'flex']]
-          : [
-              ['48px', 'flex'],
-              ['medium', 'large'],
-              ['48px', 'flex'],
-            ]
+          ? ['flex', 'small', ['medium', 'large'], 'flex']
+          : ['flex', ['small', 'large'], 'flex']
       }
       rows={['auto', 'flex']}
       areas={
@@ -61,7 +57,7 @@ const Layout = ({
               { name: 'content', start: [1, 1], end: [1, 1] },
             ]
       }
-      fill
+      pad={{ horizontal: 'large' }}
       style={{ minHeight: '100vh' }}
       {...rest}
     >
