@@ -19,6 +19,7 @@ const Header = ({ overlay, parent, site, ...rest }) => {
       align="center"
       justify="between"
       gap="medium"
+      responsive={false}
       style={style}
       {...rest}
     >

@@ -14,6 +14,7 @@ const Footer = ({ site, overlay, onChange, ...rest }) => {
       align="center"
       justify="between"
       gap="small"
+      responsive={false}
       style={style}
       {...rest}
     >
