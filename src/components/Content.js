@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import {
   Box,
   Button,
@@ -21,6 +22,11 @@ const Section = ({ background, ...rest }) => (
     {...rest}
   />
 );
+
+const Pre = styled.pre`
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+`;
 
 export default class Content extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -75,6 +81,9 @@ export default class Content extends Component {
           img: {
             component: Image,
             props: { fit: 'contain' },
+          },
+          pre: {
+            component: Pre,
           },
           Section: { component: Section },
           // Box: { component: Box },
