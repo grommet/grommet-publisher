@@ -16,7 +16,7 @@ const Action = ({ children, label, onClose, ...rest }) => (
     <Box flex background="dark-1" elevation="medium">
       <Box flex={false} direction="row" align="center" justify="between">
         <ActionButton
-          title='close'
+          title="close"
           icon={<Close />}
           hoverIndicator
           onClick={onClose}
@@ -31,7 +31,7 @@ const Action = ({ children, label, onClose, ...rest }) => (
           </Heading>
         )}
       </Box>
-      <Box flex pad="medium" align="start" overflow="auto">
+      <Box flex pad="medium" overflow="auto">
         {children}
       </Box>
     </Box>

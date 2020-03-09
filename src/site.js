@@ -80,6 +80,43 @@ export const changePagePath = (site, oldPath, newPath) => {
   site.alias = { from: oldPath, to: newPath };
 };
 
+export const publish = ({ site, email, pin, onChange, onError }) => {
+  // add some metadata to the site
+  const nextSite = JSON.parse(JSON.stringify(site));
+  nextSite.email = email;
+  const date = new Date();
+  date.setMilliseconds(pin);
+  nextSite.date = date.toISOString();
+
+  const body = JSON.stringify(nextSite);
+  fetch(apiUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json; charset=UTF-8',
+      'Content-Length': body.length,
+    },
+    body,
+  })
+    .then(response => {
+      if (response.ok) {
+        return response.text().then(id => {
+          const nextUploadUrl = [
+            window.location.protocol,
+            '//',
+            window.location.host,
+            window.location.pathname,
+            `?id=${encodeURIComponent(id)}`,
+            window.location.hash,
+          ].join('');
+          nextSite.publishedUrl = nextUploadUrl;
+          onChange(nextSite);
+        });
+      }
+      return response.text().then(onError);
+    })
+    .catch(e => onError(e.message));
+};
+
 export const upgradeSite = site => {
   // ensure site has a path
   if (!site.path) site.path = '/';

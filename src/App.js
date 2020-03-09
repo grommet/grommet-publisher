@@ -8,7 +8,7 @@ import {
   grommet,
 } from 'grommet';
 import { Document } from 'grommet-icons';
-import { apiUrl, starter, upgradeSite } from './site';
+import { apiUrl, starter, upgradeSite, publish } from './site';
 import Router from './Router';
 import Nav from './Nav/Nav';
 import Editor from './Editor';
@@ -86,6 +86,19 @@ const App = () => {
       if (event.key === 'e') {
         event.preventDefault();
         setPreview(!preview);
+      } else if (event.key === 'p' && event.shiftKey) {
+        const stored = localStorage.getItem('identity');
+        if (stored) {
+          const identity = JSON.parse(stored);
+          publish({
+            site,
+            ...identity,
+            onChange,
+            onError: error => console.error(error),
+          });
+        } else {
+          console.warn('You need to have published to be able to re-publish');
+        }
       }
     }
   };

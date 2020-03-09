@@ -8,6 +8,9 @@ Live at: [publisher.grommet.io](https://publisher.grommet.io)
 
 ### Command shortcuts
 
+- **command-e** or **control-E**: toggles preview vs. edit modes
+- **command-shift-p** or **control-shift-p**: re-publish
+
 ## Local development
 
 1. `git clone`

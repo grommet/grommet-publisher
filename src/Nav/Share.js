@@ -12,7 +12,7 @@ import {
   TextInput,
 } from 'grommet';
 import { CloudUpload, Copy, Download } from 'grommet-icons';
-import { apiUrl } from '../site';
+import { publish } from '../site';
 import Action from '../components/Action';
 
 const Summary = ({ Icon, label, guidance }) => (
@@ -27,6 +27,7 @@ const Summary = ({ Icon, label, guidance }) => (
 
 const Publish = ({ site, onChange }) => {
   const [publication, setPublication] = React.useState();
+  const [publishing, setPublishing] = React.useState();
   const [uploadUrl, setUploadUrl] = React.useState();
   const [message, setMessage] = React.useState();
   const [error, setError] = React.useState();
@@ -45,43 +46,21 @@ const Publish = ({ site, onChange }) => {
   const onPublish = ({ value: { name, email, pin } }) => {
     // remember email and pin in local storage so we can use later
     localStorage.setItem('identity', JSON.stringify({ email, pin }));
-
-    // add some metadata to the site
-    const nextSite = JSON.parse(JSON.stringify(site));
-    nextSite.email = email;
-    const date = new Date();
-    date.setMilliseconds(pin);
-    nextSite.date = date.toISOString();
-
-    const body = JSON.stringify(nextSite);
-    fetch(apiUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json; charset=UTF-8',
-        'Content-Length': body.length,
+    setPublishing(true);
+    publish({
+      site,
+      email,
+      pin,
+      onChange: nextSite => {
+        setPublishing(false);
+        setUploadUrl(nextSite.publishedUrl);
+        onChange(nextSite);
       },
-      body,
-    })
-      .then(response => {
-        if (response.ok) {
-          setError(undefined);
-          return response.text().then(id => {
-            const nextUploadUrl = [
-              window.location.protocol,
-              '//',
-              window.location.host,
-              window.location.pathname,
-              `?id=${encodeURIComponent(id)}`,
-              window.location.hash,
-            ].join('');
-            setUploadUrl(nextUploadUrl);
-          });
-        }
-        return response.text().then(setError);
-      })
-      .catch(e => setError(e.message));
-
-    onChange(nextSite);
+      onError: error => {
+        setPublishing(false);
+        setError(error);
+      },
+    });
   };
 
   const onCopy = () => {
@@ -126,9 +105,14 @@ const Publish = ({ site, onChange }) => {
           ]}
         />
         <Box align="center" margin="medium">
-          <Button type="submit" label="Publish" />
+          <Button type="submit" label="Publish" disabled={publishing} />
         </Box>
       </Form>
+      {publishing && (
+        <Box alignSelf="center" animation="pulse">
+          <Text size="large">...</Text>
+        </Box>
+      )}
       {uploadUrl && (
         <Fragment>
           <Box direction="row">
@@ -144,6 +128,18 @@ const Publish = ({ site, onChange }) => {
             <Text textAlign="end">{message}&nbsp;</Text>
           </Box>
         </Fragment>
+      )}
+      {site.date && (
+        <Box>
+          <Text size="small" color="text-xweak">
+            Last published {new Date(site.date).toLocaleString()}
+          </Text>
+          {site.publishedUrl && (
+            <Text size="small" color="text-xweak">
+              {site.publishedUrl}
+            </Text>
+          )}
+        </Box>
       )}
     </Box>
   );
@@ -172,8 +168,8 @@ const SaveLocally = ({ site, onClose }) => (
 );
 
 const Share = ({ site, onChange, onClose }) => (
-  <Action label="share" animation="fadeIn" onClose={onClose}>
-    <Grid columns={{ count: 'fit', size: 'small' }} gap="large">
+  <Action label="share" full="horizontal" animation="fadeIn" onClose={onClose}>
+    <Grid fill="horizontal" columns="medium" gap="large">
       <Publish site={site} onChange={onChange} />
       <SaveLocally site={site} onClose={onClose} />
     </Grid>
