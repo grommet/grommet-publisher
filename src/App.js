@@ -30,8 +30,11 @@ const getParams = () => {
 const App = () => {
   const [site, setSite] = React.useState();
   const [preview, setPreview] = React.useState();
+  const [changes, setChanges] = React.useState([]);
+  const [changeIndex, setChangeIndex] = React.useState();
   const storeTimer = React.useRef(null);
 
+  // load initial site
   React.useEffect(() => {
     const params = getParams();
     if (params.id) {
@@ -42,6 +45,7 @@ const App = () => {
           document.title = nextSite.name;
           setPreview(true);
           setSite(nextSite);
+          setChanges([{ site: nextSite }]);
         });
     } else {
       let stored = localStorage.getItem('activeSite');
@@ -53,11 +57,45 @@ const App = () => {
         upgradeSite(nextSite);
         document.title = nextSite.name;
         setSite(nextSite);
+        setChanges([{ site: nextSite }]);
       } else {
         setSite(starter);
+        setChanges([{ site: starter }]);
       }
     }
   }, []);
+
+  // add to changes, if needed
+  React.useEffect(() => {
+    // do this stuff lazily to ride out typing sprees
+    const timer = setTimeout(() => {
+      // If we already have this site object, we must be doing an undo or
+      // redo, and therefore no need to add a change
+      if (!changes.some(c => c.site === site)) {
+        let nextChanges;
+        nextChanges = [...changes];
+        nextChanges = nextChanges.slice(changeIndex, 10);
+        nextChanges.unshift({ site });
+        setChanges(nextChanges);
+        setChangeIndex(0);
+      }
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, [changes, changeIndex, site]);
+
+  const onUndo = React.useCallback(() => {
+    const nextChangeIndex = Math.min(changeIndex + 1, changes.length - 1);
+    const { site: nextSite } = changes[nextChangeIndex];
+    setSite(nextSite);
+    setChangeIndex(nextChangeIndex);
+  }, [changes, changeIndex]);
+
+  const onRedo = React.useCallback(() => {
+    const nextChangeIndex = Math.max(changeIndex - 1, 0);
+    const { site: nextSite } = changes[nextChangeIndex];
+    setSite(nextSite);
+    setChangeIndex(nextChangeIndex);
+  }, [changes, changeIndex]);
 
   const onChange = nextSite => {
     setSite(nextSite);
@@ -126,7 +164,12 @@ const App = () => {
                   rows="full"
                 >
                   {responsive !== 'small' && !preview && (
-                    <Nav site={site} onChange={onChange} />
+                    <Nav
+                      site={site}
+                      onChange={onChange}
+                      onRedo={changeIndex > 0 && onRedo}
+                      onUndo={changeIndex < changes.length - 1 && onUndo}
+                    />
                   )}
                   {responsive !== 'small' && !preview && (
                     <Editor site={site} onChange={onChange} />

@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { Box, Button, Text } from 'grommet';
-import { Apps, FormAdd, Share } from 'grommet-icons';
+import { Apps, FormAdd, Redo, Share, Undo } from 'grommet-icons';
 import { RouterContext } from '../Router';
 import ActionButton from '../components/ActionButton';
 import RoutedButton from '../components/RoutedButton';
@@ -24,7 +24,7 @@ const Actioner = ({ Icon, Modal, site, onChange, ...rest }) => {
   );
 };
 
-const Nav = ({ site, onChange }) => {
+const Nav = ({ site, onChange, onRedo, onUndo }) => {
   const { push } = React.useContext(RouterContext);
   return (
     <Box fill="vertical" overflow="auto" background="dark-1" border="right">
@@ -36,16 +36,28 @@ const Nav = ({ site, onChange }) => {
           site={site}
           onChange={onChange}
         />
-        <Box flex>
-          <RoutedButton fill path="/" hoverIndicator>
-            <Box fill direction="row" align="center" pad="small">
-              <Text truncate>{site.name}</Text>
-            </Box>
-          </RoutedButton>
-        </Box>
+        <ActionButton
+          title="undo last change"
+          icon={<Undo />}
+          disabled={!onUndo}
+          onClick={onUndo || undefined}
+        />
+        <ActionButton
+          title="redo last change"
+          icon={<Redo />}
+          disabled={!onRedo}
+          onClick={onRedo || undefined}
+        />
         <Actioner Icon={Share} Modal={Sharer} site={site} onChange={onChange} />
       </Box>
       <Box flex={false}>
+        <RoutedButton path="/" hoverIndicator>
+          <Box direction="row" align="center" pad="small">
+            <Text weight="bold" truncate>
+              {site.name}
+            </Text>
+          </Box>
+        </RoutedButton>
         {site.chapterOrder
           .map(path => site.chapters[path])
           .filter(chapter => chapter)

@@ -37,22 +37,44 @@ exports[`App empty 1`] = `
           </button>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 bTrMkc"
+          class="StyledBox-sc-13pk1d4-0 hTZIev"
         >
-          <a
-            class="StyledButton-sc-323bzc-0 leUHXs"
-            href="/"
+          <button
+            class="StyledButton-sc-323bzc-0 jeaTYv"
+            disabled=""
+            title="undo last change"
+            type="button"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 grzhaE"
+            <svg
+              aria-label="Undo"
+              class="StyledIcon-ofa7kd-0 kPmYvD"
+              viewBox="0 0 24 24"
             >
-              <span
-                class="StyledText-sc-1sadyjn-0 eGyAkH"
-              >
-                My Site
-              </span>
-            </div>
-          </a>
+              <path
+                d="M7.18,4,8.6,5.44,6.06,8h9.71a6,6,0,0,1,0,12h-2V18h2a4,4,0,0,0,0-8H6.06L8.6,12.51,7.18,13.92,2.23,9Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="StyledBox-sc-13pk1d4-0 hTZIev"
+        >
+          <button
+            class="StyledButton-sc-323bzc-0 jeaTYv"
+            disabled=""
+            title="redo last change"
+            type="button"
+          >
+            <svg
+              aria-label="Redo"
+              class="StyledIcon-ofa7kd-0 kPmYvD"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M16.82,4,15.4,5.44,17.94,8H8.23a6,6,0,0,0,0,12h2V18h-2a4,4,0,0,1,0-8h9.71L15.4,12.51l1.41,1.41L21.77,9Z"
+              />
+            </svg>
+          </button>
         </div>
         <div
           class="StyledBox-sc-13pk1d4-0 hTZIev"
@@ -79,6 +101,20 @@ exports[`App empty 1`] = `
       <div
         class="StyledBox-sc-13pk1d4-0 hTZIev"
       >
+        <a
+          class="StyledButton-sc-323bzc-0 cImFMH"
+          href="/"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 ekijOn"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 gWIGcR"
+            >
+              My Site
+            </span>
+          </div>
+        </a>
         <div
           class="StyledBox-sc-13pk1d4-0 hTZIev"
         >
@@ -352,22 +388,44 @@ exports[`App empty 2`] = `
           </button>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 bTrMkc"
+          class="StyledBox-sc-13pk1d4-0 hTZIev"
         >
-          <a
-            class="StyledButton-sc-323bzc-0 leUHXs"
-            href="/"
+          <button
+            class="StyledButton-sc-323bzc-0 jeaTYv"
+            disabled=""
+            title="undo last change"
+            type="button"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 grzhaE"
+            <svg
+              aria-label="Undo"
+              class="StyledIcon-ofa7kd-0 kPmYvD"
+              viewBox="0 0 24 24"
             >
-              <span
-                class="StyledText-sc-1sadyjn-0 eGyAkH"
-              >
-                My Site
-              </span>
-            </div>
-          </a>
+              <path
+                d="M7.18,4,8.6,5.44,6.06,8h9.71a6,6,0,0,1,0,12h-2V18h2a4,4,0,0,0,0-8H6.06L8.6,12.51,7.18,13.92,2.23,9Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="StyledBox-sc-13pk1d4-0 hTZIev"
+        >
+          <button
+            class="StyledButton-sc-323bzc-0 jeaTYv"
+            disabled=""
+            title="redo last change"
+            type="button"
+          >
+            <svg
+              aria-label="Redo"
+              class="StyledIcon-ofa7kd-0 kPmYvD"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M16.82,4,15.4,5.44,17.94,8H8.23a6,6,0,0,0,0,12h2V18h-2a4,4,0,0,1,0-8h9.71L15.4,12.51l1.41,1.41L21.77,9Z"
+              />
+            </svg>
+          </button>
         </div>
         <div
           class="StyledBox-sc-13pk1d4-0 hTZIev"
@@ -394,6 +452,20 @@ exports[`App empty 2`] = `
       <div
         class="StyledBox-sc-13pk1d4-0 hTZIev"
       >
+        <a
+          class="StyledButton-sc-323bzc-0 cImFMH"
+          href="/"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 ekijOn"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 gWIGcR"
+            >
+              My Site
+            </span>
+          </div>
+        </a>
         <div
           class="StyledBox-sc-13pk1d4-0 hTZIev"
         >
