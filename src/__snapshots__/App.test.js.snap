@@ -47,7 +47,7 @@ exports[`App empty 1`] = `
               class="StyledBox-sc-13pk1d4-0 grzhaE"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 hObItf"
+                class="StyledText-sc-1sadyjn-0 eGyAkH"
               >
                 My Site
               </span>
@@ -90,7 +90,7 @@ exports[`App empty 1`] = `
               class="StyledBox-sc-13pk1d4-0 koNkem"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 hncrgS"
+                class="StyledText-sc-1sadyjn-0 eGyAkH"
               >
                 welcome
               </span>
@@ -107,7 +107,7 @@ exports[`App empty 1`] = `
                 class="StyledBox-sc-13pk1d4-0 koNkem"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 hncrgS"
+                  class="StyledText-sc-1sadyjn-0 eGyAkH"
                 >
                   join
                 </span>
@@ -121,7 +121,7 @@ exports[`App empty 1`] = `
                 class="StyledBox-sc-13pk1d4-0 koNkem"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 hncrgS"
+                  class="StyledText-sc-1sadyjn-0 eGyAkH"
                 >
                   explore
                 </span>
@@ -162,7 +162,7 @@ exports[`App empty 1`] = `
               class="StyledBox-sc-13pk1d4-0 koNkem"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 hncrgS"
+                class="StyledText-sc-1sadyjn-0 eGyAkH"
               >
                 about
               </span>
@@ -179,7 +179,7 @@ exports[`App empty 1`] = `
                 class="StyledBox-sc-13pk1d4-0 koNkem"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 hncrgS"
+                  class="StyledText-sc-1sadyjn-0 eGyAkH"
                 >
                   contact
                 </span>
@@ -193,7 +193,7 @@ exports[`App empty 1`] = `
                 class="StyledBox-sc-13pk1d4-0 koNkem"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 hncrgS"
+                  class="StyledText-sc-1sadyjn-0 eGyAkH"
                 >
                   legal
                 </span>
@@ -362,7 +362,7 @@ exports[`App empty 2`] = `
               class="StyledBox-sc-13pk1d4-0 grzhaE"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 hObItf"
+                class="StyledText-sc-1sadyjn-0 eGyAkH"
               >
                 My Site
               </span>
@@ -405,7 +405,7 @@ exports[`App empty 2`] = `
               class="StyledBox-sc-13pk1d4-0 koNkem"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 hncrgS"
+                class="StyledText-sc-1sadyjn-0 eGyAkH"
               >
                 welcome
               </span>
@@ -422,7 +422,7 @@ exports[`App empty 2`] = `
                 class="StyledBox-sc-13pk1d4-0 koNkem"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 hncrgS"
+                  class="StyledText-sc-1sadyjn-0 eGyAkH"
                 >
                   join
                 </span>
@@ -436,7 +436,7 @@ exports[`App empty 2`] = `
                 class="StyledBox-sc-13pk1d4-0 koNkem"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 hncrgS"
+                  class="StyledText-sc-1sadyjn-0 eGyAkH"
                 >
                   explore
                 </span>
@@ -477,7 +477,7 @@ exports[`App empty 2`] = `
               class="StyledBox-sc-13pk1d4-0 koNkem"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 hncrgS"
+                class="StyledText-sc-1sadyjn-0 eGyAkH"
               >
                 about
               </span>
@@ -494,7 +494,7 @@ exports[`App empty 2`] = `
                 class="StyledBox-sc-13pk1d4-0 koNkem"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 hncrgS"
+                  class="StyledText-sc-1sadyjn-0 eGyAkH"
                 >
                   contact
                 </span>
@@ -508,7 +508,7 @@ exports[`App empty 2`] = `
                 class="StyledBox-sc-13pk1d4-0 koNkem"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 hncrgS"
+                  class="StyledText-sc-1sadyjn-0 eGyAkH"
                 >
                   legal
                 </span>

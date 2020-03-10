@@ -22,18 +22,13 @@ const Actioner = ({ Icon, Modal, site, onChange, ...rest }) => {
       )}
     </Fragment>
   );
-}
+};
 
 const Nav = ({ site, onChange }) => {
   const { push } = React.useContext(RouterContext);
   return (
-    <Box fill="vertical" overflow="auto" background="dark-1" border="right" >
-      <Box
-        flex={false}
-        direction="row"
-        justify="between"
-        border="bottom"
-      >
+    <Box fill="vertical" overflow="auto" background="dark-1" border="right">
+      <Box flex={false} direction="row" justify="between" border="bottom">
         <Actioner
           title="choose another site"
           Icon={Apps}
@@ -44,31 +39,26 @@ const Nav = ({ site, onChange }) => {
         <Box flex>
           <RoutedButton fill path="/" hoverIndicator>
             <Box fill direction="row" align="center" pad="small">
-              <Text size="small" truncate>
-                {site.name}
-              </Text>
+              <Text truncate>{site.name}</Text>
             </Box>
           </RoutedButton>
         </Box>
-        <Actioner
-          Icon={Share}
-          Modal={Sharer}
-          site={site}
-          onChange={onChange}
-        />
+        <Actioner Icon={Share} Modal={Sharer} site={site} onChange={onChange} />
       </Box>
       <Box flex={false}>
-        {site.chapterOrder.map(path => site.chapters[path])
+        {site.chapterOrder
+          .map(path => site.chapters[path])
           .filter(chapter => chapter)
           .map(chapter => (
             <Box key={chapter.path} flex={false}>
               <RoutedButton path={chapter.path} hoverIndicator>
                 <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
-                  <Text size="small">{chapter.name}</Text>
+                  <Text truncate>{chapter.name}</Text>
                 </Box>
               </RoutedButton>
               <Box flex={false} margin={{ left: 'small' }}>
-                {chapter.pageOrder.map(path => site.pages[path])
+                {chapter.pageOrder
+                  .map(path => site.pages[path])
                   .filter(page => page)
                   .map(page => (
                     <RoutedButton
@@ -77,11 +67,10 @@ const Nav = ({ site, onChange }) => {
                       hoverIndicator
                     >
                       <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
-                        <Text size="small">{page.name}</Text>
+                        <Text truncate>{page.name}</Text>
                       </Box>
                     </RoutedButton>
-                  ))
-                }
+                  ))}
                 <Button
                   title="add a page"
                   hoverIndicator
@@ -92,7 +81,7 @@ const Nav = ({ site, onChange }) => {
                       name: `page ${id}`,
                       path: `/page-${id}`,
                       content: `# Page ${id}`,
-                    }
+                    };
                     nextSite.pages[nextPage.path] = nextPage;
                     const nextChapter = nextSite.chapters[chapter.path];
                     nextChapter.pageOrder.push(nextPage.path);
@@ -106,8 +95,7 @@ const Nav = ({ site, onChange }) => {
                 </Button>
               </Box>
             </Box>
-          ))
-        }
+          ))}
         <Button
           title="add a chapter"
           hoverIndicator
@@ -119,7 +107,7 @@ const Nav = ({ site, onChange }) => {
               path: `/chapter-${id}`,
               content: `# Chapter ${id}`,
               pageOrder: [],
-            }
+            };
             nextSite.chapters[nextChapter.path] = nextChapter;
             nextSite.chapterOrder.push(nextChapter.path);
             onChange(nextSite);
@@ -133,6 +121,6 @@ const Nav = ({ site, onChange }) => {
       </Box>
     </Box>
   );
-}
+};
 
 export default Nav;
