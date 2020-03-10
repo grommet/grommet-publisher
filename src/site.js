@@ -108,6 +108,7 @@ export const publish = ({ site, email, pin, onChange, onError }) => {
             `?id=${encodeURIComponent(id)}`,
             window.location.hash,
           ].join('');
+          nextSite.id = id;
           nextSite.publishedUrl = nextUploadUrl;
           onChange(nextSite);
         });

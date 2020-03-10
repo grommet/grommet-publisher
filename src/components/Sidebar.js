@@ -6,7 +6,7 @@ const Sidebar = ({ routes, site, ...rest }) => {
   return (
     <Box pad={{ vertical: 'small' }} gap="small" {...rest}>
       {routes.map(route => (
-        <RoutedAnchor key={route.path} path={route.path}>
+        <RoutedAnchor key={route.path} site={site} path={route.path}>
           <Box>{route.name}</Box>
         </RoutedAnchor>
       ))}

@@ -24,9 +24,14 @@ const Header = ({ overlay, parent, site, ...rest }) => {
       {...rest}
     >
       {site.navMode === 'cards' && parent ? (
-        <RoutedAnchor path={parent.path} label={parent.name} />
+        <RoutedAnchor site={site} path={parent.path} label={parent.name} />
       ) : (
-        <RoutedButton path="/" showActive={false} style={{ lineHeight: 0 }}>
+        <RoutedButton
+          site={site}
+          path="/"
+          showActive={false}
+          style={{ lineHeight: 0 }}
+        >
           {site.logo ? (
             <Image src={normalizeImageSrc(site.logo)} />
           ) : (

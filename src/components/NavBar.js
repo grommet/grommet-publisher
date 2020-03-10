@@ -30,6 +30,7 @@ const NavBar = ({ site, overlay, ...rest }) => {
               <Box>
                 <RoutedButton
                   key={chapter.path}
+                  site={site}
                   path={chapter.path}
                   hoverIndicator
                 >
@@ -43,6 +44,7 @@ const NavBar = ({ site, overlay, ...rest }) => {
                   .map(page => (
                     <RoutedButton
                       key={page.path}
+                      site={site}
                       path={page.path}
                       hoverIndicator
                     >
@@ -67,6 +69,7 @@ const NavBar = ({ site, overlay, ...rest }) => {
       {site.chapterOrder.map(path => (
         <RoutedAnchor
           key={path}
+          site={site}
           path={path}
           active={chapter && chapter.path === path}
         >

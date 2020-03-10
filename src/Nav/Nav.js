@@ -51,7 +51,7 @@ const Nav = ({ site, onChange, onRedo, onUndo }) => {
         <Actioner Icon={Share} Modal={Sharer} site={site} onChange={onChange} />
       </Box>
       <Box flex={false}>
-        <RoutedButton path="/" hoverIndicator>
+        <RoutedButton site={site} path="/" hoverIndicator>
           <Box direction="row" align="center" pad="small">
             <Text weight="bold" truncate>
               {site.name}
@@ -63,7 +63,7 @@ const Nav = ({ site, onChange, onRedo, onUndo }) => {
           .filter(chapter => chapter)
           .map(chapter => (
             <Box key={chapter.path} flex={false}>
-              <RoutedButton path={chapter.path} hoverIndicator>
+              <RoutedButton site={site} path={chapter.path} hoverIndicator>
                 <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
                   <Text truncate>{chapter.name}</Text>
                 </Box>
@@ -75,6 +75,7 @@ const Nav = ({ site, onChange, onRedo, onUndo }) => {
                   .map(page => (
                     <RoutedButton
                       key={page.path}
+                      site={site}
                       path={page.path}
                       hoverIndicator
                     >

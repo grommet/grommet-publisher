@@ -58,7 +58,7 @@ export const Routes = ({ children, notFoundRedirect }) => {
     if (
       !found &&
       currentPath &&
-      currentPath.split('#')[0] === child.props.path
+      currentPath.split('#')[0].split('?')[0] === child.props.path
     ) {
       found = child;
     }
@@ -76,7 +76,7 @@ Routes.propTypes = {
 
 export const Route = ({ component: Comp, path, props, redirect }) => {
   const { path: currentPath, replace } = React.useContext(RouterContext);
-  if (currentPath && currentPath.split('#')[0] === path) {
+  if (currentPath && currentPath.split('#')[0].split('?')[0] === path) {
     if (redirect) {
       replace(redirect);
     } else if (Comp) {
@@ -101,7 +101,7 @@ Route.defaultProps = {
 
 export const Redirect = ({ from, to }) => {
   const { path, replace } = React.useContext(RouterContext);
-  if (path && path.split('#')[0] === from) {
+  if (path && path.split('#')[0].split('?')[0] === from) {
     replace(to);
   }
   return null;

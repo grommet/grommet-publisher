@@ -29,7 +29,7 @@ const Layout = ({
         <Box flex="grow">
           <Content fill>{content}</Content>
           {site.navMode === 'cards' && (
-            <Cards routes={children} size={site.size} overlay />
+            <Cards routes={children} site={site} size={site.size} overlay />
           )}
         </Box>
         <Footer site={site} overlay onChange={onChange} />
@@ -69,7 +69,12 @@ const Layout = ({
         <Box flex="grow">
           <Content size={site.size}>{content}</Content>
           {site.navMode === 'cards' && (
-            <Cards routes={children} size={site.size} overlay={overlay} />
+            <Cards
+              routes={children}
+              site={site}
+              size={site.size}
+              overlay={overlay}
+            />
           )}
         </Box>
         <Footer site={site} onChange={onChange} />

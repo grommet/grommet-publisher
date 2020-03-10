@@ -11,7 +11,7 @@ const textSizeMap = {
   large: 'xlarge',
 };
 
-const Cards = ({ overlay, routes = [], size = 'medium', ...rest }) => {
+const Cards = ({ overlay, routes = [], site, size = 'medium', ...rest }) => {
   const theme = React.useContext(ThemeContext);
   const colors = Object.keys(theme.global.colors).filter(c =>
     colorNameExp.test(c),
@@ -24,7 +24,7 @@ const Cards = ({ overlay, routes = [], size = 'medium', ...rest }) => {
     >
       <Grid columns="small" gap="large" align="stretch">
         {routes.map((route, index) => (
-          <RoutedButton key={route.path} path={route.path} plain>
+          <RoutedButton key={route.path} site={site} path={route.path} plain>
             {({ hover }) => (
               <Box
                 pad={size}
