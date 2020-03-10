@@ -80,7 +80,7 @@ export default class Content extends Component {
           },
           img: {
             component: Image,
-            props: { fit: 'contain' },
+            props: { fit: 'contain', style: { maxWidth: '100%' } },
           },
           pre: {
             component: Pre,
