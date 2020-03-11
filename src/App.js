@@ -46,6 +46,20 @@ const App = () => {
           setPreview(true);
           setSite(nextSite);
           setChanges([{ site: nextSite }]);
+          // save it for future offline usage
+          localStorage.setItem(params.id, JSON.stringify(nextSite));
+        })
+        .catch(() => {
+          // see if we have this site cached, we might be offline
+          const stored = localStorage.getItem(params.id);
+          if (stored) {
+            const nextSite = JSON.parse(stored);
+            upgradeSite(nextSite);
+            document.title = nextSite.name;
+            setPreview(true);
+            setSite(nextSite);
+            setChanges([{ site: nextSite }]);
+          }
         });
     } else {
       let stored = localStorage.getItem('activeSite');

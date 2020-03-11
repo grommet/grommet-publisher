@@ -19,8 +19,21 @@ const Preview = ({ site, onChange }) => {
       if (id) {
         fetch(`${themeApiUrl}/${id}`)
           .then(response => response.json())
-          .then(theme => setTheme(theme))
-          .catch(() => setTheme(grommet));
+          .then(theme => {
+            setTheme(theme);
+            // save it for future offline usage
+            localStorage.setItem(id, JSON.stringify(theme));
+          })
+          .catch(() => {
+            // see if we have this site cached, we might be offline
+            const stored = localStorage.getItem(id);
+            if (stored) {
+              const theme = JSON.parse(stored);
+              setTheme(theme);
+            } else {
+              setTheme(grommet);
+            }
+          });
         // NOTE: This doesn't work because we don't have react + styled globals
         // } else {
         //   // this is from npmjs
