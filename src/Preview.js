@@ -71,7 +71,13 @@ const Preview = ({ site, onChange }) => {
     >
       <Box fill overflow="auto" animation="fadeIn">
         {theme === undefined ? (
-          <Box flex align="center" justify="center" animation="pulse">
+          <Box
+            flex
+            align="center"
+            justify="center"
+            animation="pulse"
+            margin="xlarge"
+          >
             <Document size="xlarge" color="brand" />
           </Box>
         ) : (

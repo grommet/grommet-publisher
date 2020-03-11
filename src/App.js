@@ -162,7 +162,7 @@ const App = () => {
           <ResponsiveContext.Consumer>
             {responsive => {
               return !site ? (
-                <Box fill justify="center" align="center">
+                <Box fill justify="center" align="center" margin="xlarge">
                   <Box animation="pulse">
                     <Document size="xlarge" />
                   </Box>
