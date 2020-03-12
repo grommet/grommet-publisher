@@ -41,6 +41,7 @@ const App = () => {
       fetch(`${apiUrl}/${params.id}`)
         .then(response => response.json())
         .then(nextSite => {
+          if (!nextSite.id) nextSite.id = params.id;
           upgradeSite(nextSite);
           document.title = nextSite.name;
           setPreview(true);
