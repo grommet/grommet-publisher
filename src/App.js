@@ -20,7 +20,7 @@ const getParams = () => {
   location.search
     .slice(1)
     .split('&')
-    .forEach(p => {
+    .forEach((p) => {
       const [k, v] = p.split('=');
       params[k] = decodeURIComponent(v);
     });
@@ -39,8 +39,8 @@ const App = () => {
     const params = getParams();
     if (params.id) {
       fetch(`${apiUrl}/${params.id}`)
-        .then(response => response.json())
-        .then(nextSite => {
+        .then((response) => response.json())
+        .then((nextSite) => {
           if (!nextSite.id) nextSite.id = params.id;
           upgradeSite(nextSite);
           document.title = nextSite.name;
@@ -86,7 +86,7 @@ const App = () => {
     const timer = setTimeout(() => {
       // If we already have this site object, we must be doing an undo or
       // redo, and therefore no need to add a change
-      if (!changes.some(c => c.site === site)) {
+      if (!changes.some((c) => c.site === site)) {
         let nextChanges;
         nextChanges = [...changes];
         nextChanges = nextChanges.slice(changeIndex, 10);
@@ -112,7 +112,7 @@ const App = () => {
     setChangeIndex(nextChangeIndex);
   }, [changes, changeIndex]);
 
-  const onChange = nextSite => {
+  const onChange = (nextSite) => {
     setSite(nextSite);
 
     // delay storing it locally so we don't bog down typing
@@ -134,9 +134,9 @@ const App = () => {
     }, 1000);
   };
 
-  const onKey = event => {
+  const onKey = (event) => {
     if (event.metaKey) {
-      if (event.key === 'e') {
+      if (event.key === '.' || event.key === 'e') {
         event.preventDefault();
         setPreview(!preview);
       } else if (event.key === 'p' && event.shiftKey) {
@@ -147,7 +147,7 @@ const App = () => {
             site,
             ...identity,
             onChange,
-            onError: error => console.error(error),
+            onError: (error) => console.error(error),
           });
         } else {
           console.warn('You need to have published to be able to re-publish');
@@ -161,7 +161,7 @@ const App = () => {
       <Grommet theme={grommet} style={{ minHeight: '100vh' }}>
         <Keyboard target="document" onKeyDown={onKey}>
           <ResponsiveContext.Consumer>
-            {responsive => {
+            {(responsive) => {
               return !site ? (
                 <Box fill justify="center" align="center" margin="xlarge">
                   <Box animation="pulse">
