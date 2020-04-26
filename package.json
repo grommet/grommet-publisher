@@ -5,7 +5,6 @@
   "dependencies": {
     "grommet": "https://github.com/grommet/grommet/tarball/stable",
     "grommet-icons": "^4.2.0",
-    "grommet-theme-hpe": "https://github.com/grommet/grommet-theme-hpe/tarball/NEXT-stable",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.4.1",
