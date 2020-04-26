@@ -40,7 +40,7 @@ exports[`App empty 1`] = `
           class="StyledBox-sc-13pk1d4-0 hTZIev"
         >
           <button
-            class="StyledButton-sc-323bzc-0 jeaTYv"
+            class="StyledButton-sc-323bzc-0 jopwfj"
             disabled=""
             title="undo last change"
             type="button"
@@ -60,7 +60,7 @@ exports[`App empty 1`] = `
           class="StyledBox-sc-13pk1d4-0 hTZIev"
         >
           <button
-            class="StyledButton-sc-323bzc-0 jeaTYv"
+            class="StyledButton-sc-323bzc-0 jopwfj"
             disabled=""
             title="redo last change"
             type="button"
@@ -102,7 +102,7 @@ exports[`App empty 1`] = `
         class="StyledBox-sc-13pk1d4-0 hTZIev"
       >
         <a
-          class="StyledButton-sc-323bzc-0 cImFMH"
+          class="StyledButton-sc-323bzc-0 cYumz"
           href="/"
         >
           <div
@@ -123,7 +123,7 @@ exports[`App empty 1`] = `
             href="/welcome"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 koNkem"
+              class="StyledBox-sc-13pk1d4-0 blGPBW"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 eGyAkH"
@@ -133,14 +133,14 @@ exports[`App empty 1`] = `
             </div>
           </a>
           <div
-            class="StyledBox-sc-13pk1d4-0 ksdjXW"
+            class="StyledBox-sc-13pk1d4-0 kiLxRi"
           >
             <a
               class="StyledButton-sc-323bzc-0 iElqND"
               href="/join"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 koNkem"
+                class="StyledBox-sc-13pk1d4-0 blGPBW"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 eGyAkH"
@@ -154,7 +154,7 @@ exports[`App empty 1`] = `
               href="/explore"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 koNkem"
+                class="StyledBox-sc-13pk1d4-0 blGPBW"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 eGyAkH"
@@ -169,7 +169,7 @@ exports[`App empty 1`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jJvHJM"
+                class="StyledBox-sc-13pk1d4-0 ksaQUA"
               >
                 <svg
                   aria-label="FormAdd"
@@ -195,7 +195,7 @@ exports[`App empty 1`] = `
             href="/about"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 koNkem"
+              class="StyledBox-sc-13pk1d4-0 blGPBW"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 eGyAkH"
@@ -205,14 +205,14 @@ exports[`App empty 1`] = `
             </div>
           </a>
           <div
-            class="StyledBox-sc-13pk1d4-0 ksdjXW"
+            class="StyledBox-sc-13pk1d4-0 kiLxRi"
           >
             <a
               class="StyledButton-sc-323bzc-0 iElqND"
               href="/contact"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 koNkem"
+                class="StyledBox-sc-13pk1d4-0 blGPBW"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 eGyAkH"
@@ -226,7 +226,7 @@ exports[`App empty 1`] = `
               href="/legal"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 koNkem"
+                class="StyledBox-sc-13pk1d4-0 blGPBW"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 eGyAkH"
@@ -241,7 +241,7 @@ exports[`App empty 1`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jJvHJM"
+                class="StyledBox-sc-13pk1d4-0 ksaQUA"
               >
                 <svg
                   aria-label="FormAdd"
@@ -265,7 +265,7 @@ exports[`App empty 1`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jJvHJM"
+            class="StyledBox-sc-13pk1d4-0 ksaQUA"
           >
             <svg
               aria-label="FormAdd"
@@ -314,7 +314,7 @@ exports[`App empty 1`] = `
         class="StyledBox-sc-13pk1d4-0 bimCvx"
       >
         <textarea
-          class="StyledTextArea-sc-17i3mwp-0 fUMFqD"
+          class="StyledTextArea-sc-17i3mwp-0 jlvYkU"
           id="content"
           name="content"
         >
@@ -391,7 +391,7 @@ exports[`App empty 2`] = `
           class="StyledBox-sc-13pk1d4-0 hTZIev"
         >
           <button
-            class="StyledButton-sc-323bzc-0 jeaTYv"
+            class="StyledButton-sc-323bzc-0 jopwfj"
             disabled=""
             title="undo last change"
             type="button"
@@ -411,7 +411,7 @@ exports[`App empty 2`] = `
           class="StyledBox-sc-13pk1d4-0 hTZIev"
         >
           <button
-            class="StyledButton-sc-323bzc-0 jeaTYv"
+            class="StyledButton-sc-323bzc-0 jopwfj"
             disabled=""
             title="redo last change"
             type="button"
@@ -453,7 +453,7 @@ exports[`App empty 2`] = `
         class="StyledBox-sc-13pk1d4-0 hTZIev"
       >
         <a
-          class="StyledButton-sc-323bzc-0 cImFMH"
+          class="StyledButton-sc-323bzc-0 cYumz"
           href="/"
         >
           <div
@@ -474,7 +474,7 @@ exports[`App empty 2`] = `
             href="/welcome"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 koNkem"
+              class="StyledBox-sc-13pk1d4-0 blGPBW"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 eGyAkH"
@@ -484,14 +484,14 @@ exports[`App empty 2`] = `
             </div>
           </a>
           <div
-            class="StyledBox-sc-13pk1d4-0 ksdjXW"
+            class="StyledBox-sc-13pk1d4-0 kiLxRi"
           >
             <a
               class="StyledButton-sc-323bzc-0 iElqND"
               href="/join"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 koNkem"
+                class="StyledBox-sc-13pk1d4-0 blGPBW"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 eGyAkH"
@@ -505,7 +505,7 @@ exports[`App empty 2`] = `
               href="/explore"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 koNkem"
+                class="StyledBox-sc-13pk1d4-0 blGPBW"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 eGyAkH"
@@ -520,7 +520,7 @@ exports[`App empty 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jJvHJM"
+                class="StyledBox-sc-13pk1d4-0 ksaQUA"
               >
                 <svg
                   aria-label="FormAdd"
@@ -546,7 +546,7 @@ exports[`App empty 2`] = `
             href="/about"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 koNkem"
+              class="StyledBox-sc-13pk1d4-0 blGPBW"
             >
               <span
                 class="StyledText-sc-1sadyjn-0 eGyAkH"
@@ -556,14 +556,14 @@ exports[`App empty 2`] = `
             </div>
           </a>
           <div
-            class="StyledBox-sc-13pk1d4-0 ksdjXW"
+            class="StyledBox-sc-13pk1d4-0 kiLxRi"
           >
             <a
               class="StyledButton-sc-323bzc-0 iElqND"
               href="/contact"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 koNkem"
+                class="StyledBox-sc-13pk1d4-0 blGPBW"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 eGyAkH"
@@ -577,7 +577,7 @@ exports[`App empty 2`] = `
               href="/legal"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 koNkem"
+                class="StyledBox-sc-13pk1d4-0 blGPBW"
               >
                 <span
                   class="StyledText-sc-1sadyjn-0 eGyAkH"
@@ -592,7 +592,7 @@ exports[`App empty 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 jJvHJM"
+                class="StyledBox-sc-13pk1d4-0 ksaQUA"
               >
                 <svg
                   aria-label="FormAdd"
@@ -616,7 +616,7 @@ exports[`App empty 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jJvHJM"
+            class="StyledBox-sc-13pk1d4-0 ksaQUA"
           >
             <svg
               aria-label="FormAdd"
@@ -665,7 +665,7 @@ exports[`App empty 2`] = `
         class="StyledBox-sc-13pk1d4-0 bimCvx"
       >
         <textarea
-          class="StyledTextArea-sc-17i3mwp-0 fUMFqD"
+          class="StyledTextArea-sc-17i3mwp-0 jlvYkU"
           id="content"
           name="content"
         >
