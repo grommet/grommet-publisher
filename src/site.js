@@ -47,15 +47,15 @@ export const starter = {
 
 export const pageChapter = (site, pagePath) =>
   Object.keys(site.chapters)
-    .map(p => site.chapters[p])
-    .filter(chapter => chapter.pageOrder.includes(pagePath))[0];
+    .map((p) => site.chapters[p])
+    .filter((chapter) => chapter.pageOrder.includes(pagePath))[0];
 
 const svgPrefix = 'data:image/svg+xml;utf8,';
 
-export const normalizeImageSrc = src =>
+export const normalizeImageSrc = (src) =>
   src.slice(0, 4) === '<svg' ? `${svgPrefix}${src}` : src;
 
-export const slugify = str =>
+export const slugify = (str) =>
   `/${str
     .toLocaleLowerCase()
     .replace(/ /g, '-')
@@ -87,6 +87,7 @@ export const publish = ({ site, email, pin, onChange, onError }) => {
   const date = new Date();
   date.setMilliseconds(pin);
   nextSite.date = date.toISOString();
+  delete nextSite.local;
 
   const body = JSON.stringify(nextSite);
   fetch(apiUrl, {
@@ -97,9 +98,9 @@ export const publish = ({ site, email, pin, onChange, onError }) => {
     },
     body,
   })
-    .then(response => {
+    .then((response) => {
       if (response.ok) {
-        return response.text().then(id => {
+        return response.text().then((id) => {
           const nextUploadUrl = [
             window.location.protocol,
             '//',
@@ -110,38 +111,39 @@ export const publish = ({ site, email, pin, onChange, onError }) => {
           ].join('');
           nextSite.id = id;
           nextSite.publishedUrl = nextUploadUrl;
+          nextSite.local = true;
           onChange(nextSite);
         });
       }
       return response.text().then(onError);
     })
-    .catch(e => onError(e.message));
+    .catch((e) => onError(e.message));
 };
 
-export const upgradeSite = site => {
+export const upgradeSite = (site) => {
   // ensure site has a path
   if (!site.path) site.path = '/';
 
   // remove any undefined chapter and page references
-  site.chapterOrder = site.chapterOrder.filter(c => site.chapters[c]);
+  site.chapterOrder = site.chapterOrder.filter((c) => site.chapters[c]);
   Object.keys(site.chapters)
-    .map(c => site.chapters[c])
-    .forEach(chapter => {
-      chapter.pageOrder = chapter.pageOrder.filter(p => site.pages[p]);
+    .map((c) => site.chapters[c])
+    .forEach((chapter) => {
+      chapter.pageOrder = chapter.pageOrder.filter((p) => site.pages[p]);
     });
 
   // don't let a chapter or page have a path of '/'
   const chapterPaths = Object.keys(site.chapters);
   chapterPaths
-    .filter(p => p === '/')
-    .forEach(p => {
+    .filter((p) => p === '/')
+    .forEach((p) => {
       const nextPath = slugify(site.chapters[p].name);
       changeChapterPath(site, p, nextPath);
     });
   const pagePaths = Object.keys(site.pages);
   pagePaths
-    .filter(p => p === '/')
-    .forEach(p => {
+    .filter((p) => p === '/')
+    .forEach((p) => {
       const nextPath = slugify(site.pages[p].name);
       changePagePath(site, p, nextPath);
     });

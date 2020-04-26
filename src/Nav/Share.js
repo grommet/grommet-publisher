@@ -34,29 +34,38 @@ const Publish = ({ site, onChange }) => {
   const inputRef = React.useRef();
 
   React.useEffect(() => {
-    const stored = localStorage.getItem('identity');
+    let stored = localStorage.getItem(`${site.name}--identity`);
     if (stored) {
       const identity = JSON.parse(stored);
       setPublication({ ...identity, name: site.name });
     } else {
-      setPublication({ name: site.name });
+      stored = localStorage.getItem('identity');
+      if (stored) {
+        const identity = JSON.parse(stored);
+        setPublication({ ...identity, name: site.name });
+      } else {
+        setPublication({ name: site.name });
+      }
     }
   }, [site]);
 
   const onPublish = ({ value: { name, email, pin } }) => {
-    // remember email and pin in local storage so we can use later
-    localStorage.setItem('identity', JSON.stringify({ email, pin }));
     setPublishing(true);
+    // remember email and pin in local storage so we can use later
+    localStorage.setItem(
+      `${site.name}--identity`,
+      JSON.stringify({ email, pin }),
+    );
     publish({
       site,
       email,
       pin,
-      onChange: nextSite => {
+      onChange: (nextSite) => {
         setPublishing(false);
         setUploadUrl(nextSite.publishedUrl);
         onChange(nextSite);
       },
-      onError: error => {
+      onError: (error) => {
         setPublishing(false);
         setError(error);
       },
@@ -108,11 +117,6 @@ const Publish = ({ site, onChange }) => {
           <Button type="submit" label="Publish" disabled={publishing} />
         </Box>
       </Form>
-      {publishing && (
-        <Box alignSelf="center" animation="pulse">
-          <Text size="large">...</Text>
-        </Box>
-      )}
       {uploadUrl && (
         <Fragment>
           <Box direction="row">

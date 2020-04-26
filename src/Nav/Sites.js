@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Button, Grid, Grommet, Stack, Text } from 'grommet';
 import { Trash } from 'grommet-icons';
 import { starter, upgradeSite } from '../site';
@@ -14,24 +14,26 @@ const nameToBackground = (name) => {
 };
 
 const Sites = ({ site, onClose, onChange }) => {
-  const [sites, setSites] = React.useState([]);
-  const [error, setError] = React.useState();
-  const [confirmDelete, setConfirmDelete] = React.useState();
+  const [sites, setSites] = useState([]);
+  const [error, setError] = useState();
+  const [confirmDelete, setConfirmDelete] = useState();
 
-  React.useEffect(() => {
+  useEffect(() => {
     let item = localStorage.getItem('sites'); // array of names
     if (item) {
-      setSites(JSON.parse(item).map((name) => {
-        let site = localStorage.getItem(name);
-        if (site) {
-          try {
-            return JSON.parse(site);
-          } catch (e) {
-            return { name };
+      setSites(
+        JSON.parse(item).map((name) => {
+          let site = localStorage.getItem(name);
+          if (site) {
+            try {
+              return JSON.parse(site);
+            } catch (e) {
+              return { name };
+            }
           }
-        }
-        return { name };
-      }));
+          return { name };
+        }),
+      );
     }
   }, []);
 
@@ -40,44 +42,52 @@ const Sites = ({ site, onClose, onChange }) => {
     if (item) {
       const nextSite = JSON.parse(item);
       upgradeSite(nextSite);
+      nextSite.local = true;
       onChange(nextSite);
       onClose();
     }
-  }
+  };
 
   const onReset = () => {
     localStorage.removeItem('selected');
     localStorage.removeItem('activeSite');
     onChange(starter);
     onClose();
-  }
+  };
 
   const onDelete = (name) => {
     setConfirmDelete(undefined);
-    const nextSites = sites.map(t => t.name).filter(n => n !== name);
+    const nextSites = sites.map((t) => t.name).filter((n) => n !== name);
     localStorage.setItem('sites', JSON.stringify(nextSites));
     localStorage.removeItem(name);
+    localStorage.removeItem(`${name}--mode`);
     setSites(nextSites);
-    if (site.name === name) {
-      localStorage.removeItem('activeSite');
-      onChange(starter);
-    }
-  }
+  };
 
   return (
     <Action label="sites" onClose={onClose} full="horizontal">
       <Grid fill="horizontal" columns="small" rows="small" gap="large">
-        <Box fill round="medium" >
+        <Box fill round="medium">
           <Button fill label="New" onClick={onReset} />
         </Box>
-        {sites.map(site => {
+        {sites.map((site) => {
           const name = site.name;
           const background = nameToBackground(name);
           return (
             <Stack key={name} fill anchor="bottom-right">
               <Grommet style={{ height: '100%' }}>
                 <Box fill round="medium" overflow="hidden">
-                  <Button fill plain onClick={() => onSelect(name)}>
+                  <Button
+                    fill
+                    plain
+                    href={`/?name=${encodeURIComponent(name)}`}
+                    onClick={(event) => {
+                      if (!event.ctrlKey && !event.metaKey) {
+                        event.preventDefault();
+                        onSelect(name);
+                      }
+                    }}
+                  >
                     {({ hover }) => (
                       <Box
                         fill
@@ -111,7 +121,7 @@ const Sites = ({ site, onClose, onChange }) => {
                 />
               </Box>
             </Stack>
-          )
+          );
         })}
         <Box
           fill
@@ -138,12 +148,7 @@ const Sites = ({ site, onClose, onChange }) => {
                 reader.readAsText(event.target.files[0]);
               }}
             />
-            <Box
-              fill
-              background="dark-1"
-              align="center"
-              justify="center"
-            >
+            <Box fill background="dark-1" align="center" justify="center">
               <Text>Import</Text>
               {error && (
                 <Box background="status-critical" pad="medium">

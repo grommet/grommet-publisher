@@ -1,18 +1,12 @@
-import React from 'react';
-import {
-  Box,
-  Grid,
-  Grommet,
-  ResponsiveContext,
-  Keyboard,
-  grommet,
-} from 'grommet';
-import { Document } from 'grommet-icons';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
+import { Grid, Grommet, ResponsiveContext, Keyboard, grommet } from 'grommet';
 import { apiUrl, starter, upgradeSite, publish } from './site';
 import Router from './Router';
 import Nav from './Nav/Nav';
+import ConfirmReplace from './ConfirmReplace';
 import Editor from './Editor';
 import Preview from './Preview';
+import Loading from './components/Loading';
 
 const getParams = () => {
   const { location } = window;
@@ -27,15 +21,22 @@ const getParams = () => {
   return params;
 };
 
+const setNameParam = (name) => {
+  const search = `?name=${encodeURIComponent(name)}`;
+  const url = window.location.pathname + search;
+  window.history.replaceState(undefined, undefined, url);
+};
+
 const App = () => {
-  const [site, setSite] = React.useState();
-  const [preview, setPreview] = React.useState();
-  const [changes, setChanges] = React.useState([]);
-  const [changeIndex, setChangeIndex] = React.useState();
-  const storeTimer = React.useRef(null);
+  const responsiveSize = useContext(ResponsiveContext);
+  const [site, setSite] = useState();
+  const [mode, setMode] = useState();
+  const [changes, setChanges] = useState([]);
+  const [changeIndex, setChangeIndex] = useState();
+  const [confirmReplace, setConfirmReplace] = useState();
 
   // load initial site
-  React.useEffect(() => {
+  useEffect(() => {
     const params = getParams();
     if (params.id) {
       fetch(`${apiUrl}/${params.id}`)
@@ -44,7 +45,7 @@ const App = () => {
           if (!nextSite.id) nextSite.id = params.id;
           upgradeSite(nextSite);
           document.title = nextSite.name;
-          setPreview(true);
+          setMode('preview');
           setSite(nextSite);
           setChanges([{ site: nextSite }]);
           // save it for future offline usage
@@ -57,31 +58,60 @@ const App = () => {
             const nextSite = JSON.parse(stored);
             upgradeSite(nextSite);
             document.title = nextSite.name;
-            setPreview(true);
+            setMode('preview');
             setSite(nextSite);
             setChanges([{ site: nextSite }]);
           }
         });
-    } else {
-      let stored = localStorage.getItem('activeSite');
-      if (stored) {
-        stored = localStorage.getItem(stored);
-      }
+    } else if (params.name) {
+      const stored = localStorage.getItem(params.name);
       if (stored) {
         const nextSite = JSON.parse(stored);
         upgradeSite(nextSite);
+        nextSite.local = true;
         document.title = nextSite.name;
         setSite(nextSite);
         setChanges([{ site: nextSite }]);
+        const storedMode = localStorage.getItem(`${params.name}--mode`);
+        setMode(storedMode ? JSON.parse(storedMode) : 'edit');
       } else {
         setSite(starter);
         setChanges([{ site: starter }]);
+        setMode('edit');
       }
+    } else {
+      setSite(starter);
+      setChanges([{ site: starter }]);
+      setMode('edit');
     }
   }, []);
 
+  // store lazily
+  useEffect(() => {
+    if (site && site.local) {
+      // delay storing it locally so we don't bog down typing
+      const timer = setTimeout(() => {
+        localStorage.setItem(site.name, JSON.stringify(site));
+        const params = getParams();
+        if (params.name !== site.name) setNameParam(site.name);
+        // ensure this site is first
+        const stored = window.localStorage.getItem('sites');
+        const sites = stored ? JSON.parse(stored) : [];
+        const index = sites.indexOf(site.name);
+        if (index !== 0) {
+          if (index > 0) sites.splice(index, 1);
+          sites.unshift(site.name);
+          window.localStorage.setItem('sites', JSON.stringify(sites));
+        }
+        window.localStorage.setItem(`${site.name}--mode`, JSON.stringify(mode));
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+    return undefined;
+  }, [mode, site]);
+
   // add to changes, if needed
-  React.useEffect(() => {
+  useEffect(() => {
     // do this stuff lazily to ride out typing sprees
     const timer = setTimeout(() => {
       // If we already have this site object, we must be doing an undo or
@@ -98,14 +128,14 @@ const App = () => {
     return () => clearTimeout(timer);
   }, [changes, changeIndex, site]);
 
-  const onUndo = React.useCallback(() => {
+  const onUndo = useCallback(() => {
     const nextChangeIndex = Math.min(changeIndex + 1, changes.length - 1);
     const { site: nextSite } = changes[nextChangeIndex];
     setSite(nextSite);
     setChangeIndex(nextChangeIndex);
   }, [changes, changeIndex]);
 
-  const onRedo = React.useCallback(() => {
+  const onRedo = useCallback(() => {
     const nextChangeIndex = Math.max(changeIndex - 1, 0);
     const { site: nextSite } = changes[nextChangeIndex];
     setSite(nextSite);
@@ -113,32 +143,19 @@ const App = () => {
   }, [changes, changeIndex]);
 
   const onChange = (nextSite) => {
-    setSite(nextSite);
-
-    // delay storing it locally so we don't bog down typing
-    clearTimeout(storeTimer.current);
-    storeTimer.current = setTimeout(() => {
-      document.title = nextSite.name;
-      localStorage.setItem(nextSite.name, JSON.stringify(nextSite));
-      localStorage.setItem('activeSite', nextSite.name);
-      if (document.location.search) {
-        // clear current URL, in case we've started editing a published design locally
-        window.history.replaceState({}, nextSite.name, '/');
-      }
-      // ensure we have this site name in our site list
-      const sites = JSON.parse(localStorage.getItem('sites') || '[]');
-      if (!sites.includes(nextSite.name)) {
-        sites.unshift(nextSite.name);
-        localStorage.setItem('sites', JSON.stringify(sites));
-      }
-    }, 1000);
+    if (nextSite && !nextSite.local && localStorage.getItem(nextSite.name)) {
+      setConfirmReplace(nextSite);
+    } else {
+      if (nextSite) nextSite.local = true;
+      setSite(nextSite);
+    }
   };
 
   const onKey = (event) => {
     if (event.metaKey) {
       if (event.key === '.' || event.key === 'e') {
         event.preventDefault();
-        setPreview(!preview);
+        setMode(mode === 'preview' ? 'edit' : 'preview');
       } else if (event.key === 'p' && event.shiftKey) {
         const stored = localStorage.getItem('identity');
         if (stored) {
@@ -160,41 +177,43 @@ const App = () => {
     <Router>
       <Grommet theme={grommet} style={{ minHeight: '100vh' }}>
         <Keyboard target="document" onKeyDown={onKey}>
-          <ResponsiveContext.Consumer>
-            {(responsive) => {
-              return !site ? (
-                <Box fill justify="center" align="center" margin="xlarge">
-                  <Box animation="pulse">
-                    <Document size="xlarge" />
-                  </Box>
-                </Box>
-              ) : (
-                <Grid
-                  fill
-                  columns={
-                    responsive === 'small' || preview
-                      ? 'flex'
-                      : ['small', ['small', 'large'], ['large', 'flex']]
-                  }
-                  rows="full"
-                >
-                  {responsive !== 'small' && !preview && (
-                    <Nav
-                      site={site}
-                      onChange={onChange}
-                      onRedo={changeIndex > 0 && onRedo}
-                      onUndo={changeIndex < changes.length - 1 && onUndo}
-                    />
-                  )}
-                  {responsive !== 'small' && !preview && (
-                    <Editor site={site} onChange={onChange} />
-                  )}
-                  <Preview site={site} onChange={onChange} />
-                </Grid>
-              );
-            }}
-          </ResponsiveContext.Consumer>
+          {!site ? (
+            <Loading />
+          ) : (
+            <Grid
+              fill
+              columns={
+                responsiveSize === 'small' || mode === 'preview'
+                  ? 'flex'
+                  : ['small', ['small', 'large'], ['large', 'flex']]
+              }
+              rows="full"
+            >
+              {responsiveSize !== 'small' && mode !== 'preview' && (
+                <Nav
+                  site={site}
+                  onChange={onChange}
+                  onRedo={changeIndex > 0 && onRedo}
+                  onUndo={changeIndex < changes.length - 1 && onUndo}
+                />
+              )}
+              {responsiveSize !== 'small' && mode !== 'preview' && (
+                <Editor site={site} onChange={onChange} />
+              )}
+              <Preview site={site} onChange={onChange} />
+            </Grid>
+          )}
         </Keyboard>
+        {confirmReplace && (
+          <ConfirmReplace
+            site={site}
+            nextSite={confirmReplace}
+            onDone={(nextSite) => {
+              if (nextSite) setSite(nextSite);
+              setConfirmReplace(undefined);
+            }}
+          />
+        )}
       </Grommet>
     </Router>
   );

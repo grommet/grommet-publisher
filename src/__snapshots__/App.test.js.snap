@@ -323,28 +323,23 @@ exports[`App empty 1`] = `
       </div>
     </div>
     <div
-      class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
-      style="min-height: 100vh;"
+      class="StyledBox-sc-13pk1d4-0 diqcMS"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 lcBqZl"
+        class="StyledBox-sc-13pk1d4-0 cxSbwS"
       >
-        <div
-          class="StyledBox-sc-13pk1d4-0 dUnjgH"
+        <svg
+          aria-label="Document"
+          class="StyledIcon-ofa7kd-0 bnKSeX"
+          viewBox="0 0 24 24"
         >
-          <svg
-            aria-label="Document"
-            class="StyledIcon-ofa7kd-0 IKQZf"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M14,1 L14,8 L21,8 M21,23 L3,23 L3,1 L15,1 L18,4 L21,7 L21,23 L21,23 L21,23 Z"
-              fill="none"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </div>
+          <path
+            d="M14,1 L14,8 L21,8 M21,23 L3,23 L3,1 L15,1 L18,4 L21,7 L21,23 L21,23 L21,23 Z"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
       </div>
     </div>
   </div>
@@ -674,28 +669,23 @@ exports[`App empty 2`] = `
       </div>
     </div>
     <div
-      class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
-      style="min-height: 100vh;"
+      class="StyledBox-sc-13pk1d4-0 diqcMS"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 lcBqZl"
+        class="StyledBox-sc-13pk1d4-0 cxSbwS"
       >
-        <div
-          class="StyledBox-sc-13pk1d4-0 dUnjgH"
+        <svg
+          aria-label="Document"
+          class="StyledIcon-ofa7kd-0 bnKSeX"
+          viewBox="0 0 24 24"
         >
-          <svg
-            aria-label="Document"
-            class="StyledIcon-ofa7kd-0 IKQZf"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M14,1 L14,8 L21,8 M21,23 L3,23 L3,1 L15,1 L18,4 L21,7 L21,23 L21,23 L21,23 Z"
-              fill="none"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </div>
+          <path
+            d="M14,1 L14,8 L21,8 M21,23 L3,23 L3,1 L15,1 L18,4 L21,7 L21,23 L21,23 L21,23 Z"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
       </div>
     </div>
   </div>
