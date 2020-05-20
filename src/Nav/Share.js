@@ -90,7 +90,11 @@ const Publish = ({ site, onChange }) => {
         They will be able to create their own site based on it.
       `}
       />
-      <Form value={publication} onSubmit={onPublish}>
+      <Form
+        value={publication}
+        onChange={({ value }) => setPublication(value)}
+        onSubmit={onPublish}
+      >
         <FormField
           name="email"
           label="Email"
