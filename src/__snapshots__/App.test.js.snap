@@ -314,7 +314,7 @@ exports[`App empty 1`] = `
         class="StyledBox-sc-13pk1d4-0 eEnzqa"
       >
         <textarea
-          class="StyledTextArea-sc-17i3mwp-0 ecwuNq"
+          class="StyledTextArea-sc-17i3mwp-0 kFxXkn"
           id="content"
           name="content"
         >
@@ -660,7 +660,7 @@ exports[`App empty 2`] = `
         class="StyledBox-sc-13pk1d4-0 eEnzqa"
       >
         <textarea
-          class="StyledTextArea-sc-17i3mwp-0 ecwuNq"
+          class="StyledTextArea-sc-17i3mwp-0 kFxXkn"
           id="content"
           name="content"
         >
