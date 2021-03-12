@@ -5,7 +5,7 @@ import { RouterContext } from './Router';
 import Scope from './components/Scope';
 import { changeChapterPath, slugify } from './site';
 
-export default ({ path, site, onChange }) => {
+const ChapterEdit = ({ path, site, onChange }) => {
   const { replace } = React.useContext(RouterContext);
   const [tmpPath, setTmpPath] = React.useState(path || '');
   React.useEffect(() => setTmpPath(path), [path]);
@@ -28,7 +28,7 @@ export default ({ path, site, onChange }) => {
 
   return (
     <Scope scopes={['content', 'details']}>
-      {scope => {
+      {(scope) => {
         if (scope === 'details') {
           return (
             <Box flex="grow" pad="small">
@@ -38,7 +38,7 @@ export default ({ path, site, onChange }) => {
                     name="name"
                     plain
                     value={chapter.name || ''}
-                    onChange={event => {
+                    onChange={(event) => {
                       const nextName = event.target.value;
                       const nextSite = JSON.parse(JSON.stringify(site));
                       nextSite.chapters[chapter.path].name = nextName;
@@ -53,7 +53,7 @@ export default ({ path, site, onChange }) => {
                     name="path"
                     plain
                     value={tmpPath || ''}
-                    onChange={event => setTmpPath(event.target.value)}
+                    onChange={(event) => setTmpPath(event.target.value)}
                   />
                 </FormField>
               </Box>
@@ -67,11 +67,11 @@ export default ({ path, site, onChange }) => {
                       const nextSite = JSON.parse(JSON.stringify(site));
                       // delete all pages in this chapter
                       chapter.pageOrder.forEach(
-                        pagePath => delete nextSite.pages[pagePath],
+                        (pagePath) => delete nextSite.pages[pagePath],
                       );
                       delete nextSite.chapters[path];
                       nextSite.chapterOrder = nextSite.chapterOrder.filter(
-                        p => p !== path,
+                        (p) => p !== path,
                       );
                       onChange(nextSite);
                     }}
@@ -94,7 +94,7 @@ export default ({ path, site, onChange }) => {
                 name="content"
                 fill
                 value={chapter.content || ''}
-                onChange={event => {
+                onChange={(event) => {
                   const nextSite = JSON.parse(JSON.stringify(site));
                   nextSite.chapters[chapter.path].content = event.target.value;
                   onChange(nextSite);
@@ -107,3 +107,5 @@ export default ({ path, site, onChange }) => {
     </Scope>
   );
 };
+
+export default ChapterEdit;

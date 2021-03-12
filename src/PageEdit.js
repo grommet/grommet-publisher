@@ -5,7 +5,7 @@ import { RouterContext } from './Router';
 import Scope from './components/Scope';
 import { changePagePath, pageChapter, slugify } from './site';
 
-export default ({ path, site, onChange }) => {
+const PageEdit = ({ path, site, onChange }) => {
   const { replace } = React.useContext(RouterContext);
   const [tmpPath, setTmpPath] = React.useState(path || '');
   const [confirmDelete, setConfirmDelete] = React.useState();
@@ -28,7 +28,7 @@ export default ({ path, site, onChange }) => {
 
   return (
     <Scope scopes={['content', 'details']}>
-      {scope => {
+      {(scope) => {
         if (scope === 'details') {
           return (
             <Box flex="grow" pad="small">
@@ -39,7 +39,7 @@ export default ({ path, site, onChange }) => {
                     name="name"
                     plain
                     value={page.name || ''}
-                    onChange={event => {
+                    onChange={(event) => {
                       const nextName = event.target.value;
                       const nextSite = JSON.parse(JSON.stringify(site));
                       nextSite.pages[page.path].name = nextName;
@@ -54,7 +54,7 @@ export default ({ path, site, onChange }) => {
                     name="path"
                     plain
                     value={tmpPath}
-                    onChange={event => setTmpPath(event.target.value)}
+                    onChange={(event) => setTmpPath(event.target.value)}
                   />
                 </FormField>
               </Box>
@@ -128,7 +128,7 @@ export default ({ path, site, onChange }) => {
                         delete nextSite.pages[path];
                         const nextChapter = nextSite.chapters[chapter.path];
                         nextChapter.pageOrder = nextChapter.pageOrder.filter(
-                          p => p !== path,
+                          (p) => p !== path,
                         );
                         onChange(nextSite);
                       }}
@@ -151,7 +151,7 @@ export default ({ path, site, onChange }) => {
                 name="content"
                 fill
                 value={page.content || ''}
-                onChange={event => {
+                onChange={(event) => {
                   const nextSite = JSON.parse(JSON.stringify(site));
                   nextSite.pages[page.path].content = event.target.value;
                   onChange(nextSite);
@@ -164,3 +164,5 @@ export default ({ path, site, onChange }) => {
     </Scope>
   );
 };
+
+export default PageEdit;

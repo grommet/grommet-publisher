@@ -1,8 +1,10 @@
 import React from 'react';
 import { Box, Button } from 'grommet';
 
-export default (props) => (
+const ActionButton = (props) => (
   <Box flex={false}>
     <Button hoverIndicator {...props} />
   </Box>
 );
+
+export default ActionButton;

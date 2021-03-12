@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Button } from 'grommet';
 
-export default ({ children, scopes }) => {
+const Scope = ({ children, scopes }) => {
   const [activeScope, setActiveScope] = React.useState(scopes[0]);
 
   React.useEffect(() => {
@@ -11,7 +11,7 @@ export default ({ children, scopes }) => {
   return (
     <Box flex={false} background="light-2" fill overflow="auto">
       <Box flex={false} direction="row" align="center" background="light-4">
-        {scopes.map(scope => (
+        {scopes.map((scope) => (
           <Button
             key={scope}
             hoverIndicator
@@ -33,3 +33,5 @@ export default ({ children, scopes }) => {
     </Box>
   );
 };
+
+export default Scope;
