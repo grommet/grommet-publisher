@@ -6,13 +6,13 @@ exports[`App empty 1`] = `
   style="min-height: 100vh;"
 >
   <div
-    class="StyledGrid-sc-1wofa1l-0 duVeiO"
+    class="StyledGrid-sc-1wofa1l-0 leOfui"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 eDJMFV"
+      class="StyledBox-sc-13pk1d4-0 bpkJKB"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 esWMmd"
+        class="StyledBox-sc-13pk1d4-0 iYZesl"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 fKqrK"
@@ -314,7 +314,7 @@ exports[`App empty 1`] = `
         class="StyledBox-sc-13pk1d4-0 jbLUkE"
       >
         <textarea
-          class="StyledTextArea-sc-17i3mwp-0 kkbfDg"
+          class="StyledTextArea-sc-17i3mwp-0 kkZkzg"
           id="content"
           name="content"
         >
@@ -352,13 +352,13 @@ exports[`App empty 2`] = `
   style="min-height: 100vh;"
 >
   <div
-    class="StyledGrid-sc-1wofa1l-0 duVeiO"
+    class="StyledGrid-sc-1wofa1l-0 leOfui"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 eDJMFV"
+      class="StyledBox-sc-13pk1d4-0 bpkJKB"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 esWMmd"
+        class="StyledBox-sc-13pk1d4-0 iYZesl"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 fKqrK"
@@ -660,7 +660,7 @@ exports[`App empty 2`] = `
         class="StyledBox-sc-13pk1d4-0 jbLUkE"
       >
         <textarea
-          class="StyledTextArea-sc-17i3mwp-0 kkbfDg"
+          class="StyledTextArea-sc-17i3mwp-0 kkZkzg"
           id="content"
           name="content"
         >
