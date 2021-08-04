@@ -28,7 +28,7 @@ exports[`App empty 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M19,5 L21,5 L21,3 L19,3 L19,5 Z M11,5 L13,5 L13,3 L11,3 L11,5 Z M3,5 L5,5 L5,3 L3,3 L3,5 Z M19,13 L21,13 L21,11 L19,11 L19,13 Z M11,13 L13,13 L13,11 L11,11 L11,13 Z M3,13 L5,13 L5,11 L3,11 L3,13 Z M19,21 L21,21 L21,19 L19,19 L19,21 Z M11,21 L13,21 L13,19 L11,19 L11,21 Z M3,21 L5,21 L5,19 L3,19 L3,21 Z"
+                d="M19 5h2V3h-2v2zm-8 0h2V3h-2v2zM3 5h2V3H3v2zm16 8h2v-2h-2v2zm-8 0h2v-2h-2v2zm-8 0h2v-2H3v2zm16 8h2v-2h-2v2zm-8 0h2v-2h-2v2zm-8 0h2v-2H3v2z"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -51,7 +51,7 @@ exports[`App empty 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M7.18,4,8.6,5.44,6.06,8h9.71a6,6,0,0,1,0,12h-2V18h2a4,4,0,0,0,0-8H6.06L8.6,12.51,7.18,13.92,2.23,9Z"
+                d="M7.18 4 8.6 5.44 6.06 8h9.71a6 6 0 0 1 0 12h-2v-2h2a4 4 0 0 0 0-8H6.06l2.54 2.51-1.42 1.41L2.23 9z"
               />
             </svg>
           </button>
@@ -71,7 +71,7 @@ exports[`App empty 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M16.82,4,15.4,5.44,17.94,8H8.23a6,6,0,0,0,0,12h2V18h-2a4,4,0,0,1,0-8h9.71L15.4,12.51l1.41,1.41L21.77,9Z"
+                d="M16.82 4 15.4 5.44 17.94 8H8.23a6 6 0 0 0 0 12h2v-2h-2a4 4 0 0 1 0-8h9.71l-2.54 2.51 1.41 1.41L21.77 9z"
               />
             </svg>
           </button>
@@ -89,7 +89,7 @@ exports[`App empty 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M19,13 L19,23 L1,23 L1,5 L1,5 L11,5 M14,1 L23,1 L23,10 M10,14 L22.9999998,1 L10,14 Z"
+                d="M19 13v10H1V5h10m3-4h9v9m-13 4L23 1 10 14z"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -177,7 +177,7 @@ exports[`App empty 1`] = `
                   viewBox="0 0 24 24"
                 >
                   <path
-                    d="M12,18 L12,6 M6,12 L18,12"
+                    d="M12 18V6m-6 6h12"
                     fill="none"
                     stroke="#000"
                     stroke-width="2"
@@ -249,7 +249,7 @@ exports[`App empty 1`] = `
                   viewBox="0 0 24 24"
                 >
                   <path
-                    d="M12,18 L12,6 M6,12 L18,12"
+                    d="M12 18V6m-6 6h12"
                     fill="none"
                     stroke="#000"
                     stroke-width="2"
@@ -273,7 +273,7 @@ exports[`App empty 1`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M12,18 L12,6 M6,12 L18,12"
+                d="M12 18V6m-6 6h12"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -334,7 +334,7 @@ exports[`App empty 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M14,1 L14,8 L21,8 M21,23 L3,23 L3,1 L15,1 L18,4 L21,7 L21,23 L21,23 L21,23 Z"
+            d="M14 1v7h7m0 15H3V1h12l3 3 3 3v16z"
             fill="none"
             stroke="#000"
             stroke-width="2"
@@ -374,7 +374,7 @@ exports[`App empty 2`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M19,5 L21,5 L21,3 L19,3 L19,5 Z M11,5 L13,5 L13,3 L11,3 L11,5 Z M3,5 L5,5 L5,3 L3,3 L3,5 Z M19,13 L21,13 L21,11 L19,11 L19,13 Z M11,13 L13,13 L13,11 L11,11 L11,13 Z M3,13 L5,13 L5,11 L3,11 L3,13 Z M19,21 L21,21 L21,19 L19,19 L19,21 Z M11,21 L13,21 L13,19 L11,19 L11,21 Z M3,21 L5,21 L5,19 L3,19 L3,21 Z"
+                d="M19 5h2V3h-2v2zm-8 0h2V3h-2v2zM3 5h2V3H3v2zm16 8h2v-2h-2v2zm-8 0h2v-2h-2v2zm-8 0h2v-2H3v2zm16 8h2v-2h-2v2zm-8 0h2v-2h-2v2zm-8 0h2v-2H3v2z"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -397,7 +397,7 @@ exports[`App empty 2`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M7.18,4,8.6,5.44,6.06,8h9.71a6,6,0,0,1,0,12h-2V18h2a4,4,0,0,0,0-8H6.06L8.6,12.51,7.18,13.92,2.23,9Z"
+                d="M7.18 4 8.6 5.44 6.06 8h9.71a6 6 0 0 1 0 12h-2v-2h2a4 4 0 0 0 0-8H6.06l2.54 2.51-1.42 1.41L2.23 9z"
               />
             </svg>
           </button>
@@ -417,7 +417,7 @@ exports[`App empty 2`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M16.82,4,15.4,5.44,17.94,8H8.23a6,6,0,0,0,0,12h2V18h-2a4,4,0,0,1,0-8h9.71L15.4,12.51l1.41,1.41L21.77,9Z"
+                d="M16.82 4 15.4 5.44 17.94 8H8.23a6 6 0 0 0 0 12h2v-2h-2a4 4 0 0 1 0-8h9.71l-2.54 2.51 1.41 1.41L21.77 9z"
               />
             </svg>
           </button>
@@ -435,7 +435,7 @@ exports[`App empty 2`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M19,13 L19,23 L1,23 L1,5 L1,5 L11,5 M14,1 L23,1 L23,10 M10,14 L22.9999998,1 L10,14 Z"
+                d="M19 13v10H1V5h10m3-4h9v9m-13 4L23 1 10 14z"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -523,7 +523,7 @@ exports[`App empty 2`] = `
                   viewBox="0 0 24 24"
                 >
                   <path
-                    d="M12,18 L12,6 M6,12 L18,12"
+                    d="M12 18V6m-6 6h12"
                     fill="none"
                     stroke="#000"
                     stroke-width="2"
@@ -595,7 +595,7 @@ exports[`App empty 2`] = `
                   viewBox="0 0 24 24"
                 >
                   <path
-                    d="M12,18 L12,6 M6,12 L18,12"
+                    d="M12 18V6m-6 6h12"
                     fill="none"
                     stroke="#000"
                     stroke-width="2"
@@ -619,7 +619,7 @@ exports[`App empty 2`] = `
               viewBox="0 0 24 24"
             >
               <path
-                d="M12,18 L12,6 M6,12 L18,12"
+                d="M12 18V6m-6 6h12"
                 fill="none"
                 stroke="#000"
                 stroke-width="2"
@@ -680,7 +680,7 @@ exports[`App empty 2`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M14,1 L14,8 L21,8 M21,23 L3,23 L3,1 L15,1 L18,4 L21,7 L21,23 L21,23 L21,23 Z"
+            d="M14 1v7h7m0 15H3V1h12l3 3 3 3v16z"
             fill="none"
             stroke="#000"
             stroke-width="2"
