@@ -2,29 +2,29 @@
 
 exports[`App empty 1`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 GMzAK"
+  class="StyledGrommet-sc-19lkkz7-0 Tyrqd"
   style="min-height: 100vh;"
 >
   <div
-    class="StyledGrid-sc-1wofa1l-0 bJswZY"
+    class="StyledGrid-sc-1wofa1l-0 coLLCH"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hxJojP"
+      class="StyledBox-sc-13pk1d4-0 gVMnUQ"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kYcNvb"
+        class="StyledBox-sc-13pk1d4-0 hevOYs"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hoPFxc"
+          class="StyledBox-sc-13pk1d4-0 fHIHJf"
         >
           <button
-            class="StyledButton-sc-323bzc-0 ijXFTb"
+            class="StyledButton-sc-323bzc-0 dOEgHg"
             title="choose another site"
             type="button"
           >
             <svg
               aria-label="Apps"
-              class="StyledIcon-sc-ofa7kd-0 wnZwe"
+              class="StyledIcon-sc-ofa7kd-0 eJclys"
               viewBox="0 0 24 24"
             >
               <path
@@ -37,17 +37,17 @@ exports[`App empty 1`] = `
           </button>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 hoPFxc"
+          class="StyledBox-sc-13pk1d4-0 fHIHJf"
         >
           <button
-            class="StyledButton-sc-323bzc-0 crBWOh"
+            class="StyledButton-sc-323bzc-0 fCysDe"
             disabled=""
             title="undo last change"
             type="button"
           >
             <svg
               aria-label="Undo"
-              class="StyledIcon-sc-ofa7kd-0 wnZwe"
+              class="StyledIcon-sc-ofa7kd-0 eJclys"
               viewBox="0 0 24 24"
             >
               <path
@@ -57,17 +57,17 @@ exports[`App empty 1`] = `
           </button>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 hoPFxc"
+          class="StyledBox-sc-13pk1d4-0 fHIHJf"
         >
           <button
-            class="StyledButton-sc-323bzc-0 crBWOh"
+            class="StyledButton-sc-323bzc-0 fCysDe"
             disabled=""
             title="redo last change"
             type="button"
           >
             <svg
               aria-label="Redo"
-              class="StyledIcon-sc-ofa7kd-0 wnZwe"
+              class="StyledIcon-sc-ofa7kd-0 eJclys"
               viewBox="0 0 24 24"
             >
               <path
@@ -77,15 +77,15 @@ exports[`App empty 1`] = `
           </button>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 hoPFxc"
+          class="StyledBox-sc-13pk1d4-0 fHIHJf"
         >
           <button
-            class="StyledButton-sc-323bzc-0 ijXFTb"
+            class="StyledButton-sc-323bzc-0 dOEgHg"
             type="button"
           >
             <svg
               aria-label="Share"
-              class="StyledIcon-sc-ofa7kd-0 wnZwe"
+              class="StyledIcon-sc-ofa7kd-0 eJclys"
               viewBox="0 0 24 24"
             >
               <path
@@ -99,81 +99,81 @@ exports[`App empty 1`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 hoPFxc"
+        class="StyledBox-sc-13pk1d4-0 fHIHJf"
       >
         <a
-          class="StyledButton-sc-323bzc-0 ipiYSt"
+          class="StyledButton-sc-323bzc-0 iNHIgu"
           href="/"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jxlRzc"
+            class="StyledBox-sc-13pk1d4-0 aNszv"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 iRxwBn"
+              class="StyledText-sc-1sadyjn-0 hMxfug"
             >
               My Site
             </span>
           </div>
         </a>
         <div
-          class="StyledBox-sc-13pk1d4-0 hoPFxc"
+          class="StyledBox-sc-13pk1d4-0 fHIHJf"
         >
           <a
-            class="StyledButton-sc-323bzc-0 bAhNJx"
+            class="StyledButton-sc-323bzc-0 kIqGcK"
             href="/welcome"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 flCNEF"
+              class="StyledBox-sc-13pk1d4-0 gVMsju"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 blCBNx"
+                class="StyledText-sc-1sadyjn-0 KoMJG"
               >
                 welcome
               </span>
             </div>
           </a>
           <div
-            class="StyledBox-sc-13pk1d4-0 hjnfBd"
+            class="StyledBox-sc-13pk1d4-0 dumUMO"
           >
             <a
-              class="StyledButton-sc-323bzc-0 bAhNJx"
+              class="StyledButton-sc-323bzc-0 kIqGcK"
               href="/join"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 flCNEF"
+                class="StyledBox-sc-13pk1d4-0 gVMsju"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 blCBNx"
+                  class="StyledText-sc-1sadyjn-0 KoMJG"
                 >
                   join
                 </span>
               </div>
             </a>
             <a
-              class="StyledButton-sc-323bzc-0 bAhNJx"
+              class="StyledButton-sc-323bzc-0 kIqGcK"
               href="/explore"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 flCNEF"
+                class="StyledBox-sc-13pk1d4-0 gVMsju"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 blCBNx"
+                  class="StyledText-sc-1sadyjn-0 KoMJG"
                 >
                   explore
                 </span>
               </div>
             </a>
             <button
-              class="StyledButton-sc-323bzc-0 bAhNJx"
+              class="StyledButton-sc-323bzc-0 kIqGcK"
               title="add a page"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 likicH"
+                class="StyledBox-sc-13pk1d4-0 gaBPXI"
               >
                 <svg
                   aria-label="FormAdd"
-                  class="StyledIcon-sc-ofa7kd-0 kcqhny"
+                  class="StyledIcon-sc-ofa7kd-0 bsfwzU"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -188,64 +188,64 @@ exports[`App empty 1`] = `
           </div>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 hoPFxc"
+          class="StyledBox-sc-13pk1d4-0 fHIHJf"
         >
           <a
-            class="StyledButton-sc-323bzc-0 bAhNJx"
+            class="StyledButton-sc-323bzc-0 kIqGcK"
             href="/about"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 flCNEF"
+              class="StyledBox-sc-13pk1d4-0 gVMsju"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 blCBNx"
+                class="StyledText-sc-1sadyjn-0 KoMJG"
               >
                 about
               </span>
             </div>
           </a>
           <div
-            class="StyledBox-sc-13pk1d4-0 hjnfBd"
+            class="StyledBox-sc-13pk1d4-0 dumUMO"
           >
             <a
-              class="StyledButton-sc-323bzc-0 bAhNJx"
+              class="StyledButton-sc-323bzc-0 kIqGcK"
               href="/contact"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 flCNEF"
+                class="StyledBox-sc-13pk1d4-0 gVMsju"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 blCBNx"
+                  class="StyledText-sc-1sadyjn-0 KoMJG"
                 >
                   contact
                 </span>
               </div>
             </a>
             <a
-              class="StyledButton-sc-323bzc-0 bAhNJx"
+              class="StyledButton-sc-323bzc-0 kIqGcK"
               href="/legal"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 flCNEF"
+                class="StyledBox-sc-13pk1d4-0 gVMsju"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 blCBNx"
+                  class="StyledText-sc-1sadyjn-0 KoMJG"
                 >
                   legal
                 </span>
               </div>
             </a>
             <button
-              class="StyledButton-sc-323bzc-0 bAhNJx"
+              class="StyledButton-sc-323bzc-0 kIqGcK"
               title="add a page"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 likicH"
+                class="StyledBox-sc-13pk1d4-0 gaBPXI"
               >
                 <svg
                   aria-label="FormAdd"
-                  class="StyledIcon-sc-ofa7kd-0 kcqhny"
+                  class="StyledIcon-sc-ofa7kd-0 bsfwzU"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -260,16 +260,16 @@ exports[`App empty 1`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 bAhNJx"
+          class="StyledButton-sc-323bzc-0 kIqGcK"
           title="add a chapter"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 likicH"
+            class="StyledBox-sc-13pk1d4-0 gaBPXI"
           >
             <svg
               aria-label="FormAdd"
-              class="StyledIcon-sc-ofa7kd-0 kcqhny"
+              class="StyledIcon-sc-ofa7kd-0 bsfwzU"
               viewBox="0 0 24 24"
             >
               <path
@@ -284,37 +284,37 @@ exports[`App empty 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 dtvMAa"
+      class="StyledBox-sc-13pk1d4-0 eXQCEV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 hcamNC"
+        class="StyledBox-sc-13pk1d4-0 eVUqjt"
       >
         <button
-          class="StyledButton-sc-323bzc-0 tKoeZ"
+          class="StyledButton-sc-323bzc-0 frUvoK"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fiOklf"
+            class="StyledBox-sc-13pk1d4-0 looPps"
           >
             content
           </div>
         </button>
         <button
-          class="StyledButton-sc-323bzc-0 tKoeZ"
+          class="StyledButton-sc-323bzc-0 frUvoK"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hfOBwU"
+            class="StyledBox-sc-13pk1d4-0 iihVfL"
           >
             details
           </div>
         </button>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 gCzvci"
+        class="StyledBox-sc-13pk1d4-0 MXJld"
       >
         <textarea
-          class="StyledTextArea-sc-17i3mwp-0 kuKjha"
+          class="StyledTextArea-sc-17i3mwp-0 gqyMud"
           id="content"
           name="content"
         >
@@ -323,14 +323,14 @@ exports[`App empty 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 iZfhDl"
+      class="StyledBox-sc-13pk1d4-0 eDQEki"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kTTUvl"
+        class="StyledBox-sc-13pk1d4-0 jclSia"
       >
         <svg
           aria-label="Document"
-          class="StyledIcon-sc-ofa7kd-0 gHUeeC"
+          class="StyledIcon-sc-ofa7kd-0 BTfHE"
           viewBox="0 0 24 24"
         >
           <path
@@ -348,29 +348,29 @@ exports[`App empty 1`] = `
 
 exports[`App empty 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 GMzAK"
+  class="StyledGrommet-sc-19lkkz7-0 Tyrqd"
   style="min-height: 100vh;"
 >
   <div
-    class="StyledGrid-sc-1wofa1l-0 bJswZY"
+    class="StyledGrid-sc-1wofa1l-0 coLLCH"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hxJojP"
+      class="StyledBox-sc-13pk1d4-0 gVMnUQ"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kYcNvb"
+        class="StyledBox-sc-13pk1d4-0 hevOYs"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hoPFxc"
+          class="StyledBox-sc-13pk1d4-0 fHIHJf"
         >
           <button
-            class="StyledButton-sc-323bzc-0 ijXFTb"
+            class="StyledButton-sc-323bzc-0 dOEgHg"
             title="choose another site"
             type="button"
           >
             <svg
               aria-label="Apps"
-              class="StyledIcon-sc-ofa7kd-0 wnZwe"
+              class="StyledIcon-sc-ofa7kd-0 eJclys"
               viewBox="0 0 24 24"
             >
               <path
@@ -383,17 +383,17 @@ exports[`App empty 2`] = `
           </button>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 hoPFxc"
+          class="StyledBox-sc-13pk1d4-0 fHIHJf"
         >
           <button
-            class="StyledButton-sc-323bzc-0 crBWOh"
+            class="StyledButton-sc-323bzc-0 fCysDe"
             disabled=""
             title="undo last change"
             type="button"
           >
             <svg
               aria-label="Undo"
-              class="StyledIcon-sc-ofa7kd-0 wnZwe"
+              class="StyledIcon-sc-ofa7kd-0 eJclys"
               viewBox="0 0 24 24"
             >
               <path
@@ -403,17 +403,17 @@ exports[`App empty 2`] = `
           </button>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 hoPFxc"
+          class="StyledBox-sc-13pk1d4-0 fHIHJf"
         >
           <button
-            class="StyledButton-sc-323bzc-0 crBWOh"
+            class="StyledButton-sc-323bzc-0 fCysDe"
             disabled=""
             title="redo last change"
             type="button"
           >
             <svg
               aria-label="Redo"
-              class="StyledIcon-sc-ofa7kd-0 wnZwe"
+              class="StyledIcon-sc-ofa7kd-0 eJclys"
               viewBox="0 0 24 24"
             >
               <path
@@ -423,15 +423,15 @@ exports[`App empty 2`] = `
           </button>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 hoPFxc"
+          class="StyledBox-sc-13pk1d4-0 fHIHJf"
         >
           <button
-            class="StyledButton-sc-323bzc-0 ijXFTb"
+            class="StyledButton-sc-323bzc-0 dOEgHg"
             type="button"
           >
             <svg
               aria-label="Share"
-              class="StyledIcon-sc-ofa7kd-0 wnZwe"
+              class="StyledIcon-sc-ofa7kd-0 eJclys"
               viewBox="0 0 24 24"
             >
               <path
@@ -445,81 +445,81 @@ exports[`App empty 2`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 hoPFxc"
+        class="StyledBox-sc-13pk1d4-0 fHIHJf"
       >
         <a
-          class="StyledButton-sc-323bzc-0 ipiYSt"
+          class="StyledButton-sc-323bzc-0 iNHIgu"
           href="/"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jxlRzc"
+            class="StyledBox-sc-13pk1d4-0 aNszv"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 iRxwBn"
+              class="StyledText-sc-1sadyjn-0 hMxfug"
             >
               My Site
             </span>
           </div>
         </a>
         <div
-          class="StyledBox-sc-13pk1d4-0 hoPFxc"
+          class="StyledBox-sc-13pk1d4-0 fHIHJf"
         >
           <a
-            class="StyledButton-sc-323bzc-0 bAhNJx"
+            class="StyledButton-sc-323bzc-0 kIqGcK"
             href="/welcome"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 flCNEF"
+              class="StyledBox-sc-13pk1d4-0 gVMsju"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 blCBNx"
+                class="StyledText-sc-1sadyjn-0 KoMJG"
               >
                 welcome
               </span>
             </div>
           </a>
           <div
-            class="StyledBox-sc-13pk1d4-0 hjnfBd"
+            class="StyledBox-sc-13pk1d4-0 dumUMO"
           >
             <a
-              class="StyledButton-sc-323bzc-0 bAhNJx"
+              class="StyledButton-sc-323bzc-0 kIqGcK"
               href="/join"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 flCNEF"
+                class="StyledBox-sc-13pk1d4-0 gVMsju"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 blCBNx"
+                  class="StyledText-sc-1sadyjn-0 KoMJG"
                 >
                   join
                 </span>
               </div>
             </a>
             <a
-              class="StyledButton-sc-323bzc-0 bAhNJx"
+              class="StyledButton-sc-323bzc-0 kIqGcK"
               href="/explore"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 flCNEF"
+                class="StyledBox-sc-13pk1d4-0 gVMsju"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 blCBNx"
+                  class="StyledText-sc-1sadyjn-0 KoMJG"
                 >
                   explore
                 </span>
               </div>
             </a>
             <button
-              class="StyledButton-sc-323bzc-0 bAhNJx"
+              class="StyledButton-sc-323bzc-0 kIqGcK"
               title="add a page"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 likicH"
+                class="StyledBox-sc-13pk1d4-0 gaBPXI"
               >
                 <svg
                   aria-label="FormAdd"
-                  class="StyledIcon-sc-ofa7kd-0 kcqhny"
+                  class="StyledIcon-sc-ofa7kd-0 bsfwzU"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -534,64 +534,64 @@ exports[`App empty 2`] = `
           </div>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 hoPFxc"
+          class="StyledBox-sc-13pk1d4-0 fHIHJf"
         >
           <a
-            class="StyledButton-sc-323bzc-0 bAhNJx"
+            class="StyledButton-sc-323bzc-0 kIqGcK"
             href="/about"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 flCNEF"
+              class="StyledBox-sc-13pk1d4-0 gVMsju"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 blCBNx"
+                class="StyledText-sc-1sadyjn-0 KoMJG"
               >
                 about
               </span>
             </div>
           </a>
           <div
-            class="StyledBox-sc-13pk1d4-0 hjnfBd"
+            class="StyledBox-sc-13pk1d4-0 dumUMO"
           >
             <a
-              class="StyledButton-sc-323bzc-0 bAhNJx"
+              class="StyledButton-sc-323bzc-0 kIqGcK"
               href="/contact"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 flCNEF"
+                class="StyledBox-sc-13pk1d4-0 gVMsju"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 blCBNx"
+                  class="StyledText-sc-1sadyjn-0 KoMJG"
                 >
                   contact
                 </span>
               </div>
             </a>
             <a
-              class="StyledButton-sc-323bzc-0 bAhNJx"
+              class="StyledButton-sc-323bzc-0 kIqGcK"
               href="/legal"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 flCNEF"
+                class="StyledBox-sc-13pk1d4-0 gVMsju"
               >
                 <span
-                  class="StyledText-sc-1sadyjn-0 blCBNx"
+                  class="StyledText-sc-1sadyjn-0 KoMJG"
                 >
                   legal
                 </span>
               </div>
             </a>
             <button
-              class="StyledButton-sc-323bzc-0 bAhNJx"
+              class="StyledButton-sc-323bzc-0 kIqGcK"
               title="add a page"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 likicH"
+                class="StyledBox-sc-13pk1d4-0 gaBPXI"
               >
                 <svg
                   aria-label="FormAdd"
-                  class="StyledIcon-sc-ofa7kd-0 kcqhny"
+                  class="StyledIcon-sc-ofa7kd-0 bsfwzU"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -606,16 +606,16 @@ exports[`App empty 2`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 bAhNJx"
+          class="StyledButton-sc-323bzc-0 kIqGcK"
           title="add a chapter"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 likicH"
+            class="StyledBox-sc-13pk1d4-0 gaBPXI"
           >
             <svg
               aria-label="FormAdd"
-              class="StyledIcon-sc-ofa7kd-0 kcqhny"
+              class="StyledIcon-sc-ofa7kd-0 bsfwzU"
               viewBox="0 0 24 24"
             >
               <path
@@ -630,37 +630,37 @@ exports[`App empty 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 dtvMAa"
+      class="StyledBox-sc-13pk1d4-0 eXQCEV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 hcamNC"
+        class="StyledBox-sc-13pk1d4-0 eVUqjt"
       >
         <button
-          class="StyledButton-sc-323bzc-0 tKoeZ"
+          class="StyledButton-sc-323bzc-0 frUvoK"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 fiOklf"
+            class="StyledBox-sc-13pk1d4-0 looPps"
           >
             content
           </div>
         </button>
         <button
-          class="StyledButton-sc-323bzc-0 tKoeZ"
+          class="StyledButton-sc-323bzc-0 frUvoK"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hfOBwU"
+            class="StyledBox-sc-13pk1d4-0 iihVfL"
           >
             details
           </div>
         </button>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 gCzvci"
+        class="StyledBox-sc-13pk1d4-0 MXJld"
       >
         <textarea
-          class="StyledTextArea-sc-17i3mwp-0 kuKjha"
+          class="StyledTextArea-sc-17i3mwp-0 gqyMud"
           id="content"
           name="content"
         >
@@ -669,14 +669,14 @@ exports[`App empty 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 iZfhDl"
+      class="StyledBox-sc-13pk1d4-0 eDQEki"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kTTUvl"
+        class="StyledBox-sc-13pk1d4-0 jclSia"
       >
         <svg
           aria-label="Document"
-          class="StyledIcon-sc-ofa7kd-0 gHUeeC"
+          class="StyledIcon-sc-ofa7kd-0 BTfHE"
           viewBox="0 0 24 24"
         >
           <path
